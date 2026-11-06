@@ -20,21 +20,21 @@
    ]
   },
   {
-   "slug": "business-portraet",
-   "name": "Business & Porträt",
-   "kurz": "Porträt",
-   "title": "Business-Porträts und Firmenfotografie Hamburg – Jon Pride",
-   "desc": "Business-Porträts, Team- und Führungskräftefotos für Unternehmen in Hamburg, im Landkreis Harburg und in der Lüneburger Heide. Kunden u. a. UBS.",
-   "intro": "Porträts von Führungskräften, Teams und Persönlichkeiten für Unternehmen in Hamburg, im Landkreis Harburg und in der Lüneburger Heide. Zu den Kunden gehört unter anderem UBS.",
+   "slug": "unternehmensfotografie",
+   "name": "Unternehmen & Marke",
+   "kurz": "Unternehmen",
+   "title": "Unternehmensfotografie Hamburg: Markenauftritt und Bildwelten – Jon Pride",
+   "desc": "Unternehmensfotografie für den Markenauftritt: Teams bei der Arbeit, Räume, Produkte und Porträts der Führung. Für Website, Recruiting, Presse und Social Media. Hamburg, Landkreis Harburg, Lüneburger Heide.",
+   "intro": "Bildwelten für den Auftritt eures Unternehmens: Teams bei der Arbeit, Räume, Produkte und die Köpfe dahinter. Für Website, Recruiting, Presse und Social Media. Zu den Kunden gehört unter anderem UBS.",
    "faq": [
     "unternehmen",
     "einsatz"
    ],
    "cover": "w04",
-   "leistung": "Mitarbeiter-, Team- und Führungskräfteporträts für Website, Recruiting und Presse, bei euch vor Ort.",
+   "leistung": "Bildwelten für den Markenauftritt: Teams bei der Arbeit, Räume, Produkte und Porträts der Führung, an einem Tag bei euch vor Ort.",
    "preis": [
-    "Mitarbeiterfotos: 149 € pro fertigem Bild",
-    "Dazu 249 € für Anfahrt und mobiles Studio bis 50 km, mindestens fünf Bilder pro Termin."
+    "Markenauftritt ab 4.990 €",
+    "Ein Shootingtag in eurem Unternehmen mit Teams, Räumen, Produkten und Porträts der Führung. Einzelne Mitarbeiterporträts kosten 149 € pro Bild plus 249 € Anfahrt."
    ]
   },
   {
@@ -187,7 +187,7 @@
    "slug": "fahrerportraet",
    "titel": "Fahrerporträt",
    "kat": [
-    "business-portraet"
+    "unternehmensfotografie"
    ],
    "meta": "Motorsport",
    "zeile": "Phoenix Racing · Pressemappe",
@@ -320,7 +320,7 @@
    "slug": "executive-portraet",
    "titel": "Executive-Porträt",
    "kat": [
-    "business-portraet"
+    "unternehmensfotografie"
    ],
    "meta": "Corporate",
    "zeile": "Porträt am Empfang",

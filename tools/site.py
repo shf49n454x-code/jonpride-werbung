@@ -243,7 +243,7 @@ def kontakt():
       <div class="row"><div><label for="f-mail">E-Mail *</label><input id="f-mail" type="email" name="email" required autocomplete="email"></div>
       <div><label for="f-tel">Telefon</label><input id="f-tel" type="tel" name="telefon" autocomplete="tel"></div></div>
       <div class="row"><div><label for="f-leistung">Worum geht es?</label><select id="f-leistung" name="leistung">
-        <option value="">Bitte wählen</option><option>Werbe- / Produktfotografie</option><option>Business-Porträts / Team</option><option>Food / Restaurant</option><option>Content / Social Media</option><option>Video / Musikvideo</option><option>Sonstiges</option></select></div>
+        <option value="">Bitte wählen</option><option>Werbe- / Produktfotografie</option><option>Markenauftritt / Unternehmen</option><option>Mitarbeiterporträts</option><option>Food / Restaurant</option><option>Content / Social Media</option><option>Video / Musikvideo</option><option>Sonstiges</option></select></div>
       <div><label for="f-zeit">Zeitraum</label><input id="f-zeit" type="text" name="zeitraum" placeholder="z. B. März 2027 oder offen"></div></div>
       <div><label for="f-msg">Nachricht</label><textarea id="f-msg" name="nachricht" placeholder="Was soll entstehen, wofür und wo?"></textarea></div>
       <p class="hinweis">Mit dem Absenden stimmt ihr zu, dass ich eure Angaben zur Beantwortung der Anfrage verarbeite. Details in der <a href="https://jonpride.de/datenschutz">Datenschutzerklärung</a>.</p>

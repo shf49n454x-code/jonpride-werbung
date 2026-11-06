@@ -69,5 +69,6 @@
 
 ## Preise (von Jon festgelegt, 06.11.2026)
 - Kampagnen ab 2.999 € (Endpreis)
-- Mitarbeiterfotos: Jon will keine Business-Bilder um jeden Preis, darf teurer sein. Vorschlag umgesetzt: 149 € pro fertigem Bild + 249 € Anfahrt/mobiles Studio bis 50 km, mind. 5 Bilder (Bestätigung offen)
+- Mitarbeiterporträts: Jon hat wenig Lust darauf, dürfen teuer sein. Umgesetzt: 149 € pro fertigem Bild + 249 € Anfahrt/mobiles Studio bis 50 km, mind. 5 Bilder (Bestätigung offen)
+- Markenauftritt einer Firma mit diversen Bereichen: darauf hat Jon Lust. Kategorie heißt jetzt „Unternehmen & Marke“, Vorschlag ab 4.990 € (Bestätigung offen)
 - UGC-Pakete: offen
