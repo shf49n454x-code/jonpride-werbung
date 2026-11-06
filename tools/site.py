@@ -271,7 +271,7 @@ def startseite():
   <div class="wrap hg">
     <div class="ht">
       <p class="mono eyebrow rv">Werbe- und Businessfotografie · Hamburg &amp; international</p>
-      <h1>{worte("Bilder für Marken, die man nicht wegscrollt.")}</h1>
+      <h1>{worte("Bilder und Filme, die im Kopf bleiben.")}</h1>
       <p class="lead rv">Kampagnen für Swarovski und Procter &amp; Gamble, ein TV-Format für Sky Sport und Musikvideos mit Millionen Views. Seit 2009 hinter der Kamera.</p>
       <div class="btns rv"><a class="btn voll" href="#arbeiten">Arbeiten ansehen</a><a class="btn rand" href="/kontakt/">Projekt anfragen</a></div>
     </div>
