@@ -92,6 +92,42 @@
    ],
    "cover": "yt-yLKTaERwMj4",
    "leistung": "Reels, Social Clips, UGC und laufendes Social-Media-Management für Marken und Kanäle."
+  },
+  {
+   "slug": "ugc-videos",
+   "name": "UGC-Videos",
+   "kurz": "UGC",
+   "title": "UGC-Videos für Unternehmen: Pakete mit 3, 5 oder 10 Videos – Jon Pride",
+   "desc": "UGC-Videos für Instagram, TikTok und Facebook: kurze Hochformat-Videos, die wie eine Empfehlung wirken. Einzelvideo 750 €, Pakete mit 3, 5 oder 10 Videos ab 1.990 €.",
+   "intro": "Kurze Hochformat-Videos im Stil echter Nutzer: Jemand zeigt euer Produkt und erzählt, wie es ist. Das wirkt wie eine Empfehlung und funktioniert als Anzeige auf Instagram, TikTok und Facebook.",
+   "leistung": "Kurze Hochformat-Videos im Stil echter Nutzer für Anzeigen auf Instagram, TikTok und Facebook. Pakete mit 3, 5 oder 10 Videos.",
+   "cover": "yt-yLKTaERwMj4",
+   "preis": [
+    "Einzelvideo 750 €, Pakete ab 1.990 €",
+    "Jedes Video bis 30 Sekunden im Hochformat, mit zwei Einstiegen (Hooks) zum Testen und Untertiteln. Die Nutzung für Anzeigen ist 12 Monate inklusive."
+   ],
+   "stufen": [
+    [
+     "3 Videos",
+     "1.990 €",
+     "Zum Testen: drei Videos mit je zwei Hooks. So seht ihr schnell, welche Ansprache bei euren Kunden zieht."
+    ],
+    [
+     "5 Videos",
+     "2.990 €",
+     "Fünf Videos mit je zwei Hooks, dazu ein kurzer Plan, welche Videos ihr zuerst schaltet. Rund 600 € pro Video."
+    ],
+    [
+     "10 Videos",
+     "4.990 €",
+     "Zehn Videos mit je zwei Hooks für laufende Kampagnen. Rund 500 € pro Video."
+    ]
+   ],
+   "faq": [
+    "ugc",
+    "rechte"
+   ],
+   "eigener_bereich": true
   }
  ],
  "faq": {
@@ -118,6 +154,10 @@
   "einsatz": [
    "Wo bist du im Einsatz?",
    "Meine Basis ist Tostedt zwischen Hamburg und der Lüneburger Heide. Im Einsatz bin ich deutschlandweit und international, für Swarovski zum Beispiel in Paris, Zürich und auf Santorini."
+  ],
+  "ugc": [
+   "Was sind UGC-Videos?",
+   "UGC steht für User Generated Content. Gemeint sind kurze Videos, die aussehen, als hätte sie ein echter Kunde gedreht: Hochformat, direkt in die Kamera, ohne Werbeglanz. Als Anzeige wirken sie dadurch wie eine Empfehlung."
   ]
  },
  "startseite_faq": [
@@ -359,7 +399,8 @@
    "titel": "McDonald's",
    "kunde": "McDonald's",
    "kat": [
-    "brand-social"
+    "brand-social",
+    "ugc-videos"
    ],
    "meta": "3,5 Mio. Views",
    "zeile": "Happy-Meal-Bücher · Reel mit Mrs. Mama, Video und Ton",

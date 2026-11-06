@@ -87,7 +87,7 @@ def worte(text):
     return " ".join(f'<span class="w" style="--i:{i}">{t}</span>' for i, t in enumerate(teile))
 
 
-NAV = [("/#arbeiten", "Arbeiten"), ("/#leistungen", "Leistungen"), ("/ratgeber/", "Ratgeber")]
+NAV = [("/#arbeiten", "Arbeiten"), ("/#leistungen", "Leistungen"), ("/ugc-videos/", "UGC-Videos"), ("/ratgeber/", "Ratgeber")]
 
 
 def kopf(title, desc, pfad, ld, og_bild="w10", extra=""):
@@ -135,7 +135,7 @@ def kopf(title, desc, pfad, ld, og_bild="w10", extra=""):
 
 def fuss():
     js_v = fingerabdruck(PUB / "assets/site.js")
-    kats = "".join(f'<a href="/{k["slug"]}/">{esc(k["name"])}</a>' for k in D["kategorien"] if kat_arbeiten(k["slug"]))
+    kats = "".join(f'<a href="/{k["slug"]}/">{esc(k["name"])}</a>' for k in D["kategorien"] if kat_arbeiten(k["slug"]) and not k.get("eigener_bereich")) + '<a href="/ugc-videos/">UGC-Videos</a>'
     rg = "".join(f'<a href="/ratgeber/{r["slug"]}/">{esc(r["titel"])}</a>' for r in RATGEBER)
     return f"""</main>
 <footer class="fuss">
@@ -257,12 +257,13 @@ def startseite():
     hero_alt = D["bilder"]["w10"]
     kunden = "".join(f"<li>{esc(k)}</li>" for k in D["kunden"])
     auswahl = [BY_SLUG[x] for x in D["startseite"]]
-    kats = [k for k in D["kategorien"] if kat_arbeiten(k["slug"])]
+    kats = [k for k in D["kategorien"] if kat_arbeiten(k["slug"]) and not k.get("eigener_bereich")]
     kacheln = "".join(
         f'<a class="kat-k rv" style="--d:{i % 3}" href="/{k["slug"]}/"><div class="media">{bild(k["cover"], D["bilder"].get(k["cover"], k["name"]), "(min-width: 1100px) 31vw, (min-width: 640px) 48vw, 100vw")}</div>'
         f'<span class="kz"><span class="kt">{esc(k["name"])}</span><span class="km mono">{len(kat_arbeiten(k["slug"]))} {"Arbeit" if len(kat_arbeiten(k["slug"])) == 1 else "Arbeiten"}</span></span>'
         f'<span class="kd">{esc(k["leistung"])}</span><span class="mehr mono">Ansehen →</span></a>' for i, k in enumerate(kats))
-    kacheln += '<a class="kat-k cta-k rv" style="--d:2" href="/kontakt/"><span class="kt">Euer Projekt?</span><span class="kd">Erzählt mir in zwei Minuten, was entstehen soll. Antwort innerhalb von zwei Werktagen.</span><span class="btn schwarz">Projekt anfragen</span></a>'
+    if len(kats) % 3:
+        kacheln += '<a class="kat-k cta-k rv" style="--d:2" href="/kontakt/"><span class="kt">Euer Projekt?</span><span class="kd">Erzählt mir in zwei Minuten, was entstehen soll. Antwort innerhalb von zwei Werktagen.</span><span class="btn schwarz">Projekt anfragen</span></a>'
     rg = "".join(f'<a class="rgk rv" href="/ratgeber/{r["slug"]}/"><span class="mono">{esc(r["thema"])}</span><span class="rgt">{esc(r["titel"])}</span><span class="mehr mono">Lesen →</span></a>' for r in RATGEBER)
     h = kopf("Werbefotograf & Content Creator Hamburg – Jon Pride",
              "Werbe- und Businessfotografie, Film und Content für Marken: Swarovski, Procter & Gamble, Volkswagen, McDonald's, Sky Sport. Jon Pride aus Hamburg und der Lüneburger Heide.",
@@ -316,7 +317,7 @@ def kategorie(k):
     faq_ld, faq_html = faq_block(paare, f"Häufige Fragen zu {k['name']}")
     chips = "".join(
         f'<a class="chip{" an" if kk["slug"] == k["slug"] else ""}" href="/{kk["slug"]}/"{" aria-current=page" if kk["slug"] == k["slug"] else ""}>{esc(kk["name"])}</a>'
-        for kk in D["kategorien"] if kat_arbeiten(kk["slug"]))
+        for kk in D["kategorien"] if kat_arbeiten(kk["slug"]) and not kk.get("eigener_bereich")) if not k.get("eigener_bereich") else ""
     rg = [r for r in RATGEBER if r.get("kategorie") == k["slug"]]
     rg_html = "".join(f'<a class="weiter mono" href="/ratgeber/{r["slug"]}/">Ratgeber: {esc(r["titel"])} →</a>' for r in rg)
     coll = {"@context": "https://schema.org", "@type": "CollectionPage", "name": k["name"], "url": f'{SITE}/{k["slug"]}/',
