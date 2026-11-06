@@ -31,10 +31,27 @@
     "einsatz"
    ],
    "cover": "w04",
-   "leistung": "Bildwelten für den Markenauftritt: Teams bei der Arbeit, Räume, Produkte und Porträts der Führung, an einem Tag bei euch vor Ort.",
+   "leistung": "Bildwelten und Film für den Markenauftritt: Teams bei der Arbeit, Räume, Produkte und Porträts der Führung, vom Halbtag bis zu zwei Drehtagen.",
    "preis": [
-    "Markenauftritt ab 4.990 €",
-    "Ein Shootingtag in eurem Unternehmen mit Teams, Räumen, Produkten und Porträts der Führung. Einzelne Mitarbeiterporträts kosten 149 € pro Bild plus 249 € Anfahrt."
+    "Markenauftritt ab 1.990 €",
+    "Fotos und Film für den Auftritt eures Unternehmens, in drei Größen. Nutzung für Website, Social Media, Recruiting und Presse ist zeitlich unbegrenzt dabei, Anfahrt bis 50 km auch."
+   ],
+   "stufen": [
+    [
+     "Halbtag",
+     "ab 1.990 €",
+     "Bis 4 Stunden vor Ort, zwei Bereiche (zum Beispiel Büro und Produktion), Porträts der Führung bis 3 Personen, 25 fertige Bilder."
+    ],
+    [
+     "Ganzer Tag",
+     "ab 3.490 €",
+     "Bis 8 Stunden: Teams bei der Arbeit, Räume, Produkte und Details, Porträts der Führung bis 5 Personen, 50 fertige Bilder. Vorgespräch und Shotlist inklusive."
+    ],
+    [
+     "Foto + Film, 2 Tage",
+     "ab 6.990 €",
+     "Ein Tag Foto wie oben, ein Tag Film: Imagefilm von 60 bis 90 Sekunden und drei Schnittfassungen für Social Media."
+    ]
    ]
   },
   {

@@ -327,6 +327,7 @@ def kategorie(k):
   {nav_k}
   <div class="skg"><h1>{worte(k["name"])}</h1><p class="lead rv">{esc(k["intro"])}</p></div>
   {f'<div class="preis rv"><p class="pz">{esc(k["preis"][0])}</p><p>{esc(k["preis"][1])}</p><a class="btn voll" href="/kontakt/">Angebot anfragen</a></div>' if k.get("preis") else ""}
+  {('<div class="stufen rv">' + "".join(f'<div class="stufe{" top" if i == 1 else ""}"><p class="mono">{esc(n)}{" · Empfehlung" if i == 1 else ""}</p><p class="sp">{esc(pr)}</p><p>{esc(t)}</p></div>' for i, (n, pr, t) in enumerate(k["stufen"])) + '</div>') if k.get("stufen") else ""}
   <div class="chips rv">{chips}</div>
 </div></section>
 <section class="arbeiten kat"><div class="wrap">{raster(liste)}</div></section>

@@ -217,6 +217,15 @@ nav.haupt a.cta:hover{background:var(--accent-h);color:#0b0b0c}
 .preis .btn{grid-column:2;grid-row:1/span 2}
 @media(max-width:700px){.preis{grid-template-columns:1fr}.preis .btn{grid-column:1;grid-row:auto;justify-self:start;margin-top:10px}}
 
+.stufen{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-bottom:28px}
+.stufe{border:1px solid var(--line);padding:clamp(18px,2vw,26px);display:flex;flex-direction:column;gap:8px;clip-path:polygon(0 0,100% 0,100% calc(100% - var(--cut-md)),calc(100% - var(--cut-md)) 100%,0 100%)}
+.stufe .mono{color:var(--muted)}
+.stufe.top{border-color:var(--accent);background:var(--bg-2)}
+.stufe.top .mono{color:var(--accent)}
+.stufe .sp{font-family:var(--font-display);font-size:clamp(26px,2.4vw,34px);line-height:1.1;text-transform:uppercase;color:var(--text)}
+.stufe p:last-child{color:var(--muted-2);font-size:15.5px;line-height:1.55}
+@media(max-width:900px){.stufen{grid-template-columns:1fr}}
+
 /* Projektseite */
 .ph{margin-bottom:clamp(48px,6vw,88px)}
 .ph.leer{aspect-ratio:16/7}
