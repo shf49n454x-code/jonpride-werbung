@@ -13,11 +13,7 @@
     "rechte"
    ],
    "cover": "w09",
-   "leistung": "Kampagnen-, Produkt- und Imagebilder für Marken. Location, Set, Licht, Fotografie und Bearbeitung aus einer Hand.",
-   "preis": [
-    "Kampagnen ab 2.999 €",
-    "Der genaue Preis hängt von Shootingtagen, Postproduktion, Anzahl der Motive und Nutzungsrechten ab."
-   ]
+   "leistung": "Kampagnen-, Produkt- und Imagebilder für Marken. Location, Set, Licht, Fotografie und Bearbeitung aus einer Hand."
   },
   {
    "slug": "unternehmensfotografie",
@@ -31,28 +27,7 @@
     "einsatz"
    ],
    "cover": "w04",
-   "leistung": "Bildwelten und kurze Videos für den Markenauftritt: Teams bei der Arbeit, Räume, Produkte und Porträts der Führung, vom Halbtag bis zum ganzen Tag mit Social-Videos.",
-   "preis": [
-    "Markenauftritt ab 1.990 €",
-    "Fotos und kurze Videos für den Auftritt eures Unternehmens. Nutzung für Website, Social Media, Recruiting und Presse ist zeitlich unbegrenzt dabei, Anfahrt bis 50 km auch. Ein Imagefilm braucht zwei Drehtage und wird einzeln angeboten."
-   ],
-   "stufen": [
-    [
-     "Halbtag",
-     "ab 1.990 €",
-     "Bis 4 Stunden vor Ort, zwei Bereiche (zum Beispiel Büro und Produktion), Porträts der Führung bis 3 Personen, 25 fertige Bilder."
-    ],
-    [
-     "Ganzer Tag",
-     "ab 3.490 €",
-     "Bis 8 Stunden: Teams bei der Arbeit, Räume, Produkte und Details, Porträts der Führung bis 5 Personen, 50 fertige Bilder. Vorgespräch und Shotlist inklusive."
-    ],
-    [
-     "Foto + Social-Videos",
-     "ab 4.990 €",
-     "Der ganze Tag wie daneben, dazu drei kurze Videos für Social Media mit je etwa 30 Sekunden, am selben Tag gedreht."
-    ]
-   ]
+   "leistung": "Bildwelten und kurze Videos für den Markenauftritt: Teams bei der Arbeit, Räume, Produkte und Porträts der Führung, vom Halbtag bis zum ganzen Tag mit Social-Videos."
   },
   {
    "slug": "food",
@@ -78,11 +53,7 @@
     "agentur"
    ],
    "cover": "yt-3EJuROjO48Q",
-   "leistung": "Konzept, Dreh, Schnitt und Color Grading. Musikvideos und Formate mit Millionenreichweite.",
-   "preis": [
-    "Musikvideos ab 2.500 €",
-    "Konzept, Dreh, Schnitt und Color Grading. Der genaue Preis hängt von Drehtagen, Locations und Team ab."
-   ]
+   "leistung": "Konzept, Dreh, Schnitt und Color Grading. Musikvideos und Formate mit Millionenreichweite."
   },
   {
    "slug": "brand-social",
@@ -106,27 +77,6 @@
    "intro": "Kurze Hochformat-Videos im Stil echter Nutzer: Jemand zeigt euer Produkt und erzählt, wie es ist. Das wirkt wie eine Empfehlung und funktioniert als Anzeige auf Instagram, TikTok und Facebook.",
    "leistung": "Kurze Hochformat-Videos im Stil echter Nutzer für Anzeigen auf Instagram, TikTok und Facebook. Pakete mit 3, 5 oder 10 Videos.",
    "cover": "yt-yLKTaERwMj4",
-   "preis": [
-    "Einzelvideo 750 €, Pakete ab 1.990 €",
-    "Je mehr Videos ihr bucht, desto günstiger wird jedes einzelne. Jedes Video ist bis 30 Sekunden lang, im Hochformat, mit zwei Einstiegen (Hooks) zum Testen und Untertiteln. Die Nutzung für Anzeigen ist 12 Monate inklusive."
-   ],
-   "stufen": [
-    [
-     "3 Videos",
-     "1.990 €",
-     "Rund 660 € pro Video statt 750 €. Drei Videos mit je zwei Hooks, damit ihr schnell seht, welche Ansprache bei euren Kunden zieht."
-    ],
-    [
-     "5 Videos",
-     "2.990 €",
-     "Rund 600 € pro Video. Fünf Videos mit je zwei Hooks, dazu ein kurzer Plan, welche Videos ihr zuerst schaltet."
-    ],
-    [
-     "10 Videos",
-     "4.990 €",
-     "Rund 500 € pro Video. Zehn Videos mit je zwei Hooks für laufende Kampagnen."
-    ]
-   ],
    "faq": [
     "ugc",
     "rechte"
@@ -523,20 +473,16 @@
    "name": "UGC-Videos",
    "unterpunkte": [
     [
-     "3 Videos",
-     "/ugc-videos/#paket-1"
-    ],
-    [
-     "5 Videos",
-     "/ugc-videos/#paket-2"
-    ],
-    [
-     "10 Videos",
-     "/ugc-videos/#paket-3"
-    ],
-    [
      "Was sind UGC-Videos?",
-     "/ugc-videos/#frage-was-sind-ugc-videos"
+     "/ugc-videos/"
+    ],
+    [
+     "Beispiele",
+     "/ugc-videos/#arbeiten-liste"
+    ],
+    [
+     "Pakete & Preise",
+     "/preise/#ugc"
     ]
    ]
   }

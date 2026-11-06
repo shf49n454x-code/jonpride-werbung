@@ -75,6 +75,86 @@
     document.addEventListener('keydown', function (e) { if (!lb.hidden && e.key === 'Escape') schliessen(); });
   }
 
+  // Preise: Reiter mit Wechsel-Effekt
+  var tabs = document.querySelectorAll('.tabs .tab');
+  var strich = document.querySelector('.tab-strich');
+  function strichSetzen(t) {
+    if (!strich || !t) return;
+    strich.style.setProperty('--x', t.offsetLeft + 'px');
+    strich.style.setProperty('--w', t.offsetWidth + 'px');
+  }
+  function zeigen(id, merken) {
+    var t = document.querySelector('.tab[data-tab="' + id + '"]');
+    if (!t) return;
+    tabs.forEach(function (x) { var an = x === t; x.classList.toggle('an', an); x.setAttribute('aria-selected', an ? 'true' : 'false'); x.tabIndex = an ? 0 : -1; });
+    document.querySelectorAll('.panel').forEach(function (p) { p.classList.toggle('an', p.id === 'p-' + id); });
+    strichSetzen(t);
+    if (merken && history.replaceState) history.replaceState(null, '', '#' + id);
+  }
+  if (tabs.length) {
+    tabs.forEach(function (t, i) {
+      t.addEventListener('click', function () { zeigen(t.getAttribute('data-tab'), true); });
+      t.addEventListener('keydown', function (e) {
+        var n = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+        if (!n) return;
+        var z = tabs[(i + n + tabs.length) % tabs.length]; z.focus(); zeigen(z.getAttribute('data-tab'), true);
+      });
+    });
+    var start = (location.hash || '').slice(1);
+    zeigen(document.querySelector('.tab[data-tab="' + start + '"]') ? start : tabs[0].getAttribute('data-tab'), false);
+    window.addEventListener('hashchange', function () { zeigen(location.hash.slice(1), false); });
+    window.addEventListener('resize', function () { strichSetzen(document.querySelector('.tab.an')); });
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { strichSetzen(document.querySelector('.tab.an')); });
+  }
+
+  // Auswahl: Pakete sammeln und zusammen anfragen (nur fuer diesen Besuch gemerkt)
+  var SPEICHER = 'jp-auswahl';
+  function lesen() { try { return JSON.parse(sessionStorage.getItem(SPEICHER) || '[]'); } catch (e) { return []; } }
+  function schreiben(l) { try { sessionStorage.setItem(SPEICHER, JSON.stringify(l)); } catch (e) {} }
+  var auswahl = lesen();
+  var korb = document.getElementById('korb');
+  function euro(n) { return n.toLocaleString('de-DE') + ' €'; }
+  function korbZeigen() {
+    document.querySelectorAll('.pk').forEach(function (k) {
+      var drin = auswahl.some(function (a) { return a.id === k.getAttribute('data-id'); });
+      k.classList.toggle('gew', drin);
+      var b = k.querySelector('.wahl'); if (b) b.setAttribute('aria-pressed', drin ? 'true' : 'false');
+    });
+    if (!korb) return;
+    korb.hidden = false;
+    if (!auswahl.length) { korb.classList.remove('offen'); document.body.classList.remove('mit-korb'); return; }
+    var summe = auswahl.reduce(function (s, a) { return s + (a.ab || 0); }, 0);
+    var offen = auswahl.some(function (a) { return !a.ab; });
+    korb.querySelector('.korb-t').textContent = auswahl.map(function (a) { return a.name; }).join(' + ') +
+      (summe ? ' · ab ' + euro(summe) + (offen ? ' plus Anfrage' : '') : '');
+    document.getElementById('korb-los').href = '/kontakt/?pakete=' + encodeURIComponent(auswahl.map(function (a) { return a.id; }).join(','));
+    korb.classList.add('offen'); document.body.classList.add('mit-korb');
+  }
+  document.querySelectorAll('.pk .wahl').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var k = b.closest('.pk'), id = k.getAttribute('data-id');
+      var i = auswahl.findIndex(function (a) { return a.id === id; });
+      if (i > -1) auswahl.splice(i, 1);
+      else auswahl.push({ id: id, name: k.getAttribute('data-name'), ab: Number(k.getAttribute('data-ab')) || 0 });
+      schreiben(auswahl); korbZeigen();
+    });
+  });
+  korbZeigen();
+
+  // Kontakt: gewaehlte Pakete ins Formular uebernehmen
+  var feld = document.getElementById('f-pakete');
+  if (feld) {
+    var ids = (new URLSearchParams(location.search).get('pakete') || '').split(',').filter(Boolean);
+    var namen = ids.map(function (id) { var a = auswahl.find(function (x) { return x.id === id; }); return a ? a.name : null; }).filter(Boolean);
+    if (!namen.length) namen = auswahl.map(function (a) { return a.name; });
+    if (namen.length) {
+      feld.value = namen.join('; ');
+      var box = document.getElementById('auswahl');
+      namen.forEach(function (n) { var li = document.createElement('li'); li.textContent = n; box.querySelector('ul').appendChild(li); });
+      box.hidden = false;
+    }
+  }
+
   // Formularschutz: Zeit seit Seitenaufruf (der Server verwirft alles unter 3 s)
   var start = Date.now();
   document.addEventListener('submit', function (e) {

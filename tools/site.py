@@ -22,6 +22,7 @@ STUFEN = (640, 1000, 1600)
 
 D = json.loads((ROOT / "content/arbeiten.json").read_text())
 RATGEBER = json.loads((ROOT / "content/ratgeber.json").read_text())
+PREISE = json.loads((ROOT / "content/preise.json").read_text())
 KAT = {k["slug"]: k for k in D["kategorien"]}
 ARBEITEN = D["arbeiten"]
 BY_SLUG = {a["slug"]: a for a in ARBEITEN}
@@ -105,8 +106,8 @@ def kopf(title, desc, pfad, ld, og_bild="w10", extra=""):
     breiten = BILD[og_bild][0] if og_bild in BILD else [1000]
     og = f"{SITE}/img/{og_bild}-{breiten[-1]}.jpg"
     gruppen = nav_punkte()
-    nav = "".join(f'<div class="dd"><a class="ddt" href="{h}">{esc(t)}</a><div class="ddm">' + "".join(f'<a href="{u}">{esc(n)}</a>' for n, u in sub) + '</div></div>' for t, h, sub in gruppen) + '<a href="/ratgeber/">Ratgeber</a>'
-    nav_mobil = "".join(f'<a class="mg" href="{h}">{esc(t)}</a>' + "".join(f'<a class="mu" href="{u}">{esc(n)}</a>' for n, u in sub) for t, h, sub in gruppen) + '<a class="mg" href="/ratgeber/">Ratgeber</a>'
+    nav = "".join(f'<div class="dd"><a class="ddt" href="{h}">{esc(t)}</a><div class="ddm">' + "".join(f'<a href="{u}">{esc(n)}</a>' for n, u in sub) + '</div></div>' for t, h, sub in gruppen) + '<a href="/preise/">Preise</a><a href="/ratgeber/">Ratgeber</a>'
+    nav_mobil = "".join(f'<a class="mg" href="{h}">{esc(t)}</a>' + "".join(f'<a class="mu" href="{u}">{esc(n)}</a>' for n, u in sub) for t, h, sub in gruppen) + '<a class="mg" href="/preise/">Preise</a><a class="mg" href="/ratgeber/">Ratgeber</a>'
     lds = "".join(f'<script type="application/ld+json">{json.dumps(x, ensure_ascii=False)}</script>' for x in ld)
     return f"""<!doctype html>
 <html lang="de">
@@ -146,7 +147,7 @@ def kopf(title, desc, pfad, ld, og_bild="w10", extra=""):
 
 def fuss():
     js_v = fingerabdruck(PUB / "assets/site.js")
-    kats = "".join(f'<a href="/{k["slug"]}/">{esc(k["name"])}</a>' for k in D["kategorien"] if kat_arbeiten(k["slug"]) and not k.get("eigener_bereich")) + '<a href="/ugc-videos/">UGC-Videos</a>'
+    kats = "".join(f'<a href="/{k["slug"]}/">{esc(k["name"])}</a>' for k in D["kategorien"] if kat_arbeiten(k["slug"]) and not k.get("eigener_bereich")) + '<a href="/ugc-videos/">UGC-Videos</a><a href="/preise/">Pakete &amp; Preise</a>'
     rg = "".join(f'<a href="/ratgeber/{r["slug"]}/">{esc(r["titel"])}</a>' for r in RATGEBER)
     return f"""</main>
 <footer class="fuss">
@@ -154,7 +155,7 @@ def fuss():
     <div class="fs">
       <div><p class="mono">Arbeiten</p>{kats}</div>
       <div><p class="mono">Ratgeber</p>{rg}<a href="/ratgeber/">Alle Ratgeber</a></div>
-      <div><p class="mono">Kontakt</p><a href="mailto:me@jonpride.de">me@jonpride.de</a><a href="tel:+491623361352">0162 3361352</a><a href="https://www.instagram.com/jonpride" rel="noopener">Instagram @jonpride</a><a href="/checkliste/">Checkliste Mitarbeiterfotos (PDF)</a></div>
+      <div><p class="mono">Kontakt</p><a href="mailto:me@jonpride.de">me@jonpride.de</a><a href="tel:+491623361352">0162 3361352</a><span class="sozial"><a href="https://www.instagram.com/jonpride" rel="noopener" aria-label="Instagram @jonpride"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.4" cy="6.6" r="1.2" fill="currentColor"/></svg></a><a href="https://www.facebook.com/JonPridePhotography" rel="noopener" aria-label="Facebook Jon Pride Photography"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M13.5 21v-7.6h2.6l.4-3h-3V8.5c0-.9.3-1.5 1.5-1.5h1.6V4.3c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.2H7.8v3h2.6V21h3.1z"/></svg></a></span><a href="/checkliste/">Checkliste Mitarbeiterfotos (PDF)</a></div>
       <div><p class="mono">Jon Pride</p><a href="https://jonpride.de/">Hochzeitsfotografie</a><a href="https://jonpride.de/impressum">Impressum</a><a href="https://jonpride.de/datenschutz">Datenschutz</a></div>
     </div>
     <p class="copy mono">© {date.today().year} Jon Pride · Tostedt, Hamburg &amp; Lüneburger Heide</p>
@@ -235,7 +236,7 @@ def business_ld():
                      "addressLocality": "Tostedt", "addressRegion": "Niedersachsen", "addressCountry": "DE"},
          "areaServed": ["Hamburg", "Landkreis Harburg", "Lüneburger Heide", "Lüneburg", "Buchholz in der Nordheide", "Deutschland"],
          "knowsAbout": ["Werbefotografie", "Businessfotografie", "Business-Porträts", "Foodfotografie", "Musikvideo", "Social-Media-Content"],
-         "founder": {"@id": "https://jonpride.de/#person"}, "sameAs": ["https://jonpride.de/", "https://www.instagram.com/jonpride"]}]}
+         "founder": {"@id": "https://jonpride.de/#person"}, "sameAs": ["https://jonpride.de/", "https://www.instagram.com/jonpride", "https://www.facebook.com/JonPridePhotography"]}]}
 
 
 def kontakt():
@@ -249,6 +250,8 @@ def kontakt():
     <form class="form rv" action="https://jonpride.de/api/formular/anfrage" method="POST">
       <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
       <input type="hidden" name="seite" value="werbung">
+      <input type="hidden" name="pakete" id="f-pakete" value="">
+      <div class="auswahl" id="auswahl" hidden><p class="mono">Ausgewählte Pakete</p><ul></ul><a class="mono" href="/preise/">Auswahl ändern</a></div>
       <div class="row"><div><label for="f-name">Name *</label><input id="f-name" type="text" name="name" required autocomplete="name"></div>
       <div><label for="f-firma">Firma</label><input id="f-firma" type="text" name="firma" autocomplete="organization"></div></div>
       <div class="row"><div><label for="f-mail">E-Mail *</label><input id="f-mail" type="email" name="email" required autocomplete="email"></div>
@@ -350,6 +353,44 @@ def checkliste_danke():
     return h + fuss()
 
 
+def preise_seite():
+    ld_k, nav_k = krumen([("Start", "/"), ("Preise", "/preise/")])
+    faq_ld, faq_html = faq_block(PREISE["faq"])
+    tabs = "".join(f'<button type="button" role="tab" class="tab{" an" if i == 0 else ""}" id="tab-{t["id"]}" aria-controls="p-{t["id"]}" aria-selected="{"true" if i == 0 else "false"}" data-tab="{t["id"]}">{esc(t["name"])}</button>'
+                   for i, t in enumerate(PREISE["reiter"]))
+    panels = []
+    for i, t in enumerate(PREISE["reiter"]):
+        karten = []
+        for j, p in enumerate(t["pakete"]):
+            punkte = "".join(f"<li>{esc(x)}</li>" for x in p["punkte"])
+            ab = "" if p["ab"] is None else str(p["ab"])
+            karten.append(
+                f'<article class="pk{" top" if p.get("empfehlung") else ""}" style="--j:{j}" data-id="{p["id"]}" data-name="{esc(p.get("korb", p["name"]))}" data-ab="{ab}">'
+                f'<p class="mono pkb">{esc(p["bereich"])}{" · Empfehlung" if p.get("empfehlung") else ""}</p>'
+                f'<h3>{esc(p["name"])}</h3><p class="pkp">{esc(p["preis"])}</p><ul>{punkte}</ul>'
+                f'<div class="pka"><button type="button" class="wahl" aria-pressed="false"><span class="w1">Auswählen</span><span class="w2">Ausgewählt ✓</span></button>'
+                f'<a class="mono" href="{p["link"]}">Beispiele →</a></div></article>')
+        panels.append(f'<section class="panel{" an" if i == 0 else ""}" role="tabpanel" id="p-{t["id"]}" aria-labelledby="tab-{t["id"]}"><h2 class="ph2">{esc(t["name"])}</h2>'
+                      f'<p class="pintro">{esc(t["intro"])}</p><div class="pkg">{"".join(karten)}</div></section>')
+    offers = [{"@type": "Offer", "name": p["name"], "price": p["ab"], "priceCurrency": "EUR", "url": f"{SITE}/preise/#{t['id']}"}
+              for t in PREISE["reiter"] for p in t["pakete"] if p["ab"]]
+    ld = {"@context": "https://schema.org", "@type": "OfferCatalog", "name": "Pakete und Preise", "url": f"{SITE}/preise/", "itemListElement": offers}
+    h = kopf("Preise und Pakete: Fotografie, Film, UGC-Videos – Jon Pride",
+             "Preise für Werbe- und Unternehmensfotografie, Musikvideos, Social-Videos und UGC-Videos. Pakete auswählen, kombinieren und zusammen anfragen.",
+             "/preise/", [ld, ld_k, faq_ld])
+    h += f"""<section class="seitenkopf"><div class="wrap">{nav_k}
+  <div class="skg"><h1>{worte("Pakete & Preise")}</h1><p class="lead rv">{esc(PREISE["intro"])}</p></div>
+</div></section>
+<section class="preise"><div class="wrap">
+  <div class="tabs" role="tablist" aria-label="Bereich wählen">{tabs}<span class="tab-strich" aria-hidden="true"></span></div>
+  {"".join(panels)}
+</div></section>
+<section class="faq-s faq-preise"><div class="wrap">{faq_html}<p><a class="weiter mono" href="/fotografie/">Fotografie ansehen →</a><a class="weiter mono" href="/film/">Film ansehen →</a><a class="weiter mono" href="/ugc-videos/">UGC-Videos ansehen →</a></p></div></section>
+<div class="korb" id="korb" hidden><div class="wrap korb-in"><div><p class="mono">Eure Auswahl</p><p class="korb-t"></p></div><a class="btn voll" id="korb-los" href="/kontakt/">Zusammen anfragen</a></div></div>
+"""
+    return h + fuss()
+
+
 def kontakt_seite():
     ld_k, nav_k = krumen([("Start", "/"), ("Projekt anfragen", "/kontakt/")])
     paare = [D["faq"][k] for k in D["startseite_faq"]]
@@ -362,6 +403,18 @@ def kontakt_seite():
 <section class="faq-s"><div class="wrap">{faq_html}<p><a class="weiter mono" href="/#arbeiten">Arbeiten ansehen →</a><a class="weiter mono" href="/ratgeber/">Ratgeber →</a></p></div></section>
 """
     return h + fuss()
+
+
+REITER_VON = {"kampagne-werbung": "fotografie", "unternehmensfotografie": "fotografie", "food": "fotografie",
+              "film-musikvideo": "film", "brand-social": "film", "ugc-videos": "ugc"}
+
+
+def preis_link(k):
+    r = REITER_VON.get(k["slug"])
+    if not r or not any(p["link"] == f'/{k["slug"]}/' for t in PREISE["reiter"] for p in t["pakete"]):
+        return ""
+    return (f'<a class="pl rv" href="/preise/#{r}"><span class="mono">Gefällt euch, was ihr seht?</span>'
+            f'<span class="plt">Pakete &amp; Preise für {esc(k["name"])}</span><span class="mehr mono">Preise ansehen →</span></a>')
 
 
 def kategorie(k):
@@ -381,12 +434,10 @@ def kategorie(k):
     h += f"""<section class="seitenkopf"><div class="wrap">
   {nav_k}
   <div class="skg"><h1>{worte(k["name"])}</h1><p class="lead rv">{esc(k["intro"])}</p></div>
-  {f'<div class="preis rv"><p class="pz">{esc(k["preis"][0])}</p><p>{esc(k["preis"][1])}</p><a class="btn voll" href="/kontakt/">Angebot anfragen</a></div>' if k.get("preis") else ""}
-  {('<div class="stufen rv">' + "".join(f'<div class="stufe{" top" if i == 1 else ""}" id="paket-{i + 1}"><p class="mono">{esc(n)}{" · Empfehlung" if i == 1 else ""}</p><p class="sp">{esc(pr)}</p><p>{esc(t)}</p></div>' for i, (n, pr, t) in enumerate(k["stufen"])) + '</div>') if k.get("stufen") else ""}
   {'<a class="lm rv" href="/checkliste/"><span class="mono">Kostenlos</span><span class="lmt">Checkliste: Mitarbeiterfotos vorbereiten</span><span class="kd">Drei Seiten zum Abhaken, von der Planung bis zur Bildauswahl. PDF gegen E-Mail.</span><span class="mehr mono">Checkliste holen →</span></a>' if k["slug"] == "unternehmensfotografie" else ""}
   <div class="chips rv">{chips}</div>
 </div></section>
-<section class="arbeiten kat"><div class="wrap">{raster(liste)}</div></section>
+<section class="arbeiten kat" id="arbeiten-liste"><div class="wrap">{raster(liste)}{preis_link(k)}</div></section>
 <section class="faq-s"><div class="wrap">{faq_html}{rg_html}</div></section>
 <section class="band"><div class="wrap bg"><h2>Eigenes Projekt im Kopf?</h2><a class="btn schwarz" href="/kontakt/">Projekt anfragen</a></div></section>
 """
@@ -475,10 +526,6 @@ def ratgeber_seite(r):
     return h + fuss()
 
 
-def preis_label(k):
-    return f'<span class="km mono">{esc(k["preis"][0])}</span>' if k.get("preis") else ""
-
-
 def gruppen_seite(g):
     ld_k, nav_k = krumen([("Start", "/"), (g["name"], f'/{g["slug"]}/')])
     kats = [KAT[x] for x in g["kats"] if kat_arbeiten(x)]
@@ -486,7 +533,7 @@ def gruppen_seite(g):
         kats = kats + [KAT["ugc-videos"]]
     kacheln = "".join(
         f'<a class="kat-k rv" style="--d:{i % 3}" href="/{k["slug"]}/"><div class="media">{bild(k["cover"], D["bilder"].get(k["cover"], k["name"]), "(min-width: 1100px) 31vw, (min-width: 640px) 48vw, 100vw")}</div>'
-        f'<span class="kz"><span class="kt">{esc(k["name"])}</span>{preis_label(k)}</span>'
+        f'<span class="kz"><span class="kt">{esc(k["name"])}</span></span>'
         f'<span class="kd">{esc(k["leistung"])}</span><span class="mehr mono">Ansehen →</span></a>' for i, k in enumerate(kats))
     arbeiten = []
     for k in kats:
@@ -552,6 +599,7 @@ def main():
         if g.get("kats"):
             urls.append(schreiben(f'/{g["slug"]}/', gruppen_seite(g)))
     urls.append(schreiben("/kontakt/", kontakt_seite()))
+    urls.append(schreiben("/preise/", preise_seite()))
     urls.append(schreiben("/checkliste/", checkliste_seite()))
     schreiben("/checkliste/danke/", checkliste_danke())  # nicht in die Sitemap
     urls.append(schreiben("/ratgeber/", ratgeber_index()))
