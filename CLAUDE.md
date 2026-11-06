@@ -51,4 +51,5 @@ Lightbox und Formular durchklicken.
 - **Selbst hosten vor anbinden.** Keine CDNs, keine fremden Einbettungen außer YouTube-nocookie im Klick.
 - **Neue Seite:** Eintrag in `content/*.json`, Sitemap und llms.txt entstehen automatisch. Jede Inhaltsseite
   mit Kurztext oben, FAQ und mindestens drei internen Links; Ratgeber zusätzlich mit Stand-Datum und Quellen.
+- **Mail-Adresse und Handynummer nie als sichtbaren Text** (Jon, 06.11.2026): nur als Knopf/Link „E-Mail schreiben“, „Anrufen“. Im JSON-LD bleiben sie für Google.
 - Nie Kleinunternehmer/§ 19 erwähnen. Private Adresse nur in Impressum/Datenschutz und im LocalBusiness-JSON-LD.

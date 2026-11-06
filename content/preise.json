@@ -1,0 +1,193 @@
+{
+ "intro": "Alle Pakete auf einen Blick. Wählt aus, was zu eurem Projekt passt, auch aus mehreren Bereichen, und fragt es zusammen an. Das Angebot bekommt ihr nach einem kurzen Gespräch.",
+ "reiter": [
+  {
+   "id": "fotografie",
+   "name": "Fotografie",
+   "intro": "Kampagnen für Marken und Bildwelten für Unternehmen, bei euch vor Ort oder an der passenden Location.",
+   "pakete": [
+    {
+     "id": "kampagne",
+     "name": "Kampagne",
+     "bereich": "Kampagne & Werbung",
+     "link": "/kampagne-werbung/",
+     "preis": "ab 2.999 €",
+     "ab": 2999,
+     "punkte": [
+      "Konzept, Location, Set und Licht",
+      "Fotografie und Bearbeitung",
+      "Nutzungsrechte nach Kanal"
+     ]
+    },
+    {
+     "id": "unternehmen-halbtag",
+     "name": "Halbtag",
+     "bereich": "Unternehmen & Marke",
+     "link": "/unternehmensfotografie/",
+     "preis": "ab 1.990 €",
+     "ab": 1990,
+     "punkte": [
+      "Bis 4 Stunden vor Ort",
+      "Zwei Bereiche, zum Beispiel Büro und Produktion",
+      "Porträts der Führung bis 3 Personen",
+      "25 fertige Bilder"
+     ],
+     "korb": "Unternehmen Halbtag"
+    },
+    {
+     "id": "unternehmen-tag",
+     "name": "Ganzer Tag",
+     "bereich": "Unternehmen & Marke",
+     "link": "/unternehmensfotografie/",
+     "preis": "ab 3.490 €",
+     "ab": 3490,
+     "empfehlung": true,
+     "punkte": [
+      "Bis 8 Stunden vor Ort",
+      "Teams bei der Arbeit, Räume, Produkte und Details",
+      "Porträts der Führung bis 5 Personen",
+      "50 fertige Bilder, Vorgespräch und Shotlist"
+     ],
+     "korb": "Unternehmen ganzer Tag"
+    },
+    {
+     "id": "mitarbeiter",
+     "name": "Mitarbeiterporträts",
+     "bereich": "Unternehmen & Marke",
+     "link": "/unternehmensfotografie/",
+     "preis": "149 € pro Bild",
+     "ab": 994,
+     "punkte": [
+      "Einheitlicher Look für die ganze Teamseite",
+      "Dazu 249 € für Anfahrt und mobiles Studio bis 50 km",
+      "Ab fünf Bildern pro Termin"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "film",
+   "name": "Film",
+   "intro": "Musikvideos, Kurzvideos für Social Media und Imagefilme. Konzept, Dreh und Schnitt aus einer Hand.",
+   "pakete": [
+    {
+     "id": "musikvideo",
+     "name": "Musikvideo",
+     "bereich": "Film & Musikvideo",
+     "link": "/film-musikvideo/",
+     "preis": "ab 2.500 €",
+     "ab": 2500,
+     "punkte": [
+      "Konzept, Dreh, Schnitt und Color Grading",
+      "Preis nach Drehtagen, Locations und Team"
+     ]
+    },
+    {
+     "id": "foto-social",
+     "name": "Fotos + Social-Videos",
+     "bereich": "Unternehmen & Marke",
+     "link": "/unternehmensfotografie/",
+     "preis": "ab 4.990 €",
+     "ab": 4990,
+     "empfehlung": true,
+     "punkte": [
+      "Ein ganzer Shootingtag mit 50 fertigen Bildern",
+      "Dazu drei Kurzvideos für Social Media, je etwa 30 Sekunden",
+      "Am selben Tag gedreht"
+     ]
+    },
+    {
+     "id": "imagefilm",
+     "name": "Imagefilm",
+     "bereich": "Film",
+     "link": "/film/",
+     "preis": "auf Anfrage",
+     "ab": null,
+     "punkte": [
+      "60 bis 90 Sekunden",
+      "Zwei Drehtage",
+      "Angebot nach einem kurzen Gespräch"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ugc",
+   "name": "UGC-Videos",
+   "intro": "Kurze Hochformat-Videos im Stil echter Nutzer für Anzeigen auf Instagram, TikTok und Facebook. Je mehr Videos, desto günstiger wird jedes einzelne.",
+   "pakete": [
+    {
+     "id": "ugc-1",
+     "name": "Einzelvideo",
+     "bereich": "UGC-Videos",
+     "link": "/ugc-videos/",
+     "preis": "750 €",
+     "ab": 750,
+     "punkte": [
+      "Bis 30 Sekunden im Hochformat",
+      "Zwei Hooks zum Testen",
+      "Untertitel, Nutzung für Anzeigen 12 Monate"
+     ],
+     "korb": "UGC Einzelvideo"
+    },
+    {
+     "id": "ugc-3",
+     "name": "3 Videos",
+     "bereich": "UGC-Videos",
+     "link": "/ugc-videos/",
+     "preis": "1.990 €",
+     "ab": 1990,
+     "punkte": [
+      "Rund 660 € pro Video",
+      "Je zwei Hooks",
+      "Zum Testen, welche Ansprache zieht"
+     ],
+     "korb": "UGC 3 Videos"
+    },
+    {
+     "id": "ugc-5",
+     "name": "5 Videos",
+     "bereich": "UGC-Videos",
+     "link": "/ugc-videos/",
+     "preis": "2.990 €",
+     "ab": 2990,
+     "empfehlung": true,
+     "punkte": [
+      "Rund 600 € pro Video",
+      "Je zwei Hooks",
+      "Plan, welche Videos ihr zuerst schaltet"
+     ],
+     "korb": "UGC 5 Videos"
+    },
+    {
+     "id": "ugc-10",
+     "name": "10 Videos",
+     "bereich": "UGC-Videos",
+     "link": "/ugc-videos/",
+     "preis": "4.990 €",
+     "ab": 4990,
+     "punkte": [
+      "Rund 500 € pro Video",
+      "Je zwei Hooks",
+      "Für laufende Kampagnen"
+     ],
+     "korb": "UGC 10 Videos"
+    }
+   ]
+  }
+ ],
+ "faq": [
+  [
+   "Kann ich Pakete aus verschiedenen Bereichen kombinieren?",
+   "Ja. Wählt einfach alles aus, was euch interessiert, zum Beispiel einen Shootingtag und ein UGC-Paket, und fragt es zusammen an. Ich mache euch dann ein gemeinsames Angebot."
+  ],
+  [
+   "Sind das Endpreise?",
+   "Ja, die Preise sind Endpreise. Ab-Preise hängen vom Umfang ab, das genaue Angebot bekommt ihr vor dem Termin schriftlich."
+  ],
+  [
+   "Was ist bei der Nutzung dabei?",
+   "Bei Unternehmensfotos ist die Nutzung für Website, Social Media, Recruiting und Presse zeitlich unbegrenzt dabei. Bei UGC-Videos ist die Nutzung für Anzeigen 12 Monate inklusive. Bei Kampagnen richten sich die Rechte nach Kanal und Laufzeit."
+  ]
+ ]
+}
