@@ -155,7 +155,7 @@ def fuss():
     <div class="fs">
       <div><p class="mono">Arbeiten</p>{kats}</div>
       <div><p class="mono">Ratgeber</p>{rg}<a href="/ratgeber/">Alle Ratgeber</a></div>
-      <div><p class="mono">Kontakt</p><a href="mailto:me@jonpride.de">me@jonpride.de</a><a href="tel:+491623361352">0162 3361352</a><span class="sozial"><a href="https://www.instagram.com/jonpride" rel="noopener" aria-label="Instagram @jonpride"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.4" cy="6.6" r="1.2" fill="currentColor"/></svg></a><a href="https://www.facebook.com/JonPridePhotography" rel="noopener" aria-label="Facebook Jon Pride Photography"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M13.5 21v-7.6h2.6l.4-3h-3V8.5c0-.9.3-1.5 1.5-1.5h1.6V4.3c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.2H7.8v3h2.6V21h3.1z"/></svg></a></span><a href="/checkliste/">Checkliste Mitarbeiterfotos (PDF)</a></div>
+      <div><p class="mono">Kontakt</p><span class="kbtn"><a href="mailto:me@jonpride.de">E-Mail schreiben →</a><a href="tel:+491623361352">Anrufen →</a></span><span class="sozial"><a href="https://www.instagram.com/jonpride" rel="noopener" aria-label="Instagram @jonpride"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.4" cy="6.6" r="1.2" fill="currentColor"/></svg></a><a href="https://www.facebook.com/JonPridePhotography" rel="noopener" aria-label="Facebook Jon Pride Photography"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M13.5 21v-7.6h2.6l.4-3h-3V8.5c0-.9.3-1.5 1.5-1.5h1.6V4.3c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.2H7.8v3h2.6V21h3.1z"/></svg></a></span><a href="/checkliste/">Checkliste Mitarbeiterfotos (PDF)</a></div>
       <div><p class="mono">Jon Pride</p><a href="https://jonpride.de/">Hochzeitsfotografie</a><a href="https://jonpride.de/impressum">Impressum</a><a href="https://jonpride.de/datenschutz">Datenschutz</a></div>
     </div>
     <p class="copy mono">© {date.today().year} Jon Pride · Tostedt, Hamburg &amp; Lüneburger Heide</p>
@@ -245,7 +245,7 @@ def kontakt():
     <div class="kl">
       <h1 class="rv">Projekt anfragen</h1>
       <p class="rv">Erzählt mir kurz von eurem Projekt. Ich melde mich innerhalb von zwei Werktagen.</p>
-      <p class="rv kd2"><a href="mailto:me@jonpride.de">me@jonpride.de</a><br><a href="tel:+491623361352">0162 3361352</a></p>
+      <p class="rv btns kd2"><a class="btn schwarz" href="mailto:me@jonpride.de">E-Mail schreiben</a><a class="btn schwarz" href="tel:+491623361352">Anrufen</a></p>
     </div>
     <form class="form rv" action="https://jonpride.de/api/formular/anfrage" method="POST">
       <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
@@ -616,7 +616,7 @@ def main():
     llms += [f'- [{k["name"]}]({SITE}/{k["slug"]}/): {k["intro"]}' for k in D["kategorien"] if kat_arbeiten(k["slug"])]
     llms += ["", "## Projekte"] + [f'- [{a["titel"]}]({SITE}/projekte/{a["slug"]}/): {a["kurz"]}' for a in PROJEKTE]
     llms += ["", "## Ratgeber"] + [f'- [{r["titel"]}]({SITE}/ratgeber/{r["slug"]}/): {r["kurzantwort"]}' for r in RATGEBER]
-    llms += ["", "## Kontakt", "- E-Mail: me@jonpride.de", "- Telefon: 0162 3361352", f"- Anfrage: {SITE}/kontakt/", ""]
+    llms += ["", "## Kontakt", f"- Anfrage über das Formular: {SITE}/kontakt/", ""]
     (PUB / "llms.txt").write_text("\n".join(llms))
     print(f"{len(urls)} Seiten, {len(BILD)} Bilder")
 
