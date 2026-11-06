@@ -31,6 +31,7 @@ Lightbox und Formular durchklicken.
 | CI-Tokens und Schriften | `public/assets/ci.css`, `public/assets/fonts/` |
 | Bild-Originale | `src/img/*.jpg` (aktiv), `src/archiv/` (ungenutzt) |
 | Bestätigte Projektfakten | `docs/projekte.md` |
+| Checkliste (Lead-Magnet) | Quelle `src/pdf/checkliste.html`, PDF bauen mit `node tools/pdf.mjs` → `public/downloads/`; Formular schickt `seite=checkliste` an jonpride.de, die leitet auf `/checkliste/danke/` |
 
 ## Regeln
 

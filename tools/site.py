@@ -154,7 +154,7 @@ def fuss():
     <div class="fs">
       <div><p class="mono">Arbeiten</p>{kats}</div>
       <div><p class="mono">Ratgeber</p>{rg}<a href="/ratgeber/">Alle Ratgeber</a></div>
-      <div><p class="mono">Kontakt</p><a href="mailto:me@jonpride.de">me@jonpride.de</a><a href="tel:+491623361352">0162 3361352</a><a href="https://www.instagram.com/jonpride" rel="noopener">Instagram @jonpride</a></div>
+      <div><p class="mono">Kontakt</p><a href="mailto:me@jonpride.de">me@jonpride.de</a><a href="tel:+491623361352">0162 3361352</a><a href="https://www.instagram.com/jonpride" rel="noopener">Instagram @jonpride</a><a href="/checkliste/">Checkliste Mitarbeiterfotos (PDF)</a></div>
       <div><p class="mono">Jon Pride</p><a href="https://jonpride.de/">Hochzeitsfotografie</a><a href="https://jonpride.de/impressum">Impressum</a><a href="https://jonpride.de/datenschutz">Datenschutz</a></div>
     </div>
     <p class="copy mono">© {date.today().year} Jon Pride · Tostedt, Hamburg &amp; Lüneburger Heide</p>
@@ -309,6 +309,47 @@ def startseite():
     return h + fuss()
 
 
+def checkliste_seite():
+    ld_k, nav_k = krumen([("Start", "/"), ("Unternehmen & Marke", "/unternehmensfotografie/"), ("Checkliste Mitarbeiterfotos", "/checkliste/")])
+    h = kopf("Checkliste: Mitarbeiterfotos vorbereiten (PDF) – Jon Pride",
+             "Kostenlose Checkliste als PDF: Mitarbeiterfotos vorbereiten, von Zweck und Bildlook über Kleidung und Zeitplan bis zur Bildauswahl. Zum Abhaken für Personal und Marketing.",
+             "/checkliste/", [ld_k], og_bild="w04")
+    h += f"""<section class="seitenkopf"><div class="wrap">{nav_k}
+  <div class="skg"><h1 class="mittel">{worte("Mitarbeiterfotos vorbereiten")}</h1><p class="lead rv">Eine Checkliste mit drei Seiten zum Abhaken: was zwei bis drei Wochen vorher geklärt sein sollte, welche Kleidung auf Fotos funktioniert, wie der Shootingtag läuft und was danach kommt. Für alle, die den Termin im Unternehmen organisieren.</p></div>
+</div></section>
+<section class="kontakt lm-s"><div class="wrap kg">
+  <div class="kl">
+    <h2 class="rv">Checkliste als PDF</h2>
+    <ul class="lm-l rv"><li>Zweck, Bildlook und Zeitplan festlegen</li><li>Kleidung, die auf Fotos funktioniert</li><li>Ablauf am Shootingtag</li><li>Auswahl, Dateinamen und Formate danach</li></ul>
+  </div>
+  <form class="form rv" action="https://jonpride.de/api/formular/anfrage" method="POST">
+    <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <input type="hidden" name="seite" value="checkliste">
+    <input type="hidden" name="leistung" value="Checkliste Mitarbeiterfotos">
+    <div class="row"><div><label for="c-name">Name *</label><input id="c-name" type="text" name="name" required autocomplete="name"></div>
+    <div><label for="c-firma">Firma</label><input id="c-firma" type="text" name="firma" autocomplete="organization"></div></div>
+    <div><label for="c-mail">E-Mail *</label><input id="c-mail" type="email" name="email" required autocomplete="email"></div>
+    <p class="hinweis">Nach dem Absenden geht es direkt zum Download. Mit dem Absenden stimmt ihr zu, dass ich Name, Firma und E-Mail speichere und mich bei euch melden darf. Details in der <a href="https://jonpride.de/datenschutz">Datenschutzerklärung</a>.</p>
+    <button type="submit">Checkliste holen</button>
+  </form>
+</div></section>
+<section class="faq-s"><div class="wrap"><p><a class="weiter mono" href="/unternehmensfotografie/">Unternehmen &amp; Marke: Preise und Beispiele →</a><a class="weiter mono" href="/ratgeber/wie-entstehen-werbefotos/">Ratgeber: Wie entstehen Werbefotos? →</a><a class="weiter mono" href="/kontakt/">Projekt anfragen →</a></p></div></section>
+"""
+    return h + fuss()
+
+
+def checkliste_danke():
+    h = kopf("Danke! Eure Checkliste – Jon Pride", "Download der Checkliste Mitarbeiterfotos vorbereiten.", "/checkliste/danke/", [],
+             extra='<meta name="robots" content="noindex, nofollow">')
+    h += """<section class="seitenkopf"><div class="wrap">
+  <h1>Danke, hier ist eure Checkliste.</h1>
+  <p class="lead" style="margin-top:22px">Drei Seiten zum Ausdrucken oder Weiterleiten. Wenn ihr beim Termin Hilfe braucht, meldet euch einfach.</p>
+  <p style="margin-top:32px"><a class="btn voll" href="/downloads/checkliste-mitarbeiterfotos.pdf" download>PDF herunterladen</a> <a class="btn rand" href="/unternehmensfotografie/">Preise ansehen</a></p>
+</div></section>
+"""
+    return h + fuss()
+
+
 def kontakt_seite():
     ld_k, nav_k = krumen([("Start", "/"), ("Projekt anfragen", "/kontakt/")])
     paare = [D["faq"][k] for k in D["startseite_faq"]]
@@ -342,6 +383,7 @@ def kategorie(k):
   <div class="skg"><h1>{worte(k["name"])}</h1><p class="lead rv">{esc(k["intro"])}</p></div>
   {f'<div class="preis rv"><p class="pz">{esc(k["preis"][0])}</p><p>{esc(k["preis"][1])}</p><a class="btn voll" href="/kontakt/">Angebot anfragen</a></div>' if k.get("preis") else ""}
   {('<div class="stufen rv">' + "".join(f'<div class="stufe{" top" if i == 1 else ""}" id="paket-{i + 1}"><p class="mono">{esc(n)}{" · Empfehlung" if i == 1 else ""}</p><p class="sp">{esc(pr)}</p><p>{esc(t)}</p></div>' for i, (n, pr, t) in enumerate(k["stufen"])) + '</div>') if k.get("stufen") else ""}
+  {'<a class="lm rv" href="/checkliste/"><span class="mono">Kostenlos</span><span class="lmt">Checkliste: Mitarbeiterfotos vorbereiten</span><span class="kd">Drei Seiten zum Abhaken, von der Planung bis zur Bildauswahl. PDF gegen E-Mail.</span><span class="mehr mono">Checkliste holen →</span></a>' if k["slug"] == "unternehmensfotografie" else ""}
   <div class="chips rv">{chips}</div>
 </div></section>
 <section class="arbeiten kat"><div class="wrap">{raster(liste)}</div></section>
@@ -510,6 +552,8 @@ def main():
         if g.get("kats"):
             urls.append(schreiben(f'/{g["slug"]}/', gruppen_seite(g)))
     urls.append(schreiben("/kontakt/", kontakt_seite()))
+    urls.append(schreiben("/checkliste/", checkliste_seite()))
+    schreiben("/checkliste/danke/", checkliste_danke())  # nicht in die Sitemap
     urls.append(schreiben("/ratgeber/", ratgeber_index()))
     for r in RATGEBER:
         urls.append(schreiben(f'/ratgeber/{r["slug"]}/', ratgeber_seite(r)))
@@ -517,7 +561,7 @@ def main():
 
     (PUB / "sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
                                      + "".join(f"<url><loc>{SITE}{u}</loc><lastmod>{HEUTE}</lastmod></url>\n" for u in urls) + "</urlset>\n")
-    (PUB / "robots.txt").write_text(f"User-agent: *\nAllow: /\n\nSitemap: {SITE}/sitemap.xml\n")
+    (PUB / "robots.txt").write_text(f"User-agent: *\nAllow: /\nDisallow: /checkliste/danke/\nDisallow: /downloads/\n\nSitemap: {SITE}/sitemap.xml\n")
     llms = ["# Jon Pride – Werbung & Business", "",
             "> Werbe- und Businessfotografie, Film und Content für Marken und Unternehmen. Fotograf und Filmemacher Jon Pride (Jan Stolz), Tostedt bei Hamburg, seit 2009. Kunden u. a. Swarovski, Procter & Gamble, Volkswagen, McDonald's, Sky Sport. Hochzeiten: https://jonpride.de",
             "", "## Arbeiten"]

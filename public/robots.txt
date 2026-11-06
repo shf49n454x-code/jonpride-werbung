@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /checkliste/danke/
+Disallow: /downloads/
 
 Sitemap: https://werbung.jonpride.de/sitemap.xml
