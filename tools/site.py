@@ -205,16 +205,28 @@ def karte(a, i, sizes):
     return f'<button type="button" {attr} data-img="/img/{name}-{breiten[-1]}.jpg" data-alt="{esc(alt)}" data-t="{esc(a["titel"] + " · " + a["zeile"])}">{inhalt}<span class="mehr mono">Ansehen +</span></button>'
 
 
-# Raster: abwechselnd 7/5, 4/4/4, 5/7 – Bilder in ihrem eigenen Seitenverhaeltnis
-MUSTER = [7, 5, 4, 4, 4, 5, 7, 4, 4, 4]
-SIZES = {7: "(min-width: 900px) 56vw, 100vw", 5: "(min-width: 900px) 40vw, 100vw", 4: "(min-width: 900px) 31vw, 100vw"}
+# Raster in Reihen: 7/5, 4/4/4, 5/7, 4/4/4 … Eine unvollstaendige letzte Reihe wird
+# gleichmaessig aufgeteilt (1 → 12, 2 → 6/6). Bis drei Arbeiten: gleich breit.
+REIHEN = [[7, 5], [4, 4, 4], [5, 7], [4, 4, 4]]
+SIZES = {12: "(min-width: 900px) 92vw, 100vw", 7: "(min-width: 900px) 56vw, 100vw", 6: "(min-width: 900px) 48vw, 100vw",
+         5: "(min-width: 900px) 40vw, 100vw", 4: "(min-width: 900px) 31vw, 100vw"}
+GLEICH = {1: [12], 2: [6, 6], 3: [4, 4, 4]}
+
+
+def spannen(n):
+    if n <= 3:
+        return GLEICH[n]
+    out, r = [], 0
+    while len(out) < n:
+        reihe = REIHEN[r % len(REIHEN)]
+        rest = n - len(out)
+        out += reihe if rest >= len(reihe) else GLEICH[rest]
+        r += 1
+    return out
 
 
 def raster(liste):
-    teile = []
-    for i, a in enumerate(liste):
-        sp = MUSTER[i % len(MUSTER)]
-        teile.append(f'<div class="zelle s{sp}">{karte(a, i, SIZES[sp])}</div>')
+    teile = [f'<div class="zelle s{sp}">{karte(a, i, SIZES[sp])}</div>' for i, (a, sp) in enumerate(zip(liste, spannen(len(liste))))]
     return f'<div class="raster">{"".join(teile)}</div>'
 
 
@@ -276,7 +288,7 @@ def startseite():
     chips = '<button type="button" class="chip an" data-f="alle" aria-pressed="true">Alle</button>' + "".join(
         f'<a class="chip" href="/{k["slug"]}/" data-f="{k["slug"]}">{esc(k["name"])}</a>'
         for k in D["kategorien"] if kat_arbeiten(k["slug"]))
-    leist = "".join(f'<a class="lst rv" style="--d:{i % 3}" href="/{s}/"><span class="mono">{i + 1:02d}</span><h3>{esc(t)}</h3><p>{esc(p)}</p></a>'
+    leist = "".join(f'<a class="lst rv" style="--d:{i % 3}" href="/{s}/"><h3>{esc(t)}</h3><p>{esc(p)}</p></a>'
                     for i, (t, p, s) in enumerate(LEISTUNGEN))
     rg = "".join(f'<a class="rgk rv" href="/ratgeber/{r["slug"]}/"><span class="mono">{esc(r["thema"])}</span><span class="rgt">{esc(r["titel"])}</span><span class="mehr mono">Lesen →</span></a>' for r in RATGEBER)
     paare = [D["faq"][k] for k in D["startseite_faq"]]
@@ -333,7 +345,8 @@ def kategorie(k):
   <div class="chips rv">{chips}</div>
 </div></section>
 <section class="arbeiten kat"><div class="wrap">{raster(liste)}</div></section>
-<section class="faq-s"><div class="wrap">{faq_html}{rg_html}<a class="weiter mono" href="/#kontakt">Projekt anfragen →</a></div></section>
+<section class="faq-s"><div class="wrap">{faq_html}{rg_html}</div></section>
+<section class="band"><div class="wrap bg"><h2>Eigenes Projekt im Kopf?</h2><a class="btn schwarz" href="/#kontakt">Projekt anfragen</a></div></section>
 """
     return h + fuss()
 
@@ -428,7 +441,8 @@ def ratgeber_index():
              "/ratgeber/", [ld_k])
     h += f"""<section class="seitenkopf"><div class="wrap">{nav_k}<div class="skg"><h1>{worte("Ratgeber")}</h1>
 <p class="lead rv">Antworten für Unternehmen, die Fotos oder Videos planen: Ablauf, Kosten, Rechte. Aus der Praxis mit Marken wie Swarovski und Procter &amp; Gamble.</p></div></div></section>
-<section class="ratgeber-teaser"><div class="wrap"><div class="rgl">{liste}</div><p><a class="weiter mono" href="/#arbeiten">Arbeiten ansehen →</a> <a class="weiter mono" href="/#kontakt">Projekt anfragen →</a></p></div></section>
+<section class="ratgeber-teaser liste"><div class="wrap"><div class="rgl">{liste}</div><p><a class="weiter mono" href="/#arbeiten">Arbeiten ansehen →</a></p></div></section>
+<section class="band"><div class="wrap bg"><h2>Eigenes Projekt im Kopf?</h2><a class="btn schwarz" href="/#kontakt">Projekt anfragen</a></div></section>
 """
     return h + fuss()
 
