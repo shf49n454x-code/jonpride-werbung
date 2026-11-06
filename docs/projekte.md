@@ -73,3 +73,5 @@
 - Markenauftritt einer Firma mit diversen Bereichen: darauf hat Jon Lust. Kategorie „Unternehmen & Marke“. Stufen (Vorschlag, von Jon mit „Ja, aber Film = 2 Tage“ beantwortet): Halbtag ab 1.990 €, ganzer Tag ab 3.490 €, Foto + Social-Videos (3 × ca. 30 s, 1 Tag) ab 4.990 € (von Jon bestätigt); Imagefilm 60–90 s braucht 2 Drehtage, einzeln anbieten
 - UGC: Jon hat für ein UGC-Video (Sarah) 750 € genommen. Umgesetzt: Einzelvideo 750 €, 3 Videos 1.990 €, 5 Videos 2.990 € (Empfehlung), 10 Videos 4.990 €; je Video bis 30 s, 2 Hooks, Untertitel, Anzeigen-Nutzung 12 Monate (Paketpreise und wer vor der Kamera steht: offen)
 - UGC ist ein eigener Bereich in der Hauptnavigation, nicht neben den anderen Bereichen (Jon)
+- Musikvideos ab 2.500 € (Jon, 06.11.2026)
+- Navigation: Fotografie, Film und UGC-Videos nebeneinander, beim Klick jeweils Unterpunkte (Jon)

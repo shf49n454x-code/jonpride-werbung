@@ -78,7 +78,11 @@
     "agentur"
    ],
    "cover": "yt-3EJuROjO48Q",
-   "leistung": "Konzept, Dreh, Schnitt und Color Grading. Musikvideos und Formate mit Millionenreichweite."
+   "leistung": "Konzept, Dreh, Schnitt und Color Grading. Musikvideos und Formate mit Millionenreichweite.",
+   "preis": [
+    "Musikvideos ab 2.500 €",
+    "Konzept, Dreh, Schnitt und Color Grading. Der genaue Preis hängt von Drehtagen, Locations und Team ab."
+   ]
   },
   {
    "slug": "brand-social",
@@ -489,5 +493,52 @@
   "oral-b",
   "hoeher",
   "mcdonalds"
+ ],
+ "gruppen": [
+  {
+   "slug": "fotografie",
+   "name": "Fotografie",
+   "kats": [
+    "kampagne-werbung",
+    "unternehmensfotografie",
+    "food"
+   ],
+   "title": "Fotografie für Marken und Unternehmen – Jon Pride",
+   "desc": "Werbefotografie, Unternehmensfotografie und Foodfotografie aus dem Raum Hamburg: Kampagnen für Swarovski und Procter & Gamble, Bildwelten für Unternehmen, Gerichte für Restaurants.",
+   "intro": "Kampagnen für Marken, Bildwelten für Unternehmen und Food für Restaurants. Seit 2009, aus dem Raum Hamburg und international."
+  },
+  {
+   "slug": "film",
+   "name": "Film",
+   "kats": [
+    "film-musikvideo",
+    "brand-social"
+   ],
+   "title": "Film, Musikvideos und Social-Formate – Jon Pride",
+   "desc": "Musikvideos mit Millionen Views, das Sky-Sport-Format „Meine 11“ und Social-Formate für Marken wie McDonald's und den FC St. Pauli. Musikvideos ab 2.500 €.",
+   "intro": "Musikvideos mit Millionen Views, ein TV-Format für Sky Sport und Social-Formate für Marken. Konzept, Dreh und Schnitt."
+  },
+  {
+   "slug": "ugc-videos",
+   "name": "UGC-Videos",
+   "unterpunkte": [
+    [
+     "3 Videos",
+     "/ugc-videos/#paket-1"
+    ],
+    [
+     "5 Videos",
+     "/ugc-videos/#paket-2"
+    ],
+    [
+     "10 Videos",
+     "/ugc-videos/#paket-3"
+    ],
+    [
+     "Was sind UGC-Videos?",
+     "/ugc-videos/#frage-was-sind-ugc-videos"
+    ]
+   ]
+  }
  ]
 }

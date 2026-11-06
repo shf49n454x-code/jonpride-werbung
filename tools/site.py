@@ -87,7 +87,16 @@ def worte(text):
     return " ".join(f'<span class="w" style="--i:{i}">{t}</span>' for i, t in enumerate(teile))
 
 
-NAV = [("/#arbeiten", "Arbeiten"), ("/#leistungen", "Leistungen"), ("/ugc-videos/", "UGC-Videos"), ("/ratgeber/", "Ratgeber")]
+def nav_punkte():
+    """Fotografie, Film und UGC-Videos nebeneinander, jeweils mit Unterpunkten."""
+    out = []
+    for g in D["gruppen"]:
+        if g.get("unterpunkte"):
+            sub = g["unterpunkte"]
+        else:
+            sub = [(KAT[s]["name"], f"/{s}/") for s in g["kats"] if kat_arbeiten(s)]
+        out.append((g["name"], f'/{g["slug"]}/', sub))
+    return out
 
 
 def kopf(title, desc, pfad, ld, og_bild="w10", extra=""):
@@ -95,7 +104,9 @@ def kopf(title, desc, pfad, ld, og_bild="w10", extra=""):
     ci_v = fingerabdruck(PUB / "assets/ci.css")
     breiten = BILD[og_bild][0] if og_bild in BILD else [1000]
     og = f"{SITE}/img/{og_bild}-{breiten[-1]}.jpg"
-    nav = "".join(f'<a href="{h}">{t}</a>' for h, t in NAV)
+    gruppen = nav_punkte()
+    nav = "".join(f'<div class="dd"><a class="ddt" href="{h}">{esc(t)}</a><div class="ddm">' + "".join(f'<a href="{u}">{esc(n)}</a>' for n, u in sub) + '</div></div>' for t, h, sub in gruppen) + '<a href="/ratgeber/">Ratgeber</a>'
+    nav_mobil = "".join(f'<a class="mg" href="{h}">{esc(t)}</a>' + "".join(f'<a class="mu" href="{u}">{esc(n)}</a>' for n, u in sub) for t, h, sub in gruppen) + '<a class="mg" href="/ratgeber/">Ratgeber</a>'
     lds = "".join(f'<script type="application/ld+json">{json.dumps(x, ensure_ascii=False)}</script>' for x in ld)
     return f"""<!doctype html>
 <html lang="de">
@@ -126,7 +137,7 @@ def kopf(title, desc, pfad, ld, og_bild="w10", extra=""):
   <div class="wrap">
     <a href="/" class="marke" aria-label="Jon Pride, zur Startseite"><img src="/assets/logo/jonpride-logo.svg" alt="Jon Pride" width="962" height="592"></a>
     <nav class="haupt" aria-label="Hauptnavigation">{nav}<a class="hz" href="https://jonpride.de/">Hochzeit&nbsp;→</a><a class="cta" href="/kontakt/">Projekt anfragen</a></nav>
-    <details class="menu"><summary aria-label="Menü öffnen">Menü</summary><nav aria-label="Menü">{nav}<a href="/kontakt/">Projekt anfragen</a><a href="https://jonpride.de/">Hochzeit&nbsp;→</a></nav></details>
+    <details class="menu"><summary aria-label="Menü öffnen">Menü</summary><nav aria-label="Menü">{nav_mobil}<a class="mg" href="/kontakt/">Projekt anfragen</a><a href="https://jonpride.de/">Hochzeit&nbsp;→</a></nav></details>
   </div>
 </header>
 <main id="inhalt">
@@ -257,13 +268,15 @@ def startseite():
     hero_alt = D["bilder"]["w10"]
     kunden = "".join(f"<li>{esc(k)}</li>" for k in D["kunden"])
     auswahl = [BY_SLUG[x] for x in D["startseite"]]
-    kats = [k for k in D["kategorien"] if kat_arbeiten(k["slug"]) and not k.get("eigener_bereich")]
-    kacheln = "".join(
-        f'<a class="kat-k rv" style="--d:{i % 3}" href="/{k["slug"]}/"><div class="media">{bild(k["cover"], D["bilder"].get(k["cover"], k["name"]), "(min-width: 1100px) 31vw, (min-width: 640px) 48vw, 100vw")}</div>'
-        f'<span class="kz"><span class="kt">{esc(k["name"])}</span><span class="km mono">{len(kat_arbeiten(k["slug"]))} {"Arbeit" if len(kat_arbeiten(k["slug"])) == 1 else "Arbeiten"}</span></span>'
-        f'<span class="kd">{esc(k["leistung"])}</span><span class="mehr mono">Ansehen →</span></a>' for i, k in enumerate(kats))
-    if len(kats) % 3:
-        kacheln += '<a class="kat-k cta-k rv" style="--d:2" href="/kontakt/"><span class="kt">Euer Projekt?</span><span class="kd">Erzählt mir in zwei Minuten, was entstehen soll. Antwort innerhalb von zwei Werktagen.</span><span class="btn schwarz">Projekt anfragen</span></a>'
+    def kachel(k, i):
+        n = len(kat_arbeiten(k["slug"]))
+        return (f'<a class="kat-k rv" style="--d:{i % 3}" href="/{k["slug"]}/"><div class="media">{bild(k["cover"], D["bilder"].get(k["cover"], k["name"]), "(min-width: 1100px) 31vw, (min-width: 640px) 48vw, 100vw")}</div>'
+                f'<span class="kz"><span class="kt">{esc(k["name"])}</span><span class="km mono">{n} {"Arbeit" if n == 1 else "Arbeiten"}</span></span>'
+                f'<span class="kd">{esc(k["leistung"])}</span><span class="mehr mono">Ansehen →</span></a>')
+    foto = [KAT[x] for x in D["gruppen"][0]["kats"] if kat_arbeiten(x)]
+    film = [KAT[x] for x in D["gruppen"][1]["kats"] if kat_arbeiten(x)] + [KAT["ugc-videos"]]
+    kacheln = (f'<p class="gl mono"><a href="/fotografie/">Fotografie →</a></p><div class="raster">{"".join(kachel(k, i) for i, k in enumerate(foto))}</div>'
+               f'<p class="gl mono"><a href="/film/">Film &amp; Video →</a></p><div class="raster">{"".join(kachel(k, i) for i, k in enumerate(film))}</div>')
     rg = "".join(f'<a class="rgk rv" href="/ratgeber/{r["slug"]}/"><span class="mono">{esc(r["thema"])}</span><span class="rgt">{esc(r["titel"])}</span><span class="mehr mono">Lesen →</span></a>' for r in RATGEBER)
     h = kopf("Werbefotograf & Content Creator Hamburg – Jon Pride",
              "Werbe- und Businessfotografie, Film und Content für Marken: Swarovski, Procter & Gamble, Volkswagen, McDonald's, Sky Sport. Jon Pride aus Hamburg und der Lüneburger Heide.",
@@ -288,7 +301,7 @@ def startseite():
   </div>
 </section>
 <section class="leistungen" id="leistungen">
-  <div class="wrap"><div class="ah"><h2 class="rv">Was ich <em>mache</em></h2><p class="lead rv">Jeder Bereich hat eigene Arbeiten und Antworten auf die häufigsten Fragen. Ansprechpartner bin immer ich.</p></div><div class="raster">{kacheln}</div></div>
+  <div class="wrap"><div class="ah"><h2 class="rv">Was ich <em>mache</em></h2><p class="lead rv">Jeder Bereich hat eigene Arbeiten, Preise und Antworten auf die häufigsten Fragen. Ansprechpartner bin immer ich.</p></div>{kacheln}</div>
 </section>
 <section class="ratgeber-teaser liste-start"><div class="wrap"><h2 class="rv">Ratgeber für Unternehmen</h2><div class="rgl">{rg}</div></div></section>
 <section class="band"><div class="wrap bg"><h2>Eigenes Projekt im Kopf?</h2><a class="btn schwarz" href="/kontakt/">Projekt anfragen</a></div></section>
@@ -328,7 +341,7 @@ def kategorie(k):
   {nav_k}
   <div class="skg"><h1>{worte(k["name"])}</h1><p class="lead rv">{esc(k["intro"])}</p></div>
   {f'<div class="preis rv"><p class="pz">{esc(k["preis"][0])}</p><p>{esc(k["preis"][1])}</p><a class="btn voll" href="/kontakt/">Angebot anfragen</a></div>' if k.get("preis") else ""}
-  {('<div class="stufen rv">' + "".join(f'<div class="stufe{" top" if i == 1 else ""}"><p class="mono">{esc(n)}{" · Empfehlung" if i == 1 else ""}</p><p class="sp">{esc(pr)}</p><p>{esc(t)}</p></div>' for i, (n, pr, t) in enumerate(k["stufen"])) + '</div>') if k.get("stufen") else ""}
+  {('<div class="stufen rv">' + "".join(f'<div class="stufe{" top" if i == 1 else ""}" id="paket-{i + 1}"><p class="mono">{esc(n)}{" · Empfehlung" if i == 1 else ""}</p><p class="sp">{esc(pr)}</p><p>{esc(t)}</p></div>' for i, (n, pr, t) in enumerate(k["stufen"])) + '</div>') if k.get("stufen") else ""}
   <div class="chips rv">{chips}</div>
 </div></section>
 <section class="arbeiten kat"><div class="wrap">{raster(liste)}</div></section>
@@ -420,6 +433,39 @@ def ratgeber_seite(r):
     return h + fuss()
 
 
+def preis_label(k):
+    return f'<span class="km mono">{esc(k["preis"][0])}</span>' if k.get("preis") else ""
+
+
+def gruppen_seite(g):
+    ld_k, nav_k = krumen([("Start", "/"), (g["name"], f'/{g["slug"]}/')])
+    kats = [KAT[x] for x in g["kats"] if kat_arbeiten(x)]
+    if g["slug"] == "film":
+        kats = kats + [KAT["ugc-videos"]]
+    kacheln = "".join(
+        f'<a class="kat-k rv" style="--d:{i % 3}" href="/{k["slug"]}/"><div class="media">{bild(k["cover"], D["bilder"].get(k["cover"], k["name"]), "(min-width: 1100px) 31vw, (min-width: 640px) 48vw, 100vw")}</div>'
+        f'<span class="kz"><span class="kt">{esc(k["name"])}</span>{preis_label(k)}</span>'
+        f'<span class="kd">{esc(k["leistung"])}</span><span class="mehr mono">Ansehen →</span></a>' for i, k in enumerate(kats))
+    arbeiten = []
+    for k in kats:
+        for a in kat_arbeiten(k["slug"]):
+            if a not in arbeiten:
+                arbeiten.append(a)
+    coll = {"@context": "https://schema.org", "@type": "CollectionPage", "name": g["name"], "url": f'{SITE}/{g["slug"]}/',
+            "isPartOf": {"@id": f"{SITE}/#website"}, "description": g["desc"]}
+    og = next((bild_name(a) for a in arbeiten if bild_name(a)), "w10")
+    h = kopf(g["title"], g["desc"], f'/{g["slug"]}/', [coll, ld_k], og_bild=og)
+    h += f"""<section class="seitenkopf"><div class="wrap">
+  {nav_k}
+  <div class="skg"><h1>{worte(g["name"])}</h1><p class="lead rv">{esc(g["intro"])}</p></div>
+</div></section>
+<section class="arbeiten kat"><div class="wrap"><div class="raster">{kacheln}</div></div></section>
+<section class="arbeiten kat"><div class="wrap"><div class="ah"><h2 class="rv">Arbeiten</h2></div>{raster(arbeiten[:9])}</div></section>
+<section class="band"><div class="wrap bg"><h2>Eigenes Projekt im Kopf?</h2><a class="btn schwarz" href="/kontakt/">Projekt anfragen</a></div></section>
+"""
+    return h + fuss()
+
+
 def ratgeber_index():
     ld_k, nav_k = krumen([("Start", "/"), ("Ratgeber", "/ratgeber/")])
     liste = "".join(f'<a class="rgk rv" href="/ratgeber/{r["slug"]}/"><span class="mono">{esc(r["thema"])}</span><span class="rgt">{esc(r["titel"])}</span><span class="kd">{esc(r["kurzantwort"].split(". ")[0])}.</span><span class="mehr mono">Lesen →</span></a>' for r in RATGEBER)
@@ -460,6 +506,9 @@ def main():
             urls.append(schreiben(f'/{k["slug"]}/', kategorie(k)))
     for a in PROJEKTE:
         urls.append(schreiben(f'/projekte/{a["slug"]}/', projekt(a)))
+    for g in D["gruppen"]:
+        if g.get("kats"):
+            urls.append(schreiben(f'/{g["slug"]}/', gruppen_seite(g)))
     urls.append(schreiben("/kontakt/", kontakt_seite()))
     urls.append(schreiben("/ratgeber/", ratgeber_index()))
     for r in RATGEBER:

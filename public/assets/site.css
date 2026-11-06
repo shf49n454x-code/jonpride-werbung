@@ -54,6 +54,18 @@ nav.haupt a:hover{color:var(--accent)}
 nav.haupt a.hz{color:var(--muted);font-weight:500}
 nav.haupt a.cta{background:var(--accent);color:#0b0b0c;padding:12px 18px;clip-path:polygon(0 0,100% 0,100% calc(100% - 8px),calc(100% - 8px) 100%,0 100%)}
 nav.haupt a.cta:hover{background:var(--accent-h);color:#0b0b0c}
+.dd{position:relative;display:flex;align-items:center}
+.ddt{display:inline-flex;align-items:center}
+.ddt::after{content:"";display:inline-block;width:6px;height:6px;margin-left:8px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:translateY(-3px) rotate(45deg)}
+.ddm{position:absolute;left:-18px;top:100%;padding-top:18px;display:none;min-width:240px}
+.ddm a{display:block;background:var(--bg-2);border-left:1px solid var(--line);border-right:1px solid var(--line);padding:13px 18px;font-size:13px;letter-spacing:.1em}
+.ddm a:first-child{border-top:2px solid var(--accent)}
+.ddm a:last-child{border-bottom:1px solid var(--line);clip-path:polygon(0 0,100% 0,100% calc(100% - 8px),calc(100% - 8px) 100%,0 100%)}
+.dd:hover .ddm,.dd:focus-within .ddm{display:block}
+.gl{margin:clamp(28px,3vw,44px) 0 18px;color:var(--muted)}
+.gl:first-of-type{margin-top:0}
+.gl a{text-decoration:none;color:var(--accent)}
+.menu nav a.mu{padding:9px 20px 9px 36px;font-size:14px;font-weight:500;color:var(--muted-2)}
 .menu{display:none;position:relative}
 .menu summary{list-style:none;cursor:pointer;font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:12px 16px;border:1.5px solid var(--text)}
 .menu summary::-webkit-details-marker{display:none}
@@ -129,7 +141,7 @@ nav.haupt a.cta:hover{background:var(--accent-h);color:#0b0b0c}
 .play{position:absolute;left:50%;top:50%;width:64px;height:64px;margin:-32px 0 0 -32px;border-radius:50%;background:rgba(11,11,12,.55);border:1px solid rgba(255,255,255,.45);transition:background var(--duration-base),transform var(--duration-base) var(--ease-out)}
 .play::after{content:"";position:absolute;left:26px;top:21px;border-style:solid;border-width:11px 0 11px 17px;border-color:transparent transparent transparent #fff}
 .karte:hover .play{background:var(--accent);border-color:var(--accent);transform:scale(1.06)}
-.kz{display:flex;justify-content:space-between;align-items:baseline;gap:16px}
+.kz{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:4px 16px}
 .kt{font-family:var(--font-display);font-size:clamp(24px,2.2vw,32px);line-height:1.06;text-transform:uppercase;letter-spacing:.01em}
 .km{color:var(--muted);white-space:nowrap}
 .kd{color:var(--muted-2);font-size:16px;line-height:1.5}
