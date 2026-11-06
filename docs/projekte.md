@@ -34,12 +34,18 @@
 
 ## FC St. Pauli · St. Pauli TV
 - Laut Jon: „wir“ haben für St. Pauli TV die ganzen YouTube-Formate produziert
-- Offen: wer „wir“ ist (M11?), Jahre, Formatnamen, Jons Rolle
+- Laut Jon: zusammen mit Maik Nöcker
+- Offen: Jahre, Formatnamen, Jons Rolle
 
 ## Arctic Warrior
 - Laut Jon: Schnitte und Social Clips
 - Offen: was Arctic Warrior ist (Marke/Event), Jahr, Auftraggeber
 
+## Volkswagen · Tailgate Tour · Fußball
+- Laut Jon: „VW mit Fußball MML“ (Hörfehler möglich: MLS, also US-Fußball? Tailgate passt zu USA) – klären
+- Alte Seite: „Tailgate Tour“
+- Offen: Liga/Event, Jahr, Jons Rolle, Auftraggeber (direkt, M11, Agentur?)
+
 ## Offen
-- Cinemaxx, Jana Highholder, Robert Stolz (Food), DAR/Sir Pew Pew (Zahlen), VW
+- Cinemaxx, Jana Highholder, Robert Stolz (Food), DAR/Sir Pew Pew (Zahlen)
 - Weitere Kunden aus der alten Seite ohne Fakten: UBS, Wella, LBS, DVAG, Top Hair; Musikvideo „Through It All“ (Spoken, 5,1 Mio. Views laut alter Seite)
