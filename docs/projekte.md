@@ -12,7 +12,8 @@
 - Auftrag: direkt von Swarovski, ohne Agentur
 - Aufträge laut Jon: Paris Fashion Week (3x), Kampagne auf Santorini, Celebration-Video im Swarovski-Werk, Social-Kampagne in Zürich
 - Hinweis: Jon nennt „5 Aufträge“, die Aufzählung ergibt 6 – klären
-- Offen: Jahre, Jons Anteil je Auftrag, Team, Bilder/Videos (Ablageort)
+- Zeitraum: ca. 2015–2019 (Jons Schätzung; im Kalender 2015–2019 kein Eintrag „Swarovski“ gefunden)
+- Offen: Jons Anteil je Auftrag, Team, Bilder/Videos (Ablageort)
 
 ## Offen
 - Cinemaxx, Jana Highholder, Robert Stolz (Food), DAR/Sir Pew Pew (Zahlen), VW, McDonald's
