@@ -99,25 +99,23 @@ nav.haupt a.cta:hover{background:var(--accent-h);color:#0b0b0c}
 /* Arbeiten */
 .arbeiten{padding:clamp(80px,10vw,136px) 0}
 .arbeiten.kat{padding-top:24px;padding-bottom:clamp(40px,5vw,64px)}
-.ah{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:28px;margin-bottom:clamp(36px,4vw,56px)}
+.ah{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);justify-content:space-between;align-items:end;gap:28px;margin-bottom:clamp(36px,4vw,56px)}
+.ah .lead{font-size:18px}
+@media(max-width:900px){.ah{grid-template-columns:1fr}}
 .chips{display:flex;flex-wrap:wrap;gap:8px}
 .chip{display:inline-block;text-decoration:none;border:1px solid #3a3a3a;padding:11px 14px;font-family:var(--font-mono);font-size:12px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap;transition:border-color var(--duration-fast),background var(--duration-fast),color var(--duration-fast)}
 .chip:hover{border-color:var(--text)}
 .chip.an{background:var(--text);color:var(--bg);border-color:var(--text)}
 @media(max-width:600px){.chips{flex-wrap:nowrap;overflow-x:auto;margin:0 calc(-1*var(--pad));padding:0 var(--pad);scrollbar-width:none}.chips::-webkit-scrollbar{display:none}.chip{flex:none}}
-.raster{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:clamp(40px,4.4vw,64px) clamp(16px,2vw,28px);align-items:end}
-.zelle.s12{grid-column:1/-1}.zelle.s7{grid-column:span 7}.zelle.s6{grid-column:span 6}.zelle.s5{grid-column:span 5}.zelle.s4{grid-column:span 4}
-@media(max-width:900px){.zelle.s12,.zelle.s7,.zelle.s6,.zelle.s5,.zelle.s4{grid-column:span 12}}
-@media(min-width:600px) and (max-width:900px){.zelle.s4,.zelle.s6{grid-column:span 6}}
+.raster{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(36px,4vw,56px) clamp(16px,2vw,28px);align-items:start}
+@media(max-width:1099px){.raster{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:639px){.raster{grid-template-columns:1fr}}
 .karte{display:flex;flex-direction:column;gap:14px;width:100%;text-decoration:none;color:var(--text)}
 .karte .media{position:relative;overflow:hidden;background:var(--bg-2)}
-.karte .media{aspect-ratio:3/2}
-.zelle.s4 .karte .media{aspect-ratio:4/3}
-.zelle.s12 .karte .media{aspect-ratio:16/7}
-.karte .media.hoch,.zelle.s4 .karte .media.hoch{aspect-ratio:4/5}
-.karte .media img{width:100%;height:100%;object-fit:cover;transition:transform 1.1s var(--ease-emphasis)}
-.karte .media.hoch img{object-fit:contain}
-.karte:hover .media img{transform:scale(1.035)}
+.karte .media,.kat-k .media{aspect-ratio:3/2}
+.karte .media img,.kat-k .media img{width:100%;height:100%;object-fit:cover;transition:transform 1.1s var(--ease-emphasis)}
+.karte .media.hoch img{object-position:50% 18%}
+.karte:hover .media img,.kat-k:hover .media img{transform:scale(1.035)}
 .karte .media.leer,.ph.leer{display:flex;align-items:flex-end;padding:clamp(18px,2.4vw,32px);border:1px solid var(--line);background:linear-gradient(160deg,#181818,#0f0f0f)}
 .karte .media.leer span,.ph.leer span{font-family:var(--font-display);font-size:clamp(40px,6vw,92px);line-height:1;text-transform:uppercase;color:#2c2c2c;transition:color .6s var(--ease-emphasis)}
 .karte:hover .media.leer span{color:#3a3a3a}
@@ -129,26 +127,25 @@ nav.haupt a.cta:hover{background:var(--accent-h);color:#0b0b0c}
 .karte:hover .play{background:var(--accent);border-color:var(--accent);transform:scale(1.06)}
 .kz{display:flex;justify-content:space-between;align-items:baseline;gap:16px}
 .kt{font-family:var(--font-display);font-size:clamp(24px,2.2vw,32px);line-height:1.06;text-transform:uppercase;letter-spacing:.01em}
-.zelle.s4 .kt{font-size:clamp(22px,1.8vw,26px)}
 .km{color:var(--muted);white-space:nowrap}
 .kd{color:var(--muted-2);font-size:16px;line-height:1.5}
-.karte .mehr{color:var(--accent);opacity:0;transform:translateX(-6px);transition:opacity var(--duration-slow),transform var(--duration-slow) var(--ease-out)}
-.karte:hover .mehr,.karte:focus-visible .mehr{opacity:1;transform:none}
-@media(hover:none){.karte .mehr{opacity:1;transform:none}}
+.kat-k{display:flex;flex-direction:column;gap:14px;text-decoration:none;color:var(--text)}
+.kat-k .media{overflow:hidden;background:var(--bg-2)}
+.cta-k{background:var(--accent);color:#0b0b0c;padding:clamp(24px,2.6vw,36px);aspect-ratio:3/2;justify-content:flex-end;clip-path:polygon(0 0,100% 0,100% calc(100% - var(--cut-md)),calc(100% - var(--cut-md)) 100%,0 100%)}
+.cta-k .kd{color:#0b0b0c;max-width:30ch}
+.cta-k .btn{align-self:flex-start;margin-top:8px}
+.kat-k .mehr,.karte .mehr{color:var(--accent);opacity:0;transform:translateX(-6px);transition:opacity var(--duration-slow),transform var(--duration-slow) var(--ease-out)}
+.karte:hover .mehr,.karte:focus-visible .mehr,.kat-k:hover .mehr,.kat-k:focus-visible .mehr{opacity:1;transform:none}
+@media(hover:none){.karte .mehr,.kat-k .mehr{opacity:1;transform:none}}
 .karte.aus{display:none}
 
 /* Leistungen */
 .leistungen{background:var(--bg-2);padding:clamp(80px,10vw,136px) 0}
-.lg{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(24px,3vw,40px) clamp(20px,2.4vw,32px);margin-top:clamp(36px,4vw,56px)}
-.lst{display:flex;flex-direction:column;gap:10px;border-top:2px solid var(--accent);padding-top:22px;text-decoration:none}
-.lst p{color:var(--muted-2);font-size:16px;line-height:1.55}
-.lst h3{font-family:var(--font-display);font-weight:400;font-size:26px;line-height:1.1;text-transform:uppercase;letter-spacing:.01em;transition:color var(--duration-fast)}
-.lst:hover h3{color:var(--accent)}
-@media(max-width:900px){.lg{grid-template-columns:1fr 1fr}}
-@media(max-width:560px){.lg{grid-template-columns:1fr}}
 
 /* Ratgeber-Kacheln */
 .ratgeber-teaser{padding:clamp(80px,10vw,136px) 0 0}
+.ratgeber-teaser.liste-start{padding-bottom:clamp(80px,10vw,136px)}
+.kontakt h1{font-size:clamp(44px,6.4vw,92px)}
 .ratgeber-teaser h2{font-size:clamp(32px,4vw,56px)}
 .rgl{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:36px}
 .rgk{display:flex;flex-direction:column;gap:14px;border:1px solid var(--line);padding:30px;text-decoration:none;transition:border-color var(--duration-base),background var(--duration-base)}

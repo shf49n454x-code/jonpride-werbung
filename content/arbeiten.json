@@ -11,7 +11,9 @@
     "agentur",
     "rechte",
     "kosten"
-   ]
+   ],
+   "cover": "w09",
+   "leistung": "Kampagnen-, Produkt- und Imagebilder für Marken. Location, Set, Licht, Fotografie und Bearbeitung aus einer Hand."
   },
   {
    "slug": "business-portraet",
@@ -24,7 +26,9 @@
     "unternehmen",
     "einsatz",
     "rechte"
-   ]
+   ],
+   "cover": "w04",
+   "leistung": "Mitarbeiter-, Team- und Führungskräfteporträts für Website, Recruiting und Presse, bei euch vor Ort."
   },
   {
    "slug": "food",
@@ -36,7 +40,9 @@
    "faq": [
     "kosten",
     "rechte"
-   ]
+   ],
+   "cover": "w05",
+   "leistung": "Gerichte und Produkte für Karte, Website und Social Media, im Restaurant oder am Set."
   },
   {
    "slug": "film-musikvideo",
@@ -48,7 +54,9 @@
    "faq": [
     "unternehmen",
     "agentur"
-   ]
+   ],
+   "cover": "yt-3EJuROjO48Q",
+   "leistung": "Konzept, Dreh, Schnitt und Color Grading. Musikvideos und Formate mit Millionenreichweite."
   },
   {
    "slug": "brand-social",
@@ -60,7 +68,9 @@
    "faq": [
     "betreuung",
     "rechte"
-   ]
+   ],
+   "cover": "yt-yLKTaERwMj4",
+   "leistung": "Reels, Social Clips, UGC und laufendes Social-Media-Management für Marken und Kanäle."
   }
  ],
  "faq": {
@@ -324,16 +334,6 @@
    "yt": "yLKTaERwMj4"
   },
   {
-   "slug": "beauty-portraet",
-   "titel": "Beauty-Porträt",
-   "kat": [
-    "business-portraet"
-   ],
-   "meta": "Editorial",
-   "zeile": "Schwarz-Weiß im Gegenlicht",
-   "bild": "w01"
-  },
-  {
    "slug": "mcdonalds",
    "titel": "McDonald's",
    "kunde": "McDonald's",
@@ -373,12 +373,10 @@
    ],
    "meta": "Editorial",
    "zeile": "Lüneburger Heide im Gegenlicht",
-   "bild": "w10",
-   "start": false
+   "bild": "w10"
   }
  ],
  "bilder": {
-  "w01": "Beauty-Porträt einer Frau in Schwarz-Weiß im Gegenlicht",
   "w03": "Rennfahrer im Phoenix-Racing-Overall, freigestellt für die Pressemappe",
   "w04": "Executive-Porträt eines Mannes am Empfang eines Unternehmens",
   "w05": "Dessert mit Feigen und Heidelbeeren, Food-Styling für ein Restaurant",
@@ -421,5 +419,13 @@
    "seit 2009",
    "Fotografie und Film"
   ]
+ ],
+ "startseite": [
+  "swarovski",
+  "meine-11",
+  "vw-tailgate-tour",
+  "oral-b",
+  "hoeher",
+  "mcdonalds"
  ]
 }

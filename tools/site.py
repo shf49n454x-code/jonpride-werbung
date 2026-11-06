@@ -125,8 +125,8 @@ def kopf(title, desc, pfad, ld, og_bild="w10", extra=""):
 <header class="top">
   <div class="wrap">
     <a href="/" class="marke" aria-label="Jon Pride, zur Startseite"><img src="/assets/logo/jonpride-logo-solid-white.png" alt="Jon Pride" width="962" height="592"></a>
-    <nav class="haupt" aria-label="Hauptnavigation">{nav}<a class="hz" href="https://jonpride.de/">Hochzeit&nbsp;→</a><a class="cta" href="/#kontakt">Projekt anfragen</a></nav>
-    <details class="menu"><summary aria-label="Menü öffnen">Menü</summary><nav aria-label="Menü">{nav}<a href="/#kontakt">Projekt anfragen</a><a href="https://jonpride.de/">Hochzeit&nbsp;→</a></nav></details>
+    <nav class="haupt" aria-label="Hauptnavigation">{nav}<a class="hz" href="https://jonpride.de/">Hochzeit&nbsp;→</a><a class="cta" href="/kontakt/">Projekt anfragen</a></nav>
+    <details class="menu"><summary aria-label="Menü öffnen">Menü</summary><nav aria-label="Menü">{nav}<a href="/kontakt/">Projekt anfragen</a><a href="https://jonpride.de/">Hochzeit&nbsp;→</a></nav></details>
   </div>
 </header>
 <main id="inhalt">
@@ -187,7 +187,7 @@ def karte(a, i, sizes):
         media = '<div class="media logo-rot"><img src="/assets/mcdonalds.svg" alt="McDonald\'s Logo" width="273" height="239" loading="lazy"></div>'
     elif name:
         play = '<span class="play" aria-hidden="true"></span>' if a.get("yt") else ""
-        hoch = " hoch" if BILD[name][2] > BILD[name][1] else ""
+        hoch = " hoch" if BILD[name][2] > BILD[name][1] else ""  # Hochformat: Ausschnitt oben
         media = f'<div class="media{hoch}">{bild(name, alt, sizes)}{play}</div>'
     else:
         media = f'<div class="media leer" style="view-transition-name:p-{a["slug"]}"><span>{esc(a.get("kunde") or a["titel"])}</span></div>'
@@ -205,28 +205,9 @@ def karte(a, i, sizes):
     return f'<button type="button" {attr} data-img="/img/{name}-{breiten[-1]}.jpg" data-alt="{esc(alt)}" data-t="{esc(a["titel"] + " · " + a["zeile"])}">{inhalt}<span class="mehr mono">Ansehen +</span></button>'
 
 
-# Raster in Reihen: 7/5, 4/4/4, 5/7, 4/4/4 … Eine unvollstaendige letzte Reihe wird
-# gleichmaessig aufgeteilt (1 → 12, 2 → 6/6). Bis drei Arbeiten: gleich breit.
-REIHEN = [[7, 5], [4, 4, 4], [5, 7], [4, 4, 4]]
-SIZES = {12: "(min-width: 900px) 92vw, 100vw", 7: "(min-width: 900px) 56vw, 100vw", 6: "(min-width: 900px) 48vw, 100vw",
-         5: "(min-width: 900px) 40vw, 100vw", 4: "(min-width: 900px) 31vw, 100vw"}
-GLEICH = {1: [12], 2: [6, 6], 3: [4, 4, 4]}
-
-
-def spannen(n):
-    if n <= 3:
-        return GLEICH[n]
-    out, r = [], 0
-    while len(out) < n:
-        reihe = REIHEN[r % len(REIHEN)]
-        rest = n - len(out)
-        out += reihe if rest >= len(reihe) else GLEICH[rest]
-        r += 1
-    return out
-
-
+# Raster: gleich hohe Kacheln (3:2), drei Spalten, kein Versatz
 def raster(liste):
-    teile = [f'<div class="zelle s{sp}">{karte(a, i, SIZES[sp])}</div>' for i, (a, sp) in enumerate(zip(liste, spannen(len(liste))))]
+    teile = [f'<div class="zelle">{karte(a, i, "(min-width: 1100px) 31vw, (min-width: 640px) 48vw, 100vw")}</div>' for i, a in enumerate(liste)]
     return f'<div class="raster">{"".join(teile)}</div>'
 
 
@@ -246,21 +227,11 @@ def business_ld():
          "founder": {"@id": "https://jonpride.de/#person"}, "sameAs": ["https://jonpride.de/", "https://www.instagram.com/jonpride"]}]}
 
 
-LEISTUNGEN = [
-    ("Firmen- & Businessfotografie", "Mitarbeiter- und Teamporträts, Büro- und Standortfotos für euren Auftritt, von der Website bis zur Pressemappe.", "business-portraet"),
-    ("Werbe- & Produktfotografie", "Kampagnen-, Produkt- und Imagebilder für Marken und Unternehmen.", "kampagne-werbung"),
-    ("Content Creation", "Reels, Social Clips und UGC für Instagram, TikTok und YouTube, auf Wirkung geschnitten.", "brand-social"),
-    ("Social Media Management", "Planung, Produktion und Posting. Euer Kanal wächst, ohne dass ihr euch kümmern müsst.", "brand-social"),
-    ("Video & Musikvideo", "Konzept, Dreh, Schnitt und Color Grading. Musikvideos mit Millionenreichweite.", "film-musikvideo"),
-    ("Food & Restaurant", "Gerichte und Produkte für Karte, Website und Social Media.", "food"),
-]
-
-
 def kontakt():
     return """<section class="kontakt" id="kontakt">
   <div class="wrap kg">
     <div class="kl">
-      <h2 class="rv">Lass uns etwas machen, das auffällt.</h2>
+      <h1 class="rv">Lass uns etwas machen, das auffällt.</h1>
       <p class="rv">Erzähl mir kurz von deinem Projekt. Ich melde mich innerhalb von zwei Werktagen.</p>
       <p class="rv kd2"><a href="mailto:me@jonpride.de">me@jonpride.de</a><br><a href="tel:+491623361352">0162 3361352</a></p>
     </div>
@@ -285,42 +256,55 @@ def kontakt():
 def startseite():
     hero_alt = D["bilder"]["w10"]
     kunden = "".join(f"<li>{esc(k)}</li>" for k in D["kunden"])
-    chips = '<button type="button" class="chip an" data-f="alle" aria-pressed="true">Alle</button>' + "".join(
-        f'<a class="chip" href="/{k["slug"]}/" data-f="{k["slug"]}">{esc(k["name"])}</a>'
-        for k in D["kategorien"] if kat_arbeiten(k["slug"]))
-    leist = "".join(f'<a class="lst rv" style="--d:{i % 3}" href="/{s}/"><h3>{esc(t)}</h3><p>{esc(p)}</p></a>'
-                    for i, (t, p, s) in enumerate(LEISTUNGEN))
+    auswahl = [BY_SLUG[x] for x in D["startseite"]]
+    kats = [k for k in D["kategorien"] if kat_arbeiten(k["slug"])]
+    kacheln = "".join(
+        f'<a class="kat-k rv" style="--d:{i % 3}" href="/{k["slug"]}/"><div class="media">{bild(k["cover"], D["bilder"].get(k["cover"], k["name"]), "(min-width: 1100px) 31vw, (min-width: 640px) 48vw, 100vw")}</div>'
+        f'<span class="kz"><span class="kt">{esc(k["name"])}</span><span class="km mono">{len(kat_arbeiten(k["slug"]))} {"Arbeit" if len(kat_arbeiten(k["slug"])) == 1 else "Arbeiten"}</span></span>'
+        f'<span class="kd">{esc(k["leistung"])}</span><span class="mehr mono">Ansehen →</span></a>' for i, k in enumerate(kats))
+    kacheln += '<a class="kat-k cta-k rv" style="--d:2" href="/kontakt/"><span class="kt">Ihr Projekt?</span><span class="kd">Erzähl mir in zwei Minuten, was entstehen soll. Antwort innerhalb von zwei Werktagen.</span><span class="btn schwarz">Projekt anfragen</span></a>'
     rg = "".join(f'<a class="rgk rv" href="/ratgeber/{r["slug"]}/"><span class="mono">{esc(r["thema"])}</span><span class="rgt">{esc(r["titel"])}</span><span class="mehr mono">Lesen →</span></a>' for r in RATGEBER)
-    paare = [D["faq"][k] for k in D["startseite_faq"]]
-    faq_ld, faq_html = faq_block(paare)
     h = kopf("Werbefotograf & Content Creator Hamburg – Jon Pride",
              "Werbe- und Businessfotografie, Film und Content für Marken: Swarovski, Procter & Gamble, Volkswagen, McDonald's, Sky Sport. Jon Pride aus Hamburg und der Lüneburger Heide.",
-             "/", [business_ld(), faq_ld])
+             "/", [business_ld()])
     h += f"""<section class="hero">
   <div class="wrap hg">
     <div class="ht">
       <p class="mono eyebrow rv">Werbe- und Businessfotografie · Hamburg &amp; weltweit</p>
       <h1>{worte("Bilder für Marken, die man nicht wegscrollt.")}</h1>
       <p class="lead rv">Kampagnen für Swarovski und Procter &amp; Gamble, Formate für Sky Sport, Content mit Millionenreichweite. Fotografiert und produziert von Jon Pride, seit 2009.</p>
-      <div class="btns rv"><a class="btn voll" href="#arbeiten">Arbeiten ansehen</a><a class="btn rand" href="#kontakt">Projekt anfragen</a></div>
+      <div class="btns rv"><a class="btn voll" href="#arbeiten">Arbeiten ansehen</a><a class="btn rand" href="/kontakt/">Projekt anfragen</a></div>
     </div>
-    <figure class="hb rv">{bild("w10", hero_alt, "(min-width: 900px) 58vw, 100vw", eager=True)}<figcaption class="mono">Fashion-Editorial · Lüneburger Heide</figcaption></figure>
+    <figure class="hb rv">{bild("w10", hero_alt, "(min-width: 900px) 48vw, 100vw", eager=True)}<figcaption class="mono">Fashion-Editorial · Lüneburger Heide</figcaption></figure>
   </div>
 </section>
 <section class="zahlen" aria-label="In Zahlen"><div class="wrap zg">{"".join(f'<div class="rv" style="--d:{i}"><span class="zz">{esc(z)}</span><span class="zt">{esc(t)}</span></div>' for i, (z, t) in enumerate(D["zahlen"]))}</div></section>
 <section class="kunden" aria-label="Kunden"><div class="wrap"><ul>{kunden}</ul></div></section>
 <section class="arbeiten" id="arbeiten">
   <div class="wrap">
-    <div class="ah"><h2 class="rv">Ausgewählte<br>Arbeiten</h2><div class="chips" role="group" aria-label="Arbeiten filtern">{chips}</div></div>
-    {raster([a for a in ARBEITEN if a.get('start', True)])}
+    <div class="ah"><h2 class="rv">Ausgewählte<br>Arbeiten</h2><p class="lead rv">Sechs Projekte aus Kampagne, Film und Social. Alle Arbeiten nach Bereich findest du darunter.</p></div>
+    {raster(auswahl)}
   </div>
 </section>
 <section class="leistungen" id="leistungen">
-  <div class="wrap"><h2 class="rv">Was ich <em>mache</em></h2><div class="lg">{leist}</div></div>
+  <div class="wrap"><div class="ah"><h2 class="rv">Was ich <em>mache</em></h2><p class="lead rv">Fünf Bereiche, jeder mit eigenen Arbeiten, Antworten und Ansprechpartner: mir.</p></div><div class="raster">{kacheln}</div></div>
 </section>
-<section class="ratgeber-teaser"><div class="wrap"><h2 class="rv">Ratgeber für Unternehmen</h2><div class="rgl">{rg}</div></div></section>
-<section class="faq-s" id="faq"><div class="wrap">{faq_html}</div></section>
+<section class="ratgeber-teaser liste-start"><div class="wrap"><h2 class="rv">Ratgeber für Unternehmen</h2><div class="rgl">{rg}</div></div></section>
+<section class="band"><div class="wrap bg"><h2>Lass uns etwas machen, das auffällt.</h2><a class="btn schwarz" href="/kontakt/">Projekt anfragen</a></div></section>
+"""
+    return h + fuss()
+
+
+def kontakt_seite():
+    ld_k, nav_k = krumen([("Start", "/"), ("Projekt anfragen", "/kontakt/")])
+    paare = [D["faq"][k] for k in D["startseite_faq"]]
+    faq_ld, faq_html = faq_block(paare)
+    h = kopf("Projekt anfragen – Jon Pride, Werbe- und Businessfotografie",
+             "Anfrage für Werbe- und Businessfotografie, Film oder Content. Antwort innerhalb von zwei Werktagen. Jon Pride, Hamburg und Lüneburger Heide.",
+             "/kontakt/", [ld_k, faq_ld])
+    h += f"""<section class="seitenkopf"><div class="wrap">{nav_k}</div></section>
 {kontakt()}
+<section class="faq-s"><div class="wrap">{faq_html}<p><a class="weiter mono" href="/#arbeiten">Arbeiten ansehen →</a><a class="weiter mono" href="/ratgeber/">Ratgeber →</a></p></div></section>
 """
     return h + fuss()
 
@@ -346,7 +330,7 @@ def kategorie(k):
 </div></section>
 <section class="arbeiten kat"><div class="wrap">{raster(liste)}</div></section>
 <section class="faq-s"><div class="wrap">{faq_html}{rg_html}</div></section>
-<section class="band"><div class="wrap bg"><h2>Eigenes Projekt im Kopf?</h2><a class="btn schwarz" href="/#kontakt">Projekt anfragen</a></div></section>
+<section class="band"><div class="wrap bg"><h2>Eigenes Projekt im Kopf?</h2><a class="btn schwarz" href="/kontakt/">Projekt anfragen</a></div></section>
 """
     return h + fuss()
 
@@ -394,7 +378,7 @@ def projekt(a):
 {f'<div class="wrap">{galerie}</div>' if galerie else ""}
 <nav class="pnav" aria-label="Weitere Projekte"><div class="wrap pnv">
   <a href="/projekte/{vor["slug"]}/" class="mono">← {esc(vor["titel"])}</a>
-  <a class="btn voll" href="/#kontakt">Ähnliches Projekt anfragen</a>
+  <a class="btn voll" href="/kontakt/">Ähnliches Projekt anfragen</a>
   <a href="/projekte/{nach["slug"]}/" class="mono">Nächstes Projekt: {esc(nach["titel"])} →</a>
 </div></nav>
 </article>
@@ -428,7 +412,7 @@ def ratgeber_seite(r):
   <div class="proj rv"><p class="mono">So sah das in echt aus</p>{proj}</div>
   <div class="quellen-l rv"><p class="mono">Quellen · Stand {stand}</p><ul>{quellen}</ul></div>
 </div></article>
-<section class="band"><div class="wrap bg"><h2>Eigenes Projekt im Kopf?</h2><a class="btn schwarz" href="/#kontakt">Projekt anfragen</a></div></section>
+<section class="band"><div class="wrap bg"><h2>Eigenes Projekt im Kopf?</h2><a class="btn schwarz" href="/kontakt/">Projekt anfragen</a></div></section>
 """
     return h + fuss()
 
@@ -442,7 +426,7 @@ def ratgeber_index():
     h += f"""<section class="seitenkopf"><div class="wrap">{nav_k}<div class="skg"><h1>{worte("Ratgeber")}</h1>
 <p class="lead rv">Antworten für Unternehmen, die Fotos oder Videos planen: Ablauf, Kosten, Rechte. Aus der Praxis mit Marken wie Swarovski und Procter &amp; Gamble.</p></div></div></section>
 <section class="ratgeber-teaser liste"><div class="wrap"><div class="rgl">{liste}</div><p><a class="weiter mono" href="/#arbeiten">Arbeiten ansehen →</a></p></div></section>
-<section class="band"><div class="wrap bg"><h2>Eigenes Projekt im Kopf?</h2><a class="btn schwarz" href="/#kontakt">Projekt anfragen</a></div></section>
+<section class="band"><div class="wrap bg"><h2>Eigenes Projekt im Kopf?</h2><a class="btn schwarz" href="/kontakt/">Projekt anfragen</a></div></section>
 """
     return h + fuss()
 
@@ -473,6 +457,7 @@ def main():
             urls.append(schreiben(f'/{k["slug"]}/', kategorie(k)))
     for a in PROJEKTE:
         urls.append(schreiben(f'/projekte/{a["slug"]}/', projekt(a)))
+    urls.append(schreiben("/kontakt/", kontakt_seite()))
     urls.append(schreiben("/ratgeber/", ratgeber_index()))
     for r in RATGEBER:
         urls.append(schreiben(f'/ratgeber/{r["slug"]}/', ratgeber_seite(r)))
@@ -487,7 +472,7 @@ def main():
     llms += [f'- [{k["name"]}]({SITE}/{k["slug"]}/): {k["intro"]}' for k in D["kategorien"] if kat_arbeiten(k["slug"])]
     llms += ["", "## Projekte"] + [f'- [{a["titel"]}]({SITE}/projekte/{a["slug"]}/): {a["kurz"]}' for a in PROJEKTE]
     llms += ["", "## Ratgeber"] + [f'- [{r["titel"]}]({SITE}/ratgeber/{r["slug"]}/): {r["kurzantwort"]}' for r in RATGEBER]
-    llms += ["", "## Kontakt", "- E-Mail: me@jonpride.de", "- Telefon: 0162 3361352", f"- Anfrage: {SITE}/#kontakt", ""]
+    llms += ["", "## Kontakt", "- E-Mail: me@jonpride.de", "- Telefon: 0162 3361352", f"- Anfrage: {SITE}/kontakt/", ""]
     (PUB / "llms.txt").write_text("\n".join(llms))
     print(f"{len(urls)} Seiten, {len(BILD)} Bilder")
 

@@ -39,8 +39,10 @@ Lightbox und Formular durchklicken.
 - **Bilder immer performant.** Original nach `src/img/`, `tools/site.py` erzeugt 640/1000/1600 als WebP und
   JPG ohne Metadaten, mit `srcset`, `width`/`height` und Lazy Loading. Ziel: unter ~200 KB bei 1000 px.
   Videos als kurze stumme MP4-Loops unter 2 MB mit Posterbild, selbst gehostet.
-- **Kein Zuschneiden ins Leere:** Karten haben feste Seitenverhältnisse (3:2, 4:3), Hochformate werden mit
-  `contain` gezeigt. Nach jeder Bildänderung bei 375 px nachsehen.
+- **Gleichmäßiges Raster:** alle Karten 3:2, drei Spalten, gleiche Höhen (Jon: unterschiedliche Höhen wirken
+  unharmonisch). Hochformate mit Ausschnitt oben (`object-position`). Nach jeder Bildänderung bei 375 px nachsehen.
+- **Kein langer Onepager:** Startseite zeigt nur eine Auswahl (sechs Arbeiten) und die Bereiche; alles Weitere
+  auf Unterseiten, Anfrage auf `/kontakt/`. Jeder Klick auf eine Unterseite ist gut für die Statistik.
 - **Überschriften:** Anton in Versalien, Zeilenabstand mindestens 1.04, sonst stoßen Ä/Ö/Ü an die Zeile darüber.
 - **Design:** dunkel, Orange `#F4571B` als einziger Akzent, schräge Ecken aus der CI. Animationen dezent
   (Einblenden beim Scrollen, Überschrift Wort für Wort, View Transitions), `prefers-reduced-motion` respektieren.
