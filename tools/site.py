@@ -561,6 +561,8 @@ def main():
 
     (PUB / "sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
                                      + "".join(f"<url><loc>{SITE}{u}</loc><lastmod>{HEUTE}</lastmod></url>\n" for u in urls) + "</urlset>\n")
+    key = (ROOT / "content/indexnow-key.txt").read_text().strip()
+    (PUB / f"{key}.txt").write_text(key)  # IndexNow-Schlüssel (Bing, Yandex, Seznam)
     (PUB / "robots.txt").write_text(f"User-agent: *\nAllow: /\nDisallow: /checkliste/danke/\nDisallow: /downloads/\n\nSitemap: {SITE}/sitemap.xml\n")
     llms = ["# Jon Pride – Werbung & Business", "",
             "> Werbe- und Businessfotografie, Film und Content für Marken und Unternehmen. Fotograf und Filmemacher Jon Pride (Jan Stolz), Tostedt bei Hamburg, seit 2009. Kunden u. a. Swarovski, Procter & Gamble, Volkswagen, McDonald's, Sky Sport. Hochzeiten: https://jonpride.de",
