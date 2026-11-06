@@ -171,7 +171,7 @@ def head(title, desc, path, ld, extra=""):
 
 def foot():
     return f"""</main><footer><div class="wrap"><div>© 2026 Jon Pride</div>
-<nav aria-label="Fußnavigation"><a href="/impressum/">Impressum</a><a href="/datenschutz/">Datenschutz</a><a href="https://jonpride.de">Hochzeiten: jonpride.de</a></nav></div></footer></body></html>"""
+<nav aria-label="Fußnavigation"><a href="https://jonpride.de/impressum">Impressum</a><a href="https://jonpride.de/datenschutz">Datenschutz</a><a href="https://jonpride.de">Hochzeiten: jonpride.de</a></nav></div></footer></body></html>"""
 
 ORG = {"@type": "ProfessionalService", "@id": SITE + "/#org", "name": "Jon Pride", "url": SITE + "/",
        "description": "Business-Porträts, Werbe- und Produktfotografie für Unternehmen in Hamburg, im Landkreis Harburg und in der Lüneburger Heide.",
@@ -464,9 +464,7 @@ DATENSCHUTZ = f"""<p class="mono stand">Stand: {STAND}</p>
 <h2>7. Kontakt per E-Mail oder Telefon</h2><p>Wenn Sie uns schreiben oder anrufen, verarbeiten wir Ihre Angaben, um Ihre Anfrage zu beantworten und ein Angebot zu erstellen (Art. 6 Abs. 1 lit. b DSGVO). Wir löschen die Daten, wenn sie dafür nicht mehr nötig sind und keine gesetzlichen Aufbewahrungsfristen bestehen.</p>
 <h2>8. Ihre Rechte</h2><p>Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch. Außerdem können Sie sich bei einer Datenschutz-Aufsichtsbehörde beschweren, zum Beispiel bei der Landesbeauftragten für den Datenschutz Niedersachsen.</p>"""
 
-PAGES = {
-    "/impressum/": recht("/impressum/", "Impressum", IMPRESSUM),
-    "/datenschutz/": recht("/datenschutz/", "Datenschutzerklärung", DATENSCHUTZ),
+PAGES = {  # Impressum und Datenschutz kommen von jonpride.de
 }
 
 for path, content in PAGES.items():
