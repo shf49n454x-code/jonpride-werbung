@@ -30,7 +30,8 @@
 - Gäste laut Jon: Ridle Baku, Benjamin Henrichs, Vincenzo Grifo, „Radetzky“ (vermutlich Lukas Hradecky), ein Spieler „Freiburg → Monaco“ (Name offen)
 - Recherche, nicht von Jon bestätigt: Talkformat seit 2017 auf Sky Sport News HD, Moderator Maik Nöcker; Profis stellen ihre elf Lieblingssongs vor, gedreht in einem zum Tonstudio umgebauten Wohnmobil; weitere Gäste u. a. Naldo, Lewis Holtby, Matthias Ostrzolek, Kevin Volland, Julian Weigl; ab Nov. 2020 auch bei SPORT1 (Quellen: prisma.de, sport1.de)
 - Laut Jon: Levi's war Hauptsponsor von „Meine 11“, ausgestrahlt bei Sky Sport
-- Offen: Jons Rolle (Kamera, Ton, Schnitt, Teamleitung?), Staffeln/Jahre, Satz „Du spielst nochmal mit deinem Freund“ (zweites Format?)
+- Jons Rolle laut Jon: lange Cutter, später Hauptvideograf; viele Folgen hat Oliver von Berg als Hauptvideograf gedreht
+- Offen: Staffeln/Jahre, Satz „Du spielst nochmal mit deinem Freund“ (zweites Format?)
 
 ## FC St. Pauli · St. Pauli TV
 - Laut Jon: „wir“ haben für St. Pauli TV die ganzen YouTube-Formate produziert
@@ -54,6 +55,12 @@
 - Laut Jon: Kochfotos für Robert Stolz („Eat, Share, Live“)
 - Recherche: Restaurant „Robert Stolz – eat. share. live.“ in Plön, Gäste an zwei Eichentischen mit Blick in die offene Küche, Kochschule; seit Herbst 2018 dort (Quelle: robertstolz.de, stevanpaul.de)
 - Offen: welche Bilder, Jahr, Nutzung (Website, Social, Buch?)
+
+## Musikvideos · Sir Pew Pew (Reichweite)
+- Laut Jon: Die Musikvideos hat er gemacht (Rolle im Detail offen)
+- Spoken „Through It All“: 5,1 Mio. Views; Video „von Sarah“: rund 3 Mio. Views (Titel/Link offen); christliche Musikvideos teils Millionen, teils einige 100.000 Views
+- Sir Pew Pew: pro Video teils 650.000, sonst mehrere 100.000 Views
+- Summe belegt durch Jons Angaben: 5,1 + 3,5 (McDonald's) + 3 + 2,6 + 0,686 + ≥ 0,65 Mio. ≥ 15 Mio. → „15 Mio.+ Views“
 
 ## Offen
 - Cinemaxx, Jana Highholder, DAR/Sir Pew Pew (Zahlen)

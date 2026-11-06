@@ -1,0 +1,425 @@
+{
+ "kategorien": [
+  {
+   "slug": "kampagne-werbung",
+   "name": "Kampagne & Werbung",
+   "kurz": "Kampagne",
+   "title": "Werbefotograf Hamburg: Kampagnen und Werbefotos – Jon Pride",
+   "desc": "Werbefotografie und Kampagnen aus Hamburg für Marken wie Swarovski, Procter & Gamble und Volkswagen. Location, Set, Licht, Fotografie und Bearbeitung aus einer Hand.",
+   "intro": "Werbefotografie aus Hamburg für Marken wie Swarovski, Procter & Gamble und Volkswagen. Von der Location über Set und Licht bis zur fertigen Bildstrecke.",
+   "faq": [
+    "agentur",
+    "rechte",
+    "kosten"
+   ]
+  },
+  {
+   "slug": "business-portraet",
+   "name": "Business & Porträt",
+   "kurz": "Porträt",
+   "title": "Business-Porträts und Firmenfotografie Hamburg – Jon Pride",
+   "desc": "Business-Porträts, Team- und Führungskräftefotos für Unternehmen in Hamburg, im Landkreis Harburg und in der Lüneburger Heide. Kunden u. a. UBS.",
+   "intro": "Porträts von Führungskräften, Teams und Persönlichkeiten für Unternehmen in Hamburg, im Landkreis Harburg und in der Lüneburger Heide. Kunden unter anderem UBS.",
+   "faq": [
+    "unternehmen",
+    "einsatz",
+    "rechte"
+   ]
+  },
+  {
+   "slug": "food",
+   "name": "Food",
+   "kurz": "Food",
+   "title": "Foodfotografie für Restaurants in Hamburg und Norddeutschland – Jon Pride",
+   "desc": "Food- und Restaurantfotografie für Karte, Website und Social Media. Fine Dining, Gerichte und Produkte, im Restaurant oder am Set.",
+   "intro": "Food- und Restaurantfotografie für Karte, Website und Social Media. Fine Dining, Gerichte und Produkte, im Restaurant oder am Set.",
+   "faq": [
+    "kosten",
+    "rechte"
+   ]
+  },
+  {
+   "slug": "film-musikvideo",
+   "name": "Film & Musikvideo",
+   "kurz": "Film",
+   "title": "Musikvideos und Formate mit Millionenreichweite – Jon Pride",
+   "desc": "Musikvideos und TV-Formate: Konzept, Dreh, Schnitt und Color Grading. Musikvideos mit über 9 Millionen Views, Formate für Sky Sport.",
+   "intro": "Musikvideos und Formate mit Millionenreichweite. Konzept, Dreh, Schnitt und Color Grading, vom Wohnmobil-Studio für Sky Sport bis zum Worship-Musikvideo.",
+   "faq": [
+    "unternehmen",
+    "agentur"
+   ]
+  },
+  {
+   "slug": "brand-social",
+   "name": "Brand & Social",
+   "kurz": "Social",
+   "title": "Content Creator für Marken: Reels, Social Clips und Formate – Jon Pride",
+   "desc": "Content für Marken und Kanäle: Reels, Social Clips und YouTube-Formate, unter anderem für McDonald's, den FC St. Pauli und AMPri.",
+   "intro": "Content für Marken und Kanäle: Reels, Social Clips und YouTube-Formate, unter anderem für McDonald's und den FC St. Pauli.",
+   "faq": [
+    "betreuung",
+    "rechte"
+   ]
+  }
+ ],
+ "faq": {
+  "unternehmen": [
+   "Was machst du für Unternehmen?",
+   "Firmenfotografie mit Mitarbeiter- und Teamporträts, Werbe- und Produktfotografie, Content-Produktion (Reels, Social Clips, UGC), laufendes Social-Media-Management sowie Video für Marken- und Musikprojekte. Einzeln buchbar oder als Paket, vom einzelnen Shooting bis zur laufenden Zusammenarbeit."
+  ],
+  "agentur": [
+   "Arbeitest du auch mit Agenturen zusammen?",
+   "Ja, sehr gern. Ich arbeite als ausführender Fotograf und Videograf nach eurem Briefing, füge mich in bestehende Abläufe ein und stimme mich auf Wunsch direkt mit eurem Endkunden ab. Marken wie Swarovski und Procter & Gamble haben mich auch direkt gebucht."
+  ],
+  "kosten": [
+   "Was kostet eine Produktion?",
+   "Das hängt vom Umfang ab: Shooting-Tage, Postproduktion, Anzahl der Motive und Nutzungsrechte. Nach einem kurzen Briefing bekommt ihr ein klares Angebot, transparent kalkuliert und ohne versteckte Kosten."
+  ],
+  "rechte": [
+   "Wie sind die Nutzungsrechte geregelt?",
+   "Nutzungsrechte werden pro Projekt vereinbart. Kanäle, Laufzeit und Umfang stehen im Angebot, so wisst ihr von Anfang an, was ihr mit den Inhalten machen dürft."
+  ],
+  "betreuung": [
+   "Übernimmst du auch laufende Betreuung?",
+   "Ja. Social-Media-Management biete ich als laufende Zusammenarbeit an: Planung, Produktion und Posting aus einer Hand, damit euer Kanal regelmäßig wächst."
+  ],
+  "einsatz": [
+   "Wo bist du im Einsatz?",
+   "Meine Basis ist Tostedt zwischen Hamburg und der Lüneburger Heide. Im Einsatz bin ich deutschlandweit und international, für Swarovski zum Beispiel in Paris, Zürich und auf Santorini."
+  ]
+ },
+ "startseite_faq": [
+  "unternehmen",
+  "agentur",
+  "kosten",
+  "rechte",
+  "betreuung",
+  "einsatz"
+ ],
+ "arbeiten": [
+  {
+   "slug": "swarovski",
+   "titel": "Swarovski",
+   "kunde": "Swarovski",
+   "kat": [
+    "kampagne-werbung"
+   ],
+   "meta": "Kampagne · 2019",
+   "zeile": "Paris Fashion Week, Santorini, Zürich",
+   "seite": true,
+   "kurz": "Paris Fashion Week, eine Kampagne auf Santorini, ein Video im Werk und Social Content in Zürich. Swarovski hat direkt gebucht, ohne Agentur.",
+   "steckbrief": [
+    [
+     "Kunde",
+     "Swarovski, direkt"
+    ],
+    [
+     "Zeitraum",
+     "bis 2019"
+    ],
+    [
+     "Orte",
+     "Paris, Santorini, Zürich"
+    ],
+    [
+     "Leistung",
+     "Foto und Video"
+    ]
+   ],
+   "text": [
+    "Swarovski hat mich direkt gebucht. Es gab keine Agentur dazwischen, alle Absprachen liefen ohne Umweg mit dem Team der Marke. Aus dem ersten Auftrag wurde eine Reihe von Produktionen in drei Ländern.",
+    [
+     "Paris Fashion Week",
+     "Dreimal war ich während der Paris Fashion Week für Swarovski im Einsatz. Zwei dieser Wochen fallen ins Jahr 2019: Ende Februar bis Anfang März und Ende September. Vor der Septemberwoche trafen sich die Fotografen in einer Galerie an der Rue du Faubourg Saint-Honoré, um die Content-Produktion für die Woche abzustimmen."
+    ],
+    [
+     "Kampagne auf Santorini",
+     "Im September 2019 ging es nach Santorini. Dort entstand eine Kampagne für Swarovski."
+    ],
+    [
+     "Video im Werk",
+     "Für Swarovski habe ich außerdem ein Celebration-Video im Werk der Marke gedreht."
+    ],
+    [
+     "Social-Kampagne in Zürich",
+     "In Zürich folgte eine Kampagne für die sozialen Kanäle."
+    ]
+   ],
+   "bilder": []
+  },
+  {
+   "slug": "business-travel",
+   "titel": "Business Travel",
+   "kat": [
+    "kampagne-werbung"
+   ],
+   "meta": "Kampagne",
+   "zeile": "Geschäftsreisende auf dem Weg zum Privatjet",
+   "bild": "w09"
+  },
+  {
+   "slug": "vw-tailgate-tour",
+   "titel": "VW Tailgate Tour",
+   "kunde": "Volkswagen",
+   "kat": [
+    "kampagne-werbung"
+   ],
+   "meta": "Volkswagen",
+   "zeile": "Markenvideo · Fußball",
+   "yt": "0hc1w_PqQBU"
+  },
+  {
+   "slug": "oral-b",
+   "titel": "Oral-B",
+   "kunde": "Procter & Gamble",
+   "kat": [
+    "kampagne-werbung"
+   ],
+   "meta": "P&G · 2018",
+   "zeile": "Digitale Kampagne, direkt für Procter & Gamble",
+   "seite": true,
+   "kurz": "Eine digitale Kampagne für Oral-B, direkt für Procter & Gamble. Location, Set, Licht, Fotografie und Bildbearbeitung kamen aus einer Hand.",
+   "steckbrief": [
+    [
+     "Kunde",
+     "Procter & Gamble, direkt"
+    ],
+    [
+     "Marke",
+     "Oral-B"
+    ],
+    [
+     "Zeitpunkt",
+     "August 2018"
+    ],
+    [
+     "Nutzung",
+     "Digitale Kampagne"
+    ],
+    [
+     "Mein Anteil",
+     "Location-Scouting, Set, Licht, Fotografie, Bildbearbeitung"
+    ]
+   ],
+   "text": [
+    "Procter & Gamble hat mich im August 2018 direkt für Oral-B gebucht, ohne Agentur dazwischen. Die Bilder waren für eine digitale Kampagne bestimmt.",
+    [
+     "Alles aus einer Hand",
+     "Ich habe die Produktion von Anfang bis Ende übernommen. Zuerst die Suche nach der passenden Location, dann der Aufbau des Sets und das Licht. Am Shootingtag habe ich fotografiert, ein Assistent hat mich am Set unterstützt. Die Bildbearbeitung lag danach ebenfalls bei mir."
+    ],
+    [
+     "Warum das hilft",
+     "Wer Location, Licht und Bearbeitung selbst verantwortet, weiß schon beim Scouting, wie das fertige Bild aussehen soll. Der Kunde hat einen Ansprechpartner statt mehrerer Dienstleister, die sich untereinander abstimmen müssen."
+    ]
+   ],
+   "bilder": []
+  },
+  {
+   "slug": "through-it-all",
+   "titel": "Through It All",
+   "kat": [
+    "film-musikvideo"
+   ],
+   "meta": "5,1 Mio. Views",
+   "zeile": "Spoken · Official Video · Musikvideo",
+   "yt": "3EJuROjO48Q"
+  },
+  {
+   "slug": "mcdonalds",
+   "titel": "McDonald's",
+   "kunde": "McDonald's",
+   "kat": [
+    "brand-social"
+   ],
+   "meta": "3,5 Mio. Views",
+   "zeile": "Happy-Meal-Bücher · Reel mit Mrs. Mama, Video und Ton",
+   "link": "https://www.instagram.com/reel/DRDKX23DEZb/",
+   "logo": "mcdonalds"
+  },
+  {
+   "slug": "fashion-heide",
+   "titel": "Fashion in der Heide",
+   "kat": [
+    "kampagne-werbung"
+   ],
+   "meta": "Editorial",
+   "zeile": "Lüneburger Heide im Gegenlicht",
+   "bild": "w10",
+   "start": false
+  },
+  {
+   "slug": "meine-11",
+   "titel": "Meine 11",
+   "kunde": "Sky Sport",
+   "kat": [
+    "film-musikvideo",
+    "brand-social"
+   ],
+   "meta": "Sky Sport · Levi's",
+   "zeile": "Die Playlist der Fußballstars",
+   "seite": true,
+   "kurz": "„Meine 11 – Die Playlist der Fußballstars“: Profis stellen ihre elf Lieblingssongs vor. Ausgestrahlt bei Sky Sport, Hauptsponsor Levi's. Bei M11 war ich erst Cutter, später Hauptvideograf.",
+   "steckbrief": [
+    [
+     "Format",
+     "Meine 11 – Die Playlist der Fußballstars"
+    ],
+    [
+     "Sender",
+     "Sky Sport News HD"
+    ],
+    [
+     "Hauptsponsor",
+     "Levi's"
+    ],
+    [
+     "Produktion",
+     "M11"
+    ],
+    [
+     "Mein Anteil",
+     "Schnitt, später Hauptkamera"
+    ],
+    [
+     "Gäste u. a.",
+     "Ridle Baku, Benjamin Henrichs, Vincenzo Grifo"
+    ]
+   ],
+   "text": [
+    "In „Meine 11“ sprechen Fußballprofis über die elf Songs, die sie geprägt haben. Über die Musik kommen Geschichten auf den Tisch, die in keinem Spielbericht stehen: Liebe, Glaube, Familie und persönliche Krisen. Moderiert hat Maik Nöcker, gedreht wurde in einem Wohnmobil, das zum Tonstudio umgebaut war.",
+    [
+     "Für Sky Sport, mit Levi's",
+     "Die Sendung lief bei Sky Sport News HD, Hauptsponsor war Levi's, produziert wurde sie von M11. Dort habe ich viele Folgen geschnitten und war später selbst Hauptvideograf. Vor der Kamera saßen unter anderem Ridle Baku, Benjamin Henrichs und Vincenzo Grifo."
+    ],
+    [
+     "Nähe auf engem Raum",
+     "Das Format lebt von Nähe. In einem Wohnmobil ist wenig Platz für Kamera, Licht und Ton, und trotzdem soll das Gespräch so entspannt wirken wie auf dem eigenen Sofa."
+    ]
+   ],
+   "quellen": [
+    [
+     "prisma.de: Meine 11 bei Sky",
+     "https://www.prisma.de/news/Meine-11-Naldo-vom-FC-Schalke-04-stellt-bei-Sky-Lieblingslieder-vor,20270435"
+    ]
+   ],
+   "bilder": []
+  },
+  {
+   "slug": "executive-portraet",
+   "titel": "Executive-Porträt",
+   "kat": [
+    "business-portraet"
+   ],
+   "meta": "Corporate",
+   "zeile": "Porträt am Empfang",
+   "bild": "w04"
+  },
+  {
+   "slug": "ampri-sea-devils",
+   "titel": "AMPri × Sea Devils",
+   "kunde": "AMPri",
+   "kat": [
+    "brand-social"
+   ],
+   "meta": "Brand Video",
+   "zeile": "AMPri × Hamburg Sea Devils · Sport",
+   "yt": "yLKTaERwMj4"
+  },
+  {
+   "slug": "hoeher",
+   "titel": "Höher",
+   "kat": [
+    "film-musikvideo"
+   ],
+   "meta": "2,6 Mio. Views",
+   "zeile": "feat. Juri Friesen · ICF Worship · Musikvideo",
+   "yt": "EdldcFUYWgQ"
+  },
+  {
+   "slug": "beauty-portraet",
+   "titel": "Beauty-Porträt",
+   "kat": [
+    "business-portraet"
+   ],
+   "meta": "Editorial",
+   "zeile": "Schwarz-Weiß im Gegenlicht",
+   "bild": "w01"
+  },
+  {
+   "slug": "fahrerportraet",
+   "titel": "Fahrerporträt",
+   "kat": [
+    "business-portraet"
+   ],
+   "meta": "Motorsport",
+   "zeile": "Phoenix Racing · Pressemappe",
+   "bild": "w03"
+  },
+  {
+   "slug": "fine-dining",
+   "titel": "Fine Dining",
+   "kat": [
+    "food"
+   ],
+   "meta": "Food",
+   "zeile": "Dessert mit Feigen und Heidelbeeren",
+   "bild": "w05"
+  },
+  {
+   "slug": "alles-tanzt",
+   "titel": "Alles tanzt",
+   "kat": [
+    "film-musikvideo"
+   ],
+   "meta": "686 Tsd. Views",
+   "zeile": "YADA Worship · Musikvideo",
+   "yt": "kF5wPkOyxiU"
+  }
+ ],
+ "bilder": {
+  "w01": "Beauty-Porträt einer Frau in Schwarz-Weiß im Gegenlicht",
+  "w03": "Rennfahrer im Phoenix-Racing-Overall, freigestellt für die Pressemappe",
+  "w04": "Executive-Porträt eines Mannes am Empfang eines Unternehmens",
+  "w05": "Dessert mit Feigen und Heidelbeeren, Food-Styling für ein Restaurant",
+  "w09": "Vier Geschäftsreisende mit Koffern auf dem Weg zu einem Privatjet",
+  "w10": "Model im orangefarbenen Kleid in der blühenden Lüneburger Heide im Gegenlicht",
+  "yt-0hc1w_PqQBU": "VW Tailgate Tour, Standbild aus dem Markenvideo",
+  "yt-3EJuROjO48Q": "Through It All, Standbild aus dem Musikvideo",
+  "yt-EdldcFUYWgQ": "Höher, Standbild aus dem Musikvideo",
+  "yt-kF5wPkOyxiU": "Alles tanzt, Standbild aus dem Musikvideo",
+  "yt-yLKTaERwMj4": "AMPri und Hamburg Sea Devils, Standbild aus dem Brand Video"
+ },
+ "kunden": [
+  "Swarovski",
+  "Procter & Gamble",
+  "Volkswagen",
+  "McDonald's",
+  "Sky Sport",
+  "Levi's",
+  "UBS",
+  "St. Pauli",
+  "Wella",
+  "LBS",
+  "DVAG",
+  "Top Hair"
+ ],
+ "zahlen": [
+  [
+   "15 Mio.+",
+   "Views auf Musikvideos, Reels und Formaten"
+  ],
+  [
+   "5,1 Mio.",
+   "Through It All, Spoken"
+  ],
+  [
+   "3 Länder",
+   "für Swarovski: Frankreich, Griechenland, Schweiz"
+  ],
+  [
+   "seit 2009",
+   "Fotografie und Film"
+  ]
+ ]
+}
