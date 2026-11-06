@@ -231,7 +231,7 @@ def kontakt():
     return """<section class="kontakt" id="kontakt">
   <div class="wrap kg">
     <div class="kl">
-      <h1 class="rv">Lass uns etwas machen, das auffällt.</h1>
+      <h1 class="rv">Projekt anfragen</h1>
       <p class="rv">Erzählt mir kurz von eurem Projekt. Ich melde mich innerhalb von zwei Werktagen.</p>
       <p class="rv kd2"><a href="mailto:me@jonpride.de">me@jonpride.de</a><br><a href="tel:+491623361352">0162 3361352</a></p>
     </div>
@@ -290,7 +290,7 @@ def startseite():
   <div class="wrap"><div class="ah"><h2 class="rv">Was ich <em>mache</em></h2><p class="lead rv">Jeder Bereich hat eigene Arbeiten und Antworten auf die häufigsten Fragen. Ansprechpartner bin immer ich.</p></div><div class="raster">{kacheln}</div></div>
 </section>
 <section class="ratgeber-teaser liste-start"><div class="wrap"><h2 class="rv">Ratgeber für Unternehmen</h2><div class="rgl">{rg}</div></div></section>
-<section class="band"><div class="wrap bg"><h2>Lass uns etwas machen, das auffällt.</h2><a class="btn schwarz" href="/kontakt/">Projekt anfragen</a></div></section>
+<section class="band"><div class="wrap bg"><h2>Eigenes Projekt im Kopf?</h2><a class="btn schwarz" href="/kontakt/">Projekt anfragen</a></div></section>
 """
     return h + fuss()
 
