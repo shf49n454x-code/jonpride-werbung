@@ -50,6 +50,11 @@
 - Laut Jon: Porträt des Geschäftsführers für eine Zeitschrift und die Homepage
 - Entscheidung: Bilder nicht zeigen (Jon findet sie nicht stark), keine Projektseite; UBS nur als Name in der Kundenleiste und im Text der Kategorie Business & Porträt
 
+## Robert Stolz · eat. share. live.
+- Laut Jon: Kochfotos für Robert Stolz („Eat, Share, Live“)
+- Recherche: Restaurant „Robert Stolz – eat. share. live.“ in Plön, Gäste an zwei Eichentischen mit Blick in die offene Küche, Kochschule; seit Herbst 2018 dort (Quelle: robertstolz.de, stevanpaul.de)
+- Offen: welche Bilder, Jahr, Nutzung (Website, Social, Buch?)
+
 ## Offen
-- Cinemaxx, Jana Highholder, Robert Stolz (Food), DAR/Sir Pew Pew (Zahlen)
+- Cinemaxx, Jana Highholder, DAR/Sir Pew Pew (Zahlen)
 - Weitere Kunden aus der alten Seite ohne Fakten: Wella, LBS, DVAG, Top Hair; Musikvideo „Through It All“ (Spoken, 5,1 Mio. Views laut alter Seite)
