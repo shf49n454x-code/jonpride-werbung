@@ -25,6 +25,12 @@
 - Jons Anteil: komplett Video und Ton (bestätigt)
 - Offen: Jahr, Schreibweise/Handle von „Mrs. Mama“, ob der Auftrag über McDonald's, eine Agentur oder die Influencerin kam
 
+## Sky Sport · „Meine 11 – Die Playlist der Fußballstars“ (für M11)
+- Laut Jon: Auftrag für M11, Format „Meine 11 – Die Playlist der Fußballstars“
+- Gäste laut Jon: Ridle Baku, Benjamin Henrichs, Vincenzo Grifo, „Radetzky“ (vermutlich Lukas Hradecky), ein Spieler „Freiburg → Monaco“ (Name offen)
+- Recherche, nicht von Jon bestätigt: Talkformat seit 2017 auf Sky Sport News HD, Moderator Maik Nöcker; Profis stellen ihre elf Lieblingssongs vor, gedreht in einem zum Tonstudio umgebauten Wohnmobil; weitere Gäste u. a. Naldo, Lewis Holtby, Matthias Ostrzolek, Kevin Volland, Julian Weigl; ab Nov. 2020 auch bei SPORT1 (Quellen: prisma.de, sport1.de)
+- Offen: Jons Rolle (Kamera, Ton, Schnitt, Teamleitung?), Staffeln/Jahre, Satz „Du spielst nochmal mit deinem Freund“ (zweites Format?)
+
 ## Offen
 - Cinemaxx, Jana Highholder, Robert Stolz (Food), DAR/Sir Pew Pew (Zahlen), VW
-- Weitere Kunden aus der alten Seite ohne Fakten: Levi's, Sky Sport, UBS, St. Pauli, Wella, LBS, DVAG, Top Hair; Musikvideo „Through It All“ (Spoken, 5,1 Mio. Views laut alter Seite)
+- Weitere Kunden aus der alten Seite ohne Fakten: Levi's, UBS, St. Pauli, Wella, LBS, DVAG, Top Hair; Musikvideo „Through It All“ (Spoken, 5,1 Mio. Views laut alter Seite)
