@@ -5,7 +5,7 @@ from PIL import Image
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 PUB = ROOT / "public"
-SITE = "https://jonandjoystudios.com"
+SITE = "https://werbung.jonpride.de"
 STAND = "06.11.2026"
 MAIL = "me@jonpride.de"
 TEL = "0162 3361352"
@@ -154,14 +154,14 @@ footer nav{display:flex;flex-wrap:wrap;gap:8px 24px}footer a{text-decoration:non
 """
 
 def logo():
-    return '<a class="logo" href="/" aria-label="Jon &amp; Joy Studios, zur Startseite">Jon<em>&amp;</em>Joy Studios</a>'
+    return '<a class="logo" href="/" aria-label="Jon Pride, zur Startseite">Jon<em>&amp;</em>Joy Studios</a>'
 
 def head(title, desc, path, ld, extra=""):
     url = SITE + path
     return f"""<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{html.escape(title)}</title><meta name="description" content="{html.escape(desc)}"><link rel="canonical" href="{url}">
 <meta property="og:type" content="website"><meta property="og:title" content="{html.escape(title)}"><meta property="og:description" content="{html.escape(desc)}"><meta property="og:url" content="{url}"><meta property="og:image" content="{SITE}/img/w04-1600.jpg"><meta property="og:locale" content="de_DE">
-<meta name="theme-color" content="#000000"><link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#000000"><link rel="icon" href="/assets/logo.svg" type="image/svg+xml">
 <link rel="preload" href="/fonts/archivo-variable.woff2" as="font" type="font/woff2" crossorigin>
 <style>{CSS}</style>{extra}
 <script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script></head><body>
@@ -170,10 +170,10 @@ def head(title, desc, path, ld, extra=""):
 <main id="inhalt">"""
 
 def foot():
-    return f"""</main><footer><div class="wrap"><div>© 2026 Jon &amp; Joy Studios</div>
+    return f"""</main><footer><div class="wrap"><div>© 2026 Jon Pride</div>
 <nav aria-label="Fußnavigation"><a href="/impressum/">Impressum</a><a href="/datenschutz/">Datenschutz</a><a href="https://jonpride.de">Hochzeiten: jonpride.de</a></nav></div></footer></body></html>"""
 
-ORG = {"@type": "ProfessionalService", "@id": SITE + "/#org", "name": "Jon & Joy Studios", "url": SITE + "/",
+ORG = {"@type": "ProfessionalService", "@id": SITE + "/#org", "name": "Jon Pride", "url": SITE + "/",
        "description": "Business-Porträts, Werbe- und Produktfotografie für Unternehmen in Hamburg, im Landkreis Harburg und in der Lüneburger Heide.",
        "email": MAIL, "telephone": TEL_INT, "image": SITE + "/img/w04-1600.jpg",
        "address": {"@type": "PostalAddress", "addressLocality": "Tostedt", "postalCode": "21255", "addressCountry": "DE"},
@@ -199,7 +199,7 @@ KONTAKT = f"""<section class="dark contact" id="kontakt" aria-labelledby="kontak
 
 # ---------- Startseite ----------
 FAQ_START = [
-    ("Was fotografiert Jon & Joy Studios?", "Business-Porträts für Team, Führung und Website sowie Werbe- und Produktfotos für Kampagnen, Verpackungen, Speisekarten und Social Media. Hochzeiten fotografiert Jan Stolz unter dem Namen JON PRIDE auf jonpride.de."),
+    ("Was fotografiert Jon Pride?", "Business-Porträts für Team, Führung und Website sowie Werbe- und Produktfotos für Kampagnen, Verpackungen, Speisekarten und Social Media. Hochzeiten fotografiert Jan Stolz unter dem Namen JON PRIDE auf jonpride.de."),
     ("Kommen Sie zu uns ins Unternehmen?", "Ja. Für Porträts bringe ich ein mobiles Studio mit Licht und Hintergrund mit. Ein freier Raum von etwa vier mal vier Metern reicht. Produkte fotografiere ich vor Ort oder im Studio in Tostedt."),
     ("Was kostet ein Shooting?", "Das hängt von Dauer, Anzahl der Personen oder Motive und den Nutzungsrechten ab. Nach einem kurzen Briefing bekommen Sie ein schriftliches Angebot mit Festpreis, ohne nachträgliche Posten."),
     ("Wie sind die Nutzungsrechte geregelt?", "Kanäle, Laufzeit und Umfang stehen im Angebot. Für Website, Pressemappe und Social Media ist die Nutzung in der Regel zeitlich unbegrenzt enthalten. Anzeigen und Kampagnen werden gesondert vereinbart."),
@@ -208,7 +208,7 @@ FAQ_START = [
 ]
 
 def startseite():
-    ld = {"@context": "https://schema.org", "@graph": [ORG, PERSON, {"@type": "WebSite", "@id": SITE + "/#website", "url": SITE + "/", "name": "Jon & Joy Studios", "inLanguage": "de", "publisher": {"@id": SITE + "/#org"}}, faq_ld(FAQ_START)]}
+    ld = {"@context": "https://schema.org", "@graph": [ORG, PERSON, {"@type": "WebSite", "@id": SITE + "/#website", "url": SITE + "/", "name": "Jon Pride", "inLanguage": "de", "publisher": {"@id": SITE + "/#org"}}, faq_ld(FAQ_START)]}
     LAYOUT = [("w06","xl"),("w01","m"),("w09","s"),("w08","s"),("w10","s"),("w07","m"),("w12","xl"),("w05","s"),("w11","s"),("w03","s")]
     SZ = {"xl":"(min-width:760px) 58vw, 100vw","m":"(min-width:760px) 42vw, 100vw","s":"(min-width:760px) 33vw, 100vw"}
     works = "".join(f'<figure class="{c}">{img(n, SZ[c])}<figcaption><b class="mono">{BILDER[n][1]}</b><span class="mono">{BILDER[n][2]}</span></figcaption></figure>' for n, c in LAYOUT)
@@ -252,7 +252,7 @@ def startseite():
 <p class="mono" style="color:var(--ink-2);margin:0 0 20px">Fragen</p>
 <h2 id="faq-t">Häufige <span class="ser">Fragen.</span></h2>{faq_html(FAQ_START)}</div></section>
 {KONTAKT}"""
-    return head("Jon & Joy Studios · Business-Porträts & Werbefotografie Hamburg", "Business-Porträts, Werbe- und Produktfotografie für Unternehmen in Hamburg, im Landkreis Harburg und in der Lüneburger Heide. Festpreis nach kurzem Briefing.", "/", ld) + body + foot()
+    return head("Jon Pride · Business-Porträts & Werbefotografie Hamburg", "Business-Porträts, Werbe- und Produktfotografie für Unternehmen in Hamburg, im Landkreis Harburg und in der Lüneburger Heide. Festpreis nach kurzem Briefing.", "/", ld) + body + foot()
 
 # ---------- Unterseiten ----------
 def unterseite(path, title, desc, h1, kurz, sections_html, faqs, galerie, name):
@@ -306,15 +306,158 @@ WERBUNG_SECTIONS = """
 
 def recht(path, title, inner):
     ld = {"@context": "https://schema.org", "@graph": [ORG]}
-    return head(title + " · Jon & Joy Studios", title + " von Jon & Joy Studios.", path, ld, '<meta name="robots" content="noindex">') + f'<section class="page-hero"><div class="wrap legal"><h1 style="font-size:clamp(36px,5vw,56px)">{title}</h1>{inner}</div></section>' + foot()
+    return head(title + " · Jon Pride", title + " von Jon Pride.", path, ld, '<meta name="robots" content="noindex">') + f'<section class="page-hero"><div class="wrap legal"><h1 style="font-size:clamp(36px,5vw,56px)">{title}</h1>{inner}</div></section>' + foot()
 
-IMPRESSUM = f"""<h2>Angaben gemäß § 5 DDG</h2><p>Jon &amp; Joy Studios<br>Jan Stolz<br>Schützenstraße 10<br>21255 Tostedt<br>Deutschland</p>
+IMPRESSUM = f"""<h2>Angaben gemäß § 5 DDG</h2><p>Jon Pride<br>Jan Stolz<br>Schützenstraße 10<br>21255 Tostedt<br>Deutschland</p>
 <h2>Kontakt</h2><p>E-Mail: <a href="mailto:{MAIL}">{MAIL}</a><br>Telefon: {TEL}</p>
 <h2>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2><p>Jan Stolz, Anschrift wie oben.</p>
 <h2>Verbraucherstreitbeilegung</h2><p>Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>"""
 
 DATENSCHUTZ = f"""<p class="mono stand">Stand: {STAND}</p>
-<h2>1. Verantwortlicher</h2><p>Jon &amp; Joy Studios, Inhaber Jan Stolz, Schützenstraße 10, 21255 Tostedt. E-Mail: <a href="mailto:{MAIL}">{MAIL}</a></p>
+<h2>1. Verantwortlicher</h2><p>Jon Pride, Inhaber Jan Stolz, Schützenstraße 10, 21255 Tostedt. E-Mail: <a href="mailto:{MAIL}">{MAIL}</a></p>
+<h2>2. Hosting</h2><p>Diese Website wird über Cloudflare Pages der Cloudflare, Inc. (101 Townsend St, San Francisco, CA 94107, USA) ausgeliefert. Beim Aufruf verarbeitet Cloudflare technisch notwendige Daten, darunter Ihre IP-Adresse. Eine Verarbeitung in den USA ist nicht ausgeschlossen. Cloudflare ist unter dem EU-US Data Privacy Framework zertifiziert, ergänzend gelten die EU-Standardvertragsklauseln. Rechtsgrundlage ist unser berechtigtes Interesse an einer sicheren und schnellen Bereitstellung (Art. 6 Abs. 1 lit. f DSGVO). Mit Cloudflare besteht ein Vertrag zur Auftragsverarbeitung.</p>
+<h2>3. Server-Logfiles</h2><p>Erhoben werden Browsertyp und -version, Betriebssystem, Referrer-URL, Uhrzeit der Anfrage und IP-Adresse. Die Daten dienen der technischen Sicherheit und werden nicht mit anderen Daten zusammengeführt.</p>
+<h2>4. Keine Cookies, kein Tracking</h2><p>Diese Website setzt keine Cookies und lädt keine Analyse- oder Werbedienste. Schriften und Bilder liegen auf unserem eigenen Server.</p><h2>5. Anfrageformular</h2><p>Das Anfrageformular schickt Ihre Angaben an das Formular von jonpride.de (ebenfalls Jan Stolz, Cloudflare Pages). Dort werden sie verschlüsselt zwischengespeichert, auf unseren eigenen Rechner abgeholt und danach auf dem Server gelöscht. Rechtsgrundlage ist die Anbahnung eines Vertrags (Art. 6 Abs. 1 lit. b DSGVO).</p><h2>6. YouTube-Videos</h2><p>Videos werden erst geladen, wenn Sie auf ein Vorschaubild klicken. Dann wird eine Verbindung zu YouTube (Google Ireland Ltd.) im erweiterten Datenschutzmodus (youtube-nocookie.com) hergestellt. Dabei können Daten in die USA übertragen werden. Rechtsgrundlage ist Ihre Einwilligung durch den Klick (Art. 6 Abs. 1 lit. a DSGVO).</p>
+<h2>7. Kontakt per E-Mail oder Telefon</h2><p>Wenn Sie uns schreiben oder anrufen, verarbeiten wir Ihre Angaben, um Ihre Anfrage zu beantworten und ein Angebot zu erstellen (Art. 6 Abs. 1 lit. b DSGVO). Wir löschen die Daten, wenn sie dafür nicht mehr nötig sind und keine gesetzlichen Aufbewahrungsfristen bestehen.</p>
+<h2>8. Ihre Rechte</h2><p>Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch. Außerdem können Sie sich bei einer Datenschutz-Aufsichtsbehörde beschweren, zum Beispiel bei der Landesbeauftragten für den Datenschutz Niedersachsen.</p>"""
+
+PAGES = {}
+PERSON = {"@type": "Person", "@id": SITE + "/#jan", "name": "Jan Stolz", "alternateName": "Jon Pride", "jobTitle": "Fotograf", "worksFor": {"@id": SITE + "/#org"}, "url": "https://jonpride.de"}
+
+def faq_ld(faqs):
+    return {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in faqs]}
+
+def faq_html(faqs):
+    return '<div class="faq">' + "".join(f"<details><summary>{html.escape(q)}</summary><p>{html.escape(a)}</p></details>" for q, a in faqs) + "</div>"
+
+def crumbs_ld(items):
+    return {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": i + 1, "name": n, "item": SITE + p} for i, (n, p) in enumerate(items)]}
+
+KONTAKT = f"""<section class="dark contact" id="kontakt" aria-labelledby="kontakt-t"><div class="wrap"><div class="grid">
+<div><p class="mono" style="color:var(--on-deep-2);margin:0 0 24px">Kontakt</p><h2 id="kontakt-t">Erzählen Sie kurz, <span class="ser">was Sie brauchen.</span></h2>
+<p class="lead" style="margin:24px 0 32px">Wofür sind die Bilder, wie viele Personen oder Motive, bis wann? Sie bekommen innerhalb von zwei Werktagen ein Angebot mit Preis und Nutzungsrechten.</p>
+<a class="big" href="mailto:{MAIL}?subject=Anfrage%20Fotoproduktion">{MAIL}</a><p style="margin:28px 0 0"><a class="btn" style="background:var(--on-deep);border-color:var(--on-deep);color:var(--deep);font-weight:700" href="mailto:{MAIL}?subject=Anfrage%20Fotoproduktion">Anfrage per Mail</a></p></div>
+<dl><div><dt class="mono">Telefon</dt><dd><a href="tel:{TEL_INT}">{TEL}</a></dd></div><div><dt class="mono">Studio</dt><dd>Tostedt, zwischen Hamburg und der Lüneburger Heide</dd></div><div><dt class="mono">Einsatz</dt><dd>Bei Ihnen vor Ort, in ganz Norddeutschland</dd></div></dl>
+</div></div></section>"""
+
+# ---------- Startseite ----------
+FAQ_START = [
+    ("Was fotografiert Jon Pride?", "Business-Porträts für Team, Führung und Website sowie Werbe- und Produktfotos für Kampagnen, Verpackungen, Speisekarten und Social Media. Hochzeiten fotografiert Jan Stolz unter dem Namen JON PRIDE auf jonpride.de."),
+    ("Kommen Sie zu uns ins Unternehmen?", "Ja. Für Porträts bringe ich ein mobiles Studio mit Licht und Hintergrund mit. Ein freier Raum von etwa vier mal vier Metern reicht. Produkte fotografiere ich vor Ort oder im Studio in Tostedt."),
+    ("Was kostet ein Shooting?", "Das hängt von Dauer, Anzahl der Personen oder Motive und den Nutzungsrechten ab. Nach einem kurzen Briefing bekommen Sie ein schriftliches Angebot mit Festpreis, ohne nachträgliche Posten."),
+    ("Wie sind die Nutzungsrechte geregelt?", "Kanäle, Laufzeit und Umfang stehen im Angebot. Für Website, Pressemappe und Social Media ist die Nutzung in der Regel zeitlich unbegrenzt enthalten. Anzeigen und Kampagnen werden gesondert vereinbart."),
+    ("Arbeiten Sie mit Agenturen zusammen?", "Ja. Ich fotografiere nach Ihrem Briefing, arbeite mit Ihrem Art Director und stimme mich auf Wunsch direkt mit dem Endkunden ab."),
+    ("Wie schnell sind die Bilder fertig?", "Eine Vorauswahl gibt es meist am Folgetag. Die bearbeiteten Bilder liefere ich innerhalb von fünf Werktagen in einer Online-Galerie, in Druck- und Webgröße."),
+]
+
+def startseite():
+    ld = {"@context": "https://schema.org", "@graph": [ORG, PERSON, {"@type": "WebSite", "@id": SITE + "/#website", "url": SITE + "/", "name": "Jon Pride", "inLanguage": "de", "publisher": {"@id": SITE + "/#org"}}, faq_ld(FAQ_START)]}
+    LAYOUT = [("w06","xl"),("w01","m"),("w09","s"),("w08","s"),("w10","s"),("w07","m"),("w12","xl"),("w05","s"),("w11","s"),("w03","s")]
+    SZ = {"xl":"(min-width:760px) 58vw, 100vw","m":"(min-width:760px) 42vw, 100vw","s":"(min-width:760px) 33vw, 100vw"}
+    works = "".join(f'<figure class="{c}">{img(n, SZ[c])}<figcaption><b class="mono">{BILDER[n][1]}</b><span class="mono">{BILDER[n][2]}</span></figcaption></figure>' for n, c in LAYOUT)
+    kunden = "".join(f"<span>{k}</span>" for k in ["Swarovski", "Volkswagen", "Levi’s", "P&amp;G", "McDonald’s", "Sky Sport", "UBS", "FC St. Pauli", "Wella", "LBS", "DVAG", "Phoenix Racing"])
+    body = f"""
+<section class="hero"><div class="wrap"><div class="grid">
+<div><p class="mono eyebrow">Business- &amp; Werbefotografie · Hamburg</p>
+<h1>Bilder, die aussehen wie <span class="ser">Ihr Unternehmen.</span></h1>
+<p class="lead">Business-Porträts für Team und Führung, Werbe- und Produktfotos für Kampagnen. Fotografiert von Jan Stolz, Fotograf seit 2009, für Unternehmen von der Praxis bis zum Konzern.</p>
+<div class="actions"><a class="btn solid" href="#kontakt">Shooting anfragen</a><a class="btn ghost" href="#arbeiten">Arbeiten ansehen</a></div></div>
+<figure>{img("w04", "(min-width:900px) 45vw, 100vw", eager=True)}<figcaption class="mono">Executive-Porträt · Corporate</figcaption></figure>
+</div></div></section>
+
+<section style="padding-top:0" aria-labelledby="leistungen-t"><div class="wrap">
+<p class="mono" style="color:var(--ink-2);margin:0 0 20px">Leistungen</p>
+<h2 id="leistungen-t">Zwei Dinge, <span class="ser">richtig gemacht.</span></h2>
+<div class="two">
+<a class="card" href="/business-portraets/">{img("w08", "(min-width:760px) 50vw, 100vw", cls="top")}<div class="txt"><h3>Business-Porträts</h3><p>Mitarbeiter-, Team- und Vorstandsfotos in einheitlichem Look. Mit mobilem Studio bei Ihnen im Unternehmen, für Website, LinkedIn und Pressemappe.</p><span class="more">Mehr zu Business-Porträts →</span></div></a>
+<a class="card" href="/werbefotografie/">{img("w09", "(min-width:760px) 50vw, 100vw")}<div class="txt"><h3>Werbe- &amp; Produktfotografie</h3><p>Kampagnen, Produkte, Food und Imagebilder. Vom Konzept über Location und Styling bis zum fertigen Motiv für Anzeige, Verpackung und Social Media.</p><span class="more">Mehr zur Werbefotografie →</span></div></a>
+</div></div></section>
+
+<section class="dark" id="arbeiten" aria-labelledby="arbeiten-t"><div class="wrap">
+<p class="mono" style="color:var(--on-deep-2);margin:0 0 20px">Arbeiten</p>
+<h2 id="arbeiten-t">Ausgewählte <span class="ser">Arbeiten.</span></h2>
+<div class="works">{works}</div></div></section>
+
+<section aria-labelledby="kunden-t"><div class="wrap">
+<p class="mono" style="color:var(--ink-2);margin:0 0 20px">Kunden</p>
+<h2 id="kunden-t">Für wen ich <span class="ser">fotografiert habe.</span></h2>
+<div class="clients" role="list">{kunden.replace('<span>', '<span role="listitem">')}</div>
+<blockquote class="quote"><p>„Sehr netter Kontakt, super Bilder für den geschäftlichen Bereich! Tolle Beratung und viele Möglichkeiten, was wir zusätzlich noch realisieren könnten.“</p><cite class="mono">Philipp Timm · Google-Rezension</cite></blockquote>
+</div></section>
+
+<section style="background:var(--paper-2)" aria-labelledby="ablauf-t"><div class="wrap">
+<p class="mono" style="color:var(--ink-2);margin:0 0 20px">Ablauf</p>
+<h2 id="ablauf-t">Vom Briefing <span class="ser">zum fertigen Bild.</span></h2>
+<ol class="steps"><li><h3>Briefing</h3><p>15 Minuten am Telefon: wofür, wie viele, bis wann.</p></li><li><h3>Angebot</h3><p>Schriftlich, mit Festpreis und Nutzungsrechten.</p></li><li><h3>Shooting</h3><p>Bei Ihnen vor Ort oder im Studio, ohne Leerlauf für Ihr Team.</p></li><li><h3>Lieferung</h3><p>Bearbeitete Bilder in fünf Werktagen, in Web- und Druckgröße.</p></li></ol>
+</div></section>
+
+<section style="padding-top:0" aria-labelledby="faq-t"><div class="wrap">
+<p class="mono" style="color:var(--ink-2);margin:0 0 20px">Fragen</p>
+<h2 id="faq-t">Häufige <span class="ser">Fragen.</span></h2>{faq_html(FAQ_START)}</div></section>
+{KONTAKT}"""
+    return head("Jon Pride · Business-Porträts & Werbefotografie Hamburg", "Business-Porträts, Werbe- und Produktfotografie für Unternehmen in Hamburg, im Landkreis Harburg und in der Lüneburger Heide. Festpreis nach kurzem Briefing.", "/", ld) + body + foot()
+
+# ---------- Unterseiten ----------
+def unterseite(path, title, desc, h1, kurz, sections_html, faqs, galerie, name):
+    ld = {"@context": "https://schema.org", "@graph": [ORG, PERSON,
+          {"@type": "Service", "name": name, "provider": {"@id": SITE + "/#org"}, "areaServed": ORG["areaServed"], "url": SITE + path},
+          crumbs_ld([("Startseite", "/"), (name, path)]), faq_ld(faqs)]}
+    gal = "".join(img(n, "(min-width:760px) 33vw, 50vw") for n in galerie)
+    body = f"""
+<section class="page-hero"><div class="wrap">
+<nav class="crumbs mono" aria-label="Brotkrumen"><a href="/">Startseite</a> / {name}</nav>
+<h1>{h1}</h1>
+<div class="answer"><p class="lead" style="color:var(--ink)">{kurz}</p></div>
+<div class="gallery">{gal}</div>
+<p class="mono stand">Stand: {STAND} · Jan Stolz, Fotograf seit 2009</p>
+</div></section>
+{sections_html}
+<section style="padding-top:0" aria-labelledby="faq-t"><div class="wrap"><h2 id="faq-t">Häufige <span class="ser">Fragen.</span></h2>{faq_html(faqs)}</div></section>
+{KONTAKT}"""
+    return head(title, desc, path, ld) + body + foot()
+
+FAQ_PORTRAET = [
+    ("Wie lange dauert ein Porträt pro Person?", "Etwa zehn Minuten. Mit Aufbau und Abbau rechne ich bei 20 Personen mit einem halben Tag, ohne dass jemand lange warten muss."),
+    ("Brauchen wir einen Raum mit besonderem Licht?", "Nein. Ich bringe Licht und Hintergrund mit. Ein freier Raum von etwa vier mal vier Metern genügt, Tageslicht ist nicht nötig."),
+    ("Können neue Mitarbeiter später im gleichen Look fotografiert werden?", "Ja. Licht, Abstand und Hintergrund dokumentiere ich beim ersten Termin. So passen spätere Porträts genau zu den bisherigen."),
+    ("Wer sucht die Bilder aus?", "Jede Person wählt in einer Online-Galerie ihr Lieblingsbild selbst aus. Auf Wunsch übernehme ich die Vorauswahl."),
+    ("Wird retuschiert?", "Ja, natürlich und zurückhaltend: Hautunreinheiten, Fusseln, Haarsträhnen. Die Person bleibt erkennbar, Gesichtsformen verändere ich nicht."),
+]
+PORTRAET_SECTIONS = """
+<section aria-labelledby="was-t"><div class="wrap split">
+<div class="prose"><h2 id="was-t">Was Sie <span class="ser">bekommen.</span></h2>
+<ul><li>Einheitlicher Look für das ganze Team, auf Wunsch passend zu Ihrem Corporate Design</li><li>Mobiles Studio mit Licht und Hintergrund bei Ihnen im Unternehmen</li><li>Auswahl in einer Online-Galerie, jede Person wählt selbst</li><li>Natürliche Retusche, Lieferung in fünf Werktagen</li><li>Formate für Website, LinkedIn, Pressemappe und Druck</li></ul></div>
+<div class="prose"><h2>Für wen <span class="ser">es passt.</span></h2>
+<p>Für Unternehmen, Kanzleien, Praxen und Agenturen, die auf Website und LinkedIn ein einheitliches Bild abgeben wollen. Ebenso für Geschäftsführung und Vorstand, die für Presse, Geschäftsbericht oder Vortrag ein Porträt brauchen.</p>
+<p>Für größere Bildwelten mit Arbeitssituationen, Räumen und Produkten gibt es die <a href="/werbefotografie/">Werbe- und Imagefotografie</a>. Hochzeiten fotografiere ich auf <a href="https://jonpride.de">jonpride.de</a>.</p></div>
+</div></section>"""
+
+FAQ_WERBUNG = [
+    ("Übernehmen Sie auch Konzept, Location und Styling?", "Ja. Auf Wunsch entwickle ich die Bildidee, suche Location und Models und organisiere Styling und Requisiten. Alternativ arbeite ich nach dem Briefing Ihrer Agentur."),
+    ("Fotografieren Sie Produkte freigestellt?", "Ja, sowohl freigestellt auf Weiß für Shop und Katalog als auch inszeniert für Anzeigen und Social Media."),
+    ("Machen Sie Food-Fotografie für Restaurants?", "Ja. Für Speisekarten, Website und Social Media fotografiere ich direkt in Ihrer Küche, wenn die Gerichte frisch angerichtet sind."),
+    ("Was kostet eine Produktion?", "Das richtet sich nach Shooting-Tagen, Anzahl der Motive, Aufwand für Location und Styling sowie den Nutzungsrechten. Nach dem Briefing bekommen Sie ein schriftliches Angebot mit Festpreis."),
+]
+WERBUNG_SECTIONS = """
+<section aria-labelledby="was-t"><div class="wrap split">
+<div class="prose"><h2 id="was-t">Was ich <span class="ser">fotografiere.</span></h2>
+<ul><li>Kampagnen und Imagebilder mit Models, Team oder Kunden</li><li>Produkte freigestellt und inszeniert, Verpackung und Packshots</li><li>Food und Getränke für Gastronomie und Hersteller</li><li>Events und Firmenfeiern als Bildstrecke für Presse und Social Media</li><li>Künstler und Bands für Presse und Streaming-Dienste</li></ul></div>
+<div class="prose"><h2>Wie <span class="ser">gearbeitet wird.</span></h2>
+<p>Am Anfang steht die Frage, wo das Bild laufen soll. Eine Anzeige braucht anderes Format und andere Freiflächen als ein Instagram-Post. Daraus folgen Motive, Licht und Location.</p>
+<p>Fotografiert wird mit Profi-Licht und Tethering, damit Sie die Bilder am Set direkt am Bildschirm sehen und freigeben. Für Porträts Ihres Teams gibt es die <a href="/business-portraets/">Business-Porträts</a>, die <a href="/#arbeiten">Arbeiten</a> zeigen weitere Beispiele.</p></div>
+</div></section>"""
+
+def recht(path, title, inner):
+    ld = {"@context": "https://schema.org", "@graph": [ORG]}
+    return head(title + " · Jon Pride", title + " von Jon Pride.", path, ld, '<meta name="robots" content="noindex">') + f'<section class="page-hero"><div class="wrap legal"><h1 style="font-size:clamp(36px,5vw,56px)">{title}</h1>{inner}</div></section>' + foot()
+
+IMPRESSUM = f"""<h2>Angaben gemäß § 5 DDG</h2><p>Jon Pride<br>Jan Stolz<br>Schützenstraße 10<br>21255 Tostedt<br>Deutschland</p>
+<h2>Kontakt</h2><p>E-Mail: <a href="mailto:{MAIL}">{MAIL}</a><br>Telefon: {TEL}</p>
+<h2>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2><p>Jan Stolz, Anschrift wie oben.</p>
+<h2>Verbraucherstreitbeilegung</h2><p>Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>"""
+
+DATENSCHUTZ = f"""<p class="mono stand">Stand: {STAND}</p>
+<h2>1. Verantwortlicher</h2><p>Jon Pride, Inhaber Jan Stolz, Schützenstraße 10, 21255 Tostedt. E-Mail: <a href="mailto:{MAIL}">{MAIL}</a></p>
 <h2>2. Hosting</h2><p>Diese Website wird über Cloudflare Pages der Cloudflare, Inc. (101 Townsend St, San Francisco, CA 94107, USA) ausgeliefert. Beim Aufruf verarbeitet Cloudflare technisch notwendige Daten, darunter Ihre IP-Adresse. Eine Verarbeitung in den USA ist nicht ausgeschlossen. Cloudflare ist unter dem EU-US Data Privacy Framework zertifiziert, ergänzend gelten die EU-Standardvertragsklauseln. Rechtsgrundlage ist unser berechtigtes Interesse an einer sicheren und schnellen Bereitstellung (Art. 6 Abs. 1 lit. f DSGVO). Mit Cloudflare besteht ein Vertrag zur Auftragsverarbeitung.</p>
 <h2>3. Server-Logfiles</h2><p>Erhoben werden Browsertyp und -version, Betriebssystem, Referrer-URL, Uhrzeit der Anfrage und IP-Adresse. Die Daten dienen der technischen Sicherheit und werden nicht mit anderen Daten zusammengeführt.</p>
 <h2>4. Keine Cookies, kein Tracking</h2><p>Diese Website setzt keine Cookies und lädt keine Analyse- oder Werbedienste. Schriften und Bilder liegen auf unserem eigenen Server.</p><h2>5. Anfrageformular</h2><p>Das Anfrageformular schickt Ihre Angaben an das Formular von jonpride.de (ebenfalls Jan Stolz, Cloudflare Pages). Dort werden sie verschlüsselt zwischengespeichert, auf unseren eigenen Rechner abgeholt und danach auf dem Server gelöscht. Rechtsgrundlage ist die Anbahnung eines Vertrags (Art. 6 Abs. 1 lit. b DSGVO).</p><h2>6. YouTube-Videos</h2><p>Videos werden erst geladen, wenn Sie auf ein Vorschaubild klicken. Dann wird eine Verbindung zu YouTube (Google Ireland Ltd.) im erweiterten Datenschutzmodus (youtube-nocookie.com) hergestellt. Dabei können Daten in die USA übertragen werden. Rechtsgrundlage ist Ihre Einwilligung durch den Klick (Art. 6 Abs. 1 lit. a DSGVO).</p>
@@ -331,13 +474,13 @@ for path, content in PAGES.items():
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(content)
 
-nf = head("Seite nicht gefunden · Jon & Joy Studios", "Diese Seite gibt es nicht.", "/404", {"@context": "https://schema.org", "@graph": [ORG]}, '<meta name="robots" content="noindex">')
+nf = head("Seite nicht gefunden · Jon Pride", "Diese Seite gibt es nicht.", "/404", {"@context": "https://schema.org", "@graph": [ORG]}, '<meta name="robots" content="noindex">')
 (PUB / "404.html").write_text(nf + '<section class="page-hero"><div class="wrap"><h1>Diese Seite <span class="ser">gibt es nicht.</span></h1><p class="lead" style="margin:24px 0 32px">Vielleicht hilft einer dieser Wege weiter.</p><a class="btn solid" href="/">Zur Startseite</a></div></section>' + foot())
 
 indexiert = ["/"]
 (PUB / "sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + "".join(f"<url><loc>{SITE}{p}</loc><lastmod>2026-11-06</lastmod></url>\n" for p in indexiert) + "</urlset>\n")
 (PUB / "robots.txt").write_text(f"User-agent: *\nAllow: /\n\nSitemap: {SITE}/sitemap.xml\n")
-(PUB / "llms.txt").write_text(f"""# Jon & Joy Studios
+(PUB / "llms.txt").write_text(f"""# Jon Pride Werbung
 
 > Business-Porträts sowie Werbe- und Produktfotografie für Unternehmen in Hamburg, im Landkreis Harburg und in der Lüneburger Heide. Fotograf: Jan Stolz (Jon Pride), Tostedt, seit 2009. Hochzeiten: https://jonpride.de
 
