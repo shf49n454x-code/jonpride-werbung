@@ -1,0 +1,544 @@
+{
+ "kategorien": [
+  {
+   "slug": "kampagne-werbung",
+   "name": "Kampagne & Werbung",
+   "kurz": "Kampagne",
+   "title": "Werbefotograf Hamburg: Kampagnen und Werbefotos – Jon Pride",
+   "desc": "Werbefotografie und Kampagnen aus Hamburg für Marken wie Swarovski, Procter & Gamble und Volkswagen. Location, Set, Licht, Fotografie und Bearbeitung aus einer Hand.",
+   "intro": "Werbefotografie und Markenvideo aus dem Raum Hamburg für Swarovski, Procter & Gamble und Volkswagen. Von der Location über Set und Licht bis zur fertigen Bildstrecke.",
+   "faq": [
+    "agentur",
+    "kosten",
+    "rechte"
+   ],
+   "cover": "w09",
+   "leistung": "Kampagnen-, Produkt- und Imagebilder für Marken. Location, Set, Licht, Fotografie und Bearbeitung aus einer Hand.",
+   "preis": [
+    "Kampagnen ab 2.999 €",
+    "Der genaue Preis hängt von Shootingtagen, Postproduktion, Anzahl der Motive und Nutzungsrechten ab."
+   ]
+  },
+  {
+   "slug": "unternehmensfotografie",
+   "name": "Unternehmen & Marke",
+   "kurz": "Unternehmen",
+   "title": "Unternehmensfotografie Hamburg: Markenauftritt und Bildwelten – Jon Pride",
+   "desc": "Unternehmensfotografie für den Markenauftritt: Teams bei der Arbeit, Räume, Produkte und Porträts der Führung. Für Website, Recruiting, Presse und Social Media. Hamburg, Landkreis Harburg, Lüneburger Heide.",
+   "intro": "Bildwelten für den Auftritt eures Unternehmens: Teams bei der Arbeit, Räume, Produkte und die Köpfe dahinter. Für Website, Recruiting, Presse und Social Media. Zu den Kunden gehört unter anderem UBS.",
+   "faq": [
+    "unternehmen",
+    "einsatz"
+   ],
+   "cover": "w04",
+   "leistung": "Bildwelten und kurze Videos für den Markenauftritt: Teams bei der Arbeit, Räume, Produkte und Porträts der Führung, vom Halbtag bis zum ganzen Tag mit Social-Videos.",
+   "preis": [
+    "Markenauftritt ab 1.990 €",
+    "Fotos und kurze Videos für den Auftritt eures Unternehmens. Nutzung für Website, Social Media, Recruiting und Presse ist zeitlich unbegrenzt dabei, Anfahrt bis 50 km auch. Ein Imagefilm braucht zwei Drehtage und wird einzeln angeboten."
+   ],
+   "stufen": [
+    [
+     "Halbtag",
+     "ab 1.990 €",
+     "Bis 4 Stunden vor Ort, zwei Bereiche (zum Beispiel Büro und Produktion), Porträts der Führung bis 3 Personen, 25 fertige Bilder."
+    ],
+    [
+     "Ganzer Tag",
+     "ab 3.490 €",
+     "Bis 8 Stunden: Teams bei der Arbeit, Räume, Produkte und Details, Porträts der Führung bis 5 Personen, 50 fertige Bilder. Vorgespräch und Shotlist inklusive."
+    ],
+    [
+     "Foto + Social-Videos",
+     "ab 4.990 €",
+     "Der ganze Tag wie daneben, dazu drei kurze Videos für Social Media mit je etwa 30 Sekunden, am selben Tag gedreht."
+    ]
+   ]
+  },
+  {
+   "slug": "food",
+   "name": "Food",
+   "kurz": "Food",
+   "title": "Foodfotografie für Restaurants in Hamburg und Norddeutschland – Jon Pride",
+   "desc": "Food- und Restaurantfotografie für Karte, Website und Social Media. Fine Dining, Gerichte und Produkte, im Restaurant oder am Set.",
+   "intro": "Food- und Restaurantfotografie für Karte, Website und Social Media. Fine Dining, Gerichte und Produkte, im Restaurant oder am Set.",
+   "faq": [
+    "kosten"
+   ],
+   "cover": "w05",
+   "leistung": "Gerichte und Produkte für Karte, Website und Social Media, im Restaurant oder am Set."
+  },
+  {
+   "slug": "film-musikvideo",
+   "name": "Film & Musikvideo",
+   "kurz": "Film",
+   "title": "Musikvideos und Formate mit Millionenreichweite – Jon Pride",
+   "desc": "Musikvideos und TV-Formate: Konzept, Dreh, Schnitt und Color Grading. Musikvideos mit über 9 Millionen Views, Formate für Sky Sport.",
+   "intro": "Musikvideos und Formate mit Millionenreichweite. Konzept, Dreh, Schnitt und Color Grading, vom Wohnmobil-Studio für Sky Sport bis zum Worship-Musikvideo.",
+   "faq": [
+    "agentur"
+   ],
+   "cover": "yt-3EJuROjO48Q",
+   "leistung": "Konzept, Dreh, Schnitt und Color Grading. Musikvideos und Formate mit Millionenreichweite.",
+   "preis": [
+    "Musikvideos ab 2.500 €",
+    "Konzept, Dreh, Schnitt und Color Grading. Der genaue Preis hängt von Drehtagen, Locations und Team ab."
+   ]
+  },
+  {
+   "slug": "brand-social",
+   "name": "Brand & Social",
+   "kurz": "Social",
+   "title": "Content Creator für Marken: Reels, Social Clips und Formate – Jon Pride",
+   "desc": "Content für Marken und Kanäle: Reels, Social Clips und YouTube-Formate, unter anderem für McDonald's, den FC St. Pauli und AMPri.",
+   "intro": "Content für Marken und Kanäle: Reels, Social Clips und YouTube-Formate, unter anderem für McDonald's und den FC St. Pauli.",
+   "faq": [
+    "betreuung"
+   ],
+   "cover": "yt-yLKTaERwMj4",
+   "leistung": "Reels, Social Clips, UGC und laufendes Social-Media-Management für Marken und Kanäle."
+  },
+  {
+   "slug": "ugc-videos",
+   "name": "UGC-Videos",
+   "kurz": "UGC",
+   "title": "UGC-Videos für Unternehmen: Pakete mit 3, 5 oder 10 Videos – Jon Pride",
+   "desc": "UGC-Videos für Instagram, TikTok und Facebook: kurze Hochformat-Videos, die wie eine Empfehlung wirken. Einzelvideo 750 €, Pakete mit 3, 5 oder 10 Videos ab 1.990 €.",
+   "intro": "Kurze Hochformat-Videos im Stil echter Nutzer: Jemand zeigt euer Produkt und erzählt, wie es ist. Das wirkt wie eine Empfehlung und funktioniert als Anzeige auf Instagram, TikTok und Facebook.",
+   "leistung": "Kurze Hochformat-Videos im Stil echter Nutzer für Anzeigen auf Instagram, TikTok und Facebook. Pakete mit 3, 5 oder 10 Videos.",
+   "cover": "yt-yLKTaERwMj4",
+   "preis": [
+    "Einzelvideo 750 €, Pakete ab 1.990 €",
+    "Je mehr Videos ihr bucht, desto günstiger wird jedes einzelne. Jedes Video ist bis 30 Sekunden lang, im Hochformat, mit zwei Einstiegen (Hooks) zum Testen und Untertiteln. Die Nutzung für Anzeigen ist 12 Monate inklusive."
+   ],
+   "stufen": [
+    [
+     "3 Videos",
+     "1.990 €",
+     "Rund 660 € pro Video statt 750 €. Drei Videos mit je zwei Hooks, damit ihr schnell seht, welche Ansprache bei euren Kunden zieht."
+    ],
+    [
+     "5 Videos",
+     "2.990 €",
+     "Rund 600 € pro Video. Fünf Videos mit je zwei Hooks, dazu ein kurzer Plan, welche Videos ihr zuerst schaltet."
+    ],
+    [
+     "10 Videos",
+     "4.990 €",
+     "Rund 500 € pro Video. Zehn Videos mit je zwei Hooks für laufende Kampagnen."
+    ]
+   ],
+   "faq": [
+    "ugc",
+    "rechte"
+   ],
+   "eigener_bereich": true
+  }
+ ],
+ "faq": {
+  "unternehmen": [
+   "Was machst du für Unternehmen?",
+   "Firmenfotografie mit Mitarbeiter- und Teamporträts, Werbe- und Produktfotografie, Content-Produktion (Reels, Social Clips, UGC), laufendes Social-Media-Management sowie Video für Marken- und Musikprojekte. Alles ist einzeln oder kombiniert buchbar, auch als laufende Zusammenarbeit."
+  ],
+  "agentur": [
+   "Arbeitest du auch mit Agenturen zusammen?",
+   "Ja, sehr gern. Ich arbeite als ausführender Fotograf und Videograf nach eurem Briefing, füge mich in bestehende Abläufe ein und stimme mich auf Wunsch direkt mit eurem Endkunden ab. Marken wie Swarovski und Procter & Gamble haben mich auch direkt gebucht."
+  ],
+  "kosten": [
+   "Was kostet eine Produktion?",
+   "Das hängt von Shootingtagen, Postproduktion, Anzahl der Motive und Nutzungsrechten ab. Nach einem kurzen Briefing bekommt ihr ein festes Angebot."
+  ],
+  "rechte": [
+   "Wie sind die Nutzungsrechte geregelt?",
+   "Nutzungsrechte werden pro Projekt vereinbart. Kanäle, Laufzeit und Umfang stehen im Angebot, so wisst ihr von Anfang an, was ihr mit den Inhalten machen dürft."
+  ],
+  "betreuung": [
+   "Übernimmst du auch laufende Betreuung?",
+   "Ja. Planung, Produktion und Posting übernehme ich, damit euer Kanal regelmäßig bespielt wird."
+  ],
+  "einsatz": [
+   "Wo bist du im Einsatz?",
+   "Meine Basis ist Tostedt zwischen Hamburg und der Lüneburger Heide. Im Einsatz bin ich deutschlandweit und international, für Swarovski zum Beispiel in Paris, Zürich und auf Santorini."
+  ],
+  "ugc": [
+   "Was sind UGC-Videos?",
+   "UGC steht für User Generated Content. Gemeint sind kurze Videos, die aussehen, als hätte sie ein echter Kunde gedreht: Hochformat, direkt in die Kamera, ohne Werbeglanz. Als Anzeige wirken sie dadurch wie eine Empfehlung."
+  ]
+ },
+ "startseite_faq": [
+  "unternehmen",
+  "agentur",
+  "kosten",
+  "rechte",
+  "betreuung",
+  "einsatz"
+ ],
+ "arbeiten": [
+  {
+   "slug": "swarovski",
+   "titel": "Swarovski",
+   "kunde": "Swarovski",
+   "kat": [
+    "kampagne-werbung"
+   ],
+   "meta": "Kampagne · 2019",
+   "zeile": "Paris Fashion Week, Santorini, Zürich",
+   "seite": true,
+   "kurz": "Paris Fashion Week, eine Kampagne auf Santorini, ein Video im Werk und Social Content in Zürich. Swarovski hat direkt gebucht, ohne Agentur.",
+   "steckbrief": [
+    [
+     "Kunde",
+     "Swarovski, direkt"
+    ],
+    [
+     "Zeitraum",
+     "bis 2019"
+    ],
+    [
+     "Orte",
+     "Paris, Santorini, Zürich"
+    ],
+    [
+     "Leistung",
+     "Foto und Video"
+    ]
+   ],
+   "text": [
+    "Alle Absprachen liefen direkt mit dem Team der Marke. Daraus wurden mehrere Produktionen in Paris, auf Santorini, in Zürich und im Werk der Marke.",
+    [
+     "Paris Fashion Week",
+     "Dreimal war ich während der Paris Fashion Week für Swarovski im Einsatz. Zwei dieser Wochen fallen ins Jahr 2019: Ende Februar bis Anfang März und Ende September. Vor der Septemberwoche trafen sich die Fotografen in einer Galerie an der Rue du Faubourg Saint-Honoré, um die Content-Produktion für die Woche abzustimmen."
+    ],
+    [
+     "Kampagne auf Santorini",
+     "Im September 2019 ging es nach Santorini. Dort entstand eine Kampagne für Swarovski."
+    ],
+    [
+     "Video im Werk",
+     "Für Swarovski habe ich außerdem ein Celebration-Video im Werk der Marke gedreht."
+    ],
+    [
+     "Social-Kampagne in Zürich",
+     "In Zürich folgte eine Kampagne für die sozialen Kanäle."
+    ]
+   ],
+   "bilder": []
+  },
+  {
+   "slug": "business-travel",
+   "titel": "Business Travel",
+   "kat": [
+    "kampagne-werbung"
+   ],
+   "meta": "Kampagne",
+   "zeile": "Geschäftsreisende auf dem Weg zum Privatjet",
+   "bild": "w09"
+  },
+  {
+   "slug": "vw-tailgate-tour",
+   "titel": "VW Tailgate Tour",
+   "kunde": "Volkswagen",
+   "kat": [
+    "kampagne-werbung"
+   ],
+   "meta": "Volkswagen",
+   "zeile": "Markenvideo · Fußball",
+   "yt": "0hc1w_PqQBU"
+  },
+  {
+   "slug": "fahrerportraet",
+   "titel": "Fahrerporträt",
+   "kat": [
+    "unternehmensfotografie"
+   ],
+   "meta": "Motorsport",
+   "zeile": "Phoenix Racing · Pressemappe",
+   "bild": "w03"
+  },
+  {
+   "slug": "through-it-all",
+   "titel": "Through It All",
+   "kat": [
+    "film-musikvideo"
+   ],
+   "meta": "5,1 Mio. Views",
+   "zeile": "Spoken · Official Video · Musikvideo",
+   "yt": "3EJuROjO48Q"
+  },
+  {
+   "slug": "oral-b",
+   "titel": "Oral-B",
+   "kunde": "Procter & Gamble",
+   "kat": [
+    "kampagne-werbung"
+   ],
+   "meta": "P&G · 2018",
+   "zeile": "Digitale Kampagne, direkt für Procter & Gamble",
+   "seite": true,
+   "kurz": "Eine digitale Kampagne für Oral-B, direkt für Procter & Gamble. Location, Set, Licht, Fotografie und Bildbearbeitung kamen aus einer Hand.",
+   "steckbrief": [
+    [
+     "Kunde",
+     "Procter & Gamble, direkt"
+    ],
+    [
+     "Marke",
+     "Oral-B"
+    ],
+    [
+     "Zeitpunkt",
+     "August 2018"
+    ],
+    [
+     "Nutzung",
+     "Digitale Kampagne"
+    ],
+    [
+     "Mein Anteil",
+     "Location-Scouting, Set, Licht, Fotografie, Bildbearbeitung"
+    ]
+   ],
+   "text": [
+    "Procter & Gamble hat mich im August 2018 direkt für Oral-B gebucht, ohne Agentur dazwischen. Die Bilder waren für eine digitale Kampagne bestimmt.",
+    [
+     "Alles aus einer Hand",
+     "Ich habe die Produktion von Anfang bis Ende übernommen. Zuerst die Suche nach der passenden Location, dann der Aufbau des Sets und das Licht. Am Shootingtag habe ich fotografiert, ein Assistent hat mich am Set unterstützt. Die Bildbearbeitung lag danach ebenfalls bei mir."
+    ],
+    [
+     "Ein Ansprechpartner",
+     "Weil Location, Licht und Bearbeitung bei mir lagen, hatte Procter & Gamble einen Ansprechpartner für die ganze Produktion."
+    ]
+   ],
+   "bilder": []
+  },
+  {
+   "slug": "hoeher",
+   "titel": "Höher",
+   "kat": [
+    "film-musikvideo"
+   ],
+   "meta": "2,6 Mio. Views",
+   "zeile": "feat. Juri Friesen · ICF Worship · Musikvideo",
+   "yt": "EdldcFUYWgQ"
+  },
+  {
+   "slug": "meine-11",
+   "titel": "Meine 11",
+   "kunde": "Sky Sport",
+   "kat": [
+    "film-musikvideo",
+    "brand-social"
+   ],
+   "meta": "Sky Sport · Levi's",
+   "zeile": "Die Playlist der Fußballstars",
+   "seite": true,
+   "kurz": "„Meine 11 – Die Playlist der Fußballstars“: Profis sprechen über die elf Songs, die sie geprägt haben. Ausgestrahlt bei Sky Sport, Hauptsponsor Levi's.",
+   "steckbrief": [
+    [
+     "Format",
+     "Meine 11 – Die Playlist der Fußballstars"
+    ],
+    [
+     "Sender",
+     "Sky Sport News HD"
+    ],
+    [
+     "Hauptsponsor",
+     "Levi's"
+    ],
+    [
+     "Produktion",
+     "M11"
+    ],
+    [
+     "Mein Anteil",
+     "Schnitt, später Hauptkamera"
+    ],
+    [
+     "Gäste u. a.",
+     "Ridle Baku, Benjamin Henrichs, Vincenzo Grifo"
+    ]
+   ],
+   "text": [
+    "In „Meine 11“ sprechen Fußballprofis über die elf Songs, die sie geprägt haben. Über die Musik kommen Geschichten auf den Tisch, die in keinem Spielbericht stehen: Liebe, Glaube, Familie und persönliche Krisen. Moderiert hat Maik Nöcker, gedreht wurde in einem Wohnmobil, das zum Tonstudio umgebaut war.",
+    [
+     "Für Sky Sport, mit Levi's",
+     "Die Sendung lief bei Sky Sport News HD, Hauptsponsor war Levi's, produziert wurde sie von M11. Dort habe ich viele Folgen geschnitten und war später selbst Hauptvideograf. Vor der Kamera saßen unter anderem Ridle Baku, Benjamin Henrichs und Vincenzo Grifo."
+    ],
+    [
+     "Nähe auf engem Raum",
+     "Im Wohnmobil ist wenig Platz für Kamera, Licht und Ton. Das Gespräch soll trotzdem so entspannt wirken wie auf dem eigenen Sofa."
+    ]
+   ],
+   "quellen": [
+    [
+     "prisma.de: Meine 11 bei Sky",
+     "https://www.prisma.de/news/Meine-11-Naldo-vom-FC-Schalke-04-stellt-bei-Sky-Lieblingslieder-vor,20270435"
+    ]
+   ],
+   "bilder": []
+  },
+  {
+   "slug": "executive-portraet",
+   "titel": "Executive-Porträt",
+   "kat": [
+    "unternehmensfotografie"
+   ],
+   "meta": "Corporate",
+   "zeile": "Porträt am Empfang",
+   "bild": "w04"
+  },
+  {
+   "slug": "ampri-sea-devils",
+   "titel": "AMPri × Sea Devils",
+   "kunde": "AMPri",
+   "kat": [
+    "brand-social"
+   ],
+   "meta": "Brand Video",
+   "zeile": "AMPri × Hamburg Sea Devils · Sport",
+   "yt": "yLKTaERwMj4"
+  },
+  {
+   "slug": "mcdonalds",
+   "titel": "McDonald's",
+   "kunde": "McDonald's",
+   "kat": [
+    "brand-social",
+    "ugc-videos"
+   ],
+   "meta": "3,5 Mio. Views",
+   "zeile": "Happy-Meal-Bücher · Reel mit Mrs. Mama, Video und Ton",
+   "link": "https://www.instagram.com/reel/DRDKX23DEZb/",
+   "logo": "mcdonalds"
+  },
+  {
+   "slug": "fine-dining",
+   "titel": "Fine Dining",
+   "kat": [
+    "food"
+   ],
+   "meta": "Food",
+   "zeile": "Dessert mit Feigen und Heidelbeeren",
+   "bild": "w05"
+  },
+  {
+   "slug": "alles-tanzt",
+   "titel": "Alles tanzt",
+   "kat": [
+    "film-musikvideo"
+   ],
+   "meta": "686 Tsd. Views",
+   "zeile": "YADA Worship · Musikvideo",
+   "yt": "kF5wPkOyxiU"
+  },
+  {
+   "slug": "fashion-heide",
+   "titel": "Fashion in der Heide",
+   "kat": [
+    "kampagne-werbung"
+   ],
+   "meta": "Editorial",
+   "zeile": "Lüneburger Heide im Gegenlicht",
+   "bild": "w10"
+  }
+ ],
+ "bilder": {
+  "w03": "Rennfahrer im Phoenix-Racing-Overall, freigestellt für die Pressemappe",
+  "w04": "Executive-Porträt eines Mannes am Empfang eines Unternehmens",
+  "w05": "Dessert mit Feigen und Heidelbeeren, Food-Styling für ein Restaurant",
+  "w09": "Vier Geschäftsreisende mit Koffern auf dem Weg zu einem Privatjet",
+  "w10": "Model im orangefarbenen Kleid in der blühenden Lüneburger Heide im Gegenlicht",
+  "yt-0hc1w_PqQBU": "VW Tailgate Tour, Standbild aus dem Markenvideo",
+  "yt-3EJuROjO48Q": "Through It All, Standbild aus dem Musikvideo",
+  "yt-EdldcFUYWgQ": "Höher, Standbild aus dem Musikvideo",
+  "yt-kF5wPkOyxiU": "Alles tanzt, Standbild aus dem Musikvideo",
+  "yt-yLKTaERwMj4": "AMPri und Hamburg Sea Devils, Standbild aus dem Brand Video"
+ },
+ "kunden": [
+  "Swarovski",
+  "P&G",
+  "Volkswagen",
+  "McDonald's",
+  "Sky Sport",
+  "Levi's",
+  "UBS",
+  "St. Pauli",
+  "Wella",
+  "LBS",
+  "DVAG",
+  "Top Hair"
+ ],
+ "zahlen": [
+  [
+   "15 Mio.+",
+   "Views auf Musikvideos, Reels und Formaten"
+  ],
+  [
+   "5,1 Mio.",
+   "Through It All, Spoken"
+  ],
+  [
+   "3× Paris",
+   "Fashion Week für Swarovski"
+  ],
+  [
+   "seit 2009",
+   "Fotografie und Film"
+  ]
+ ],
+ "startseite": [
+  "swarovski",
+  "meine-11",
+  "vw-tailgate-tour",
+  "oral-b",
+  "hoeher",
+  "mcdonalds"
+ ],
+ "gruppen": [
+  {
+   "slug": "fotografie",
+   "name": "Fotografie",
+   "kats": [
+    "kampagne-werbung",
+    "unternehmensfotografie",
+    "food"
+   ],
+   "title": "Fotografie für Marken und Unternehmen – Jon Pride",
+   "desc": "Werbefotografie, Unternehmensfotografie und Foodfotografie aus dem Raum Hamburg: Kampagnen für Swarovski und Procter & Gamble, Bildwelten für Unternehmen, Gerichte für Restaurants.",
+   "intro": "Kampagnen für Marken, Bildwelten für Unternehmen und Food für Restaurants. Seit 2009, aus dem Raum Hamburg und international."
+  },
+  {
+   "slug": "film",
+   "name": "Film",
+   "kats": [
+    "film-musikvideo",
+    "brand-social"
+   ],
+   "title": "Film, Musikvideos und Social-Formate – Jon Pride",
+   "desc": "Musikvideos mit Millionen Views, das Sky-Sport-Format „Meine 11“ und Social-Formate für Marken wie McDonald's und den FC St. Pauli. Musikvideos ab 2.500 €.",
+   "intro": "Musikvideos mit Millionen Views, ein TV-Format für Sky Sport und Social-Formate für Marken. Konzept, Dreh und Schnitt."
+  },
+  {
+   "slug": "ugc-videos",
+   "name": "UGC-Videos",
+   "unterpunkte": [
+    [
+     "3 Videos",
+     "/ugc-videos/#paket-1"
+    ],
+    [
+     "5 Videos",
+     "/ugc-videos/#paket-2"
+    ],
+    [
+     "10 Videos",
+     "/ugc-videos/#paket-3"
+    ],
+    [
+     "Was sind UGC-Videos?",
+     "/ugc-videos/#frage-was-sind-ugc-videos"
+    ]
+   ]
+  }
+ ]
+}
