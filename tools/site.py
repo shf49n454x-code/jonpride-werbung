@@ -232,7 +232,7 @@ def kontakt():
   <div class="wrap kg">
     <div class="kl">
       <h1 class="rv">Lass uns etwas machen, das auffällt.</h1>
-      <p class="rv">Erzähl mir kurz von deinem Projekt. Ich melde mich innerhalb von zwei Werktagen.</p>
+      <p class="rv">Erzählt mir kurz von eurem Projekt. Ich melde mich innerhalb von zwei Werktagen.</p>
       <p class="rv kd2"><a href="mailto:me@jonpride.de">me@jonpride.de</a><br><a href="tel:+491623361352">0162 3361352</a></p>
     </div>
     <form class="form rv" action="https://jonpride.de/api/formular/anfrage" method="POST">
@@ -246,7 +246,7 @@ def kontakt():
         <option value="">Bitte wählen</option><option>Werbe- / Produktfotografie</option><option>Business-Porträts / Team</option><option>Food / Restaurant</option><option>Content / Social Media</option><option>Video / Musikvideo</option><option>Sonstiges</option></select></div>
       <div><label for="f-zeit">Zeitraum</label><input id="f-zeit" type="text" name="zeitraum" placeholder="z. B. März 2027 oder offen"></div></div>
       <div><label for="f-msg">Nachricht</label><textarea id="f-msg" name="nachricht" placeholder="Was soll entstehen, wofür und wo?"></textarea></div>
-      <p class="hinweis">Mit dem Absenden stimmst du zu, dass ich deine Angaben zur Bearbeitung deiner Anfrage verarbeite. Details in der <a href="https://jonpride.de/datenschutz">Datenschutzerklärung</a>.</p>
+      <p class="hinweis">Mit dem Absenden stimmt ihr zu, dass ich eure Angaben zur Beantwortung der Anfrage verarbeite. Details in der <a href="https://jonpride.de/datenschutz">Datenschutzerklärung</a>.</p>
       <button type="submit">Anfrage senden</button>
     </form>
   </div>
@@ -262,7 +262,7 @@ def startseite():
         f'<a class="kat-k rv" style="--d:{i % 3}" href="/{k["slug"]}/"><div class="media">{bild(k["cover"], D["bilder"].get(k["cover"], k["name"]), "(min-width: 1100px) 31vw, (min-width: 640px) 48vw, 100vw")}</div>'
         f'<span class="kz"><span class="kt">{esc(k["name"])}</span><span class="km mono">{len(kat_arbeiten(k["slug"]))} {"Arbeit" if len(kat_arbeiten(k["slug"])) == 1 else "Arbeiten"}</span></span>'
         f'<span class="kd">{esc(k["leistung"])}</span><span class="mehr mono">Ansehen →</span></a>' for i, k in enumerate(kats))
-    kacheln += '<a class="kat-k cta-k rv" style="--d:2" href="/kontakt/"><span class="kt">Euer Projekt?</span><span class="kd">Erzähl mir in zwei Minuten, was entstehen soll. Antwort innerhalb von zwei Werktagen.</span><span class="btn schwarz">Projekt anfragen</span></a>'
+    kacheln += '<a class="kat-k cta-k rv" style="--d:2" href="/kontakt/"><span class="kt">Euer Projekt?</span><span class="kd">Erzählt mir in zwei Minuten, was entstehen soll. Antwort innerhalb von zwei Werktagen.</span><span class="btn schwarz">Projekt anfragen</span></a>'
     rg = "".join(f'<a class="rgk rv" href="/ratgeber/{r["slug"]}/"><span class="mono">{esc(r["thema"])}</span><span class="rgt">{esc(r["titel"])}</span><span class="mehr mono">Lesen →</span></a>' for r in RATGEBER)
     h = kopf("Werbefotograf & Content Creator Hamburg – Jon Pride",
              "Werbe- und Businessfotografie, Film und Content für Marken: Swarovski, Procter & Gamble, Volkswagen, McDonald's, Sky Sport. Jon Pride aus Hamburg und der Lüneburger Heide.",
@@ -270,7 +270,7 @@ def startseite():
     h += f"""<section class="hero">
   <div class="wrap hg">
     <div class="ht">
-      <p class="mono eyebrow rv">Werbe- und Businessfotografie · Hamburg &amp; weltweit</p>
+      <p class="mono eyebrow rv">Werbe- und Businessfotografie · Hamburg &amp; international</p>
       <h1>{worte("Bilder für Marken, die man nicht wegscrollt.")}</h1>
       <p class="lead rv">Kampagnen für Swarovski und Procter &amp; Gamble, ein TV-Format für Sky Sport und Musikvideos mit Millionen Views. Seit 2009 hinter der Kamera.</p>
       <div class="btns rv"><a class="btn voll" href="#arbeiten">Arbeiten ansehen</a><a class="btn rand" href="/kontakt/">Projekt anfragen</a></div>

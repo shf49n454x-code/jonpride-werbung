@@ -60,6 +60,7 @@
 - Laut Jon: Die Musikvideos hat er gemacht (Rolle im Detail offen)
 - Spoken „Through It All“: 5,1 Mio. Views; Video „von Sarah“: rund 3 Mio. Views (Titel/Link offen); christliche Musikvideos teils Millionen, teils einige 100.000 Views
 - Sir Pew Pew: pro Video teils 650.000, sonst mehrere 100.000 Views
+- Offen: Ort des Swarovski-Werks (Wattens/Österreich?), deshalb auf der Seite keine Länderzahl
 - Summe belegt durch Jons Angaben: 5,1 + 3,5 (McDonald's) + 3 + 2,6 + 0,686 + ≥ 0,65 Mio. ≥ 15 Mio. → „15 Mio.+ Views“
 
 ## Offen
