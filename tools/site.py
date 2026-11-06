@@ -312,7 +312,7 @@ def kontakt_seite():
 
 def kategorie(k):
     liste = kat_arbeiten(k["slug"])
-    ld_k, nav_k = krumen([("Start", "/"), ("Arbeiten", "/#arbeiten"), (k["name"], f'/{k["slug"]}/')])
+    ld_k, nav_k = krumen([("Start", "/"), (k["name"], f'/{k["slug"]}/')] if k.get("eigener_bereich") else [("Start", "/"), ("Arbeiten", "/#arbeiten"), (k["name"], f'/{k["slug"]}/')])
     paare = [D["faq"][x] for x in k["faq"]]
     faq_ld, faq_html = faq_block(paare, f"Häufige Fragen zu {k['name']}")
     chips = "".join(
