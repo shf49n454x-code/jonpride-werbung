@@ -1,0 +1,99 @@
+/* ===================================================================
+   Jon Pride CI — gemeinsame Ebene (Design-System 338cc9d7)
+   -------------------------------------------------------------------
+   Schriften und Tokens, die mehr als eine Seite braucht. Ersetzt das
+   frühere assets/ci-fonts.css, dessen @font-face-Regeln hier aufgegangen sind.
+
+   Bewusst NICHT hier: die Alias-Namen (--cream, --card, --ink, --muted,
+   --line, --accent, --maxw). Die belegt assets/region.css mit eigenen,
+   editorialen Werten. Stünden sie hier, würden beide Systeme um
+   dieselben Variablennamen streiten.
+
+   Wer eine Farbe ändert, ändert sie hier — nicht im Markup.
+   =================================================================== */
+
+/* ---------- Schriften ---------- */
+@font-face{font-family:'Anton';font-style:normal;font-weight:400;font-display:swap;src:url('fonts/anton-variable.woff2') format('woff2')}
+@font-face{font-family:'Archivo';font-style:normal;font-weight:100 900;font-display:swap;src:url('fonts/archivo-variable.woff2') format('woff2')}
+@font-face{font-family:'Archivo';font-style:italic;font-weight:100 900;font-display:swap;src:url('fonts/archivo-italic-variable.woff2') format('woff2')}
+@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:100 800;font-display:swap;src:url('fonts/jetbrains-mono-variable.woff2') format('woff2')}
+
+:root{
+  /* ---------- Farbskalen ----------
+     Ein Orange fuer alles: #F4571B, exakt der Ton des Logos
+     (assets/logo/jonpride-logo.svg). Flaechen, Logo und App-Icons tragen
+     denselben Wert. Die uebrigen Stufen bleiben als Hover-, Press- und
+     Text-Stufen bestehen. */
+  --color-orange-100:#fdece3;
+  --color-orange-300:#f7a77d;
+  --color-orange-500:#f4571b;
+  --color-orange-600:#d24b00;
+  --color-orange-700:#aa3a00;
+
+  --color-ink-900:#0b0b0c;
+  --color-ink-700:#2b2b2e;
+  --color-ink-500:#6b6b6f;
+  --color-ink-300:#a3a1a0;
+  --color-ink-200:#d8d6d3;
+  --color-ink-100:#ede9e4;
+
+  --color-paper-0:#ffffff;
+  --color-paper-50:#f7f3ee;
+  --color-paper-100:#efeae3;
+
+  --color-teal-100:#e3edee;
+  --color-teal-500:#14555c;
+  --color-teal-600:#0f4247;
+  --color-teal-700:#0a3034;
+
+  /* ---------- Markenrollen ---------- */
+  --brand-primary:var(--color-orange-500);
+  --brand-primary-hover:var(--color-orange-600);
+  --brand-primary-press:var(--color-orange-700);
+  /* Das Markenorange trägt auf hellem Grund nur 2,4:1. Für Text und
+     bedeutungstragende Icons auf Papier oder Karte deshalb diese Stufe
+     (6,3:1 auf Weiß). Flächen und Logo bleiben --brand-primary. */
+  --brand-on-light:var(--color-orange-700);
+  --accent-teal:var(--color-teal-500);
+
+  /* ---------- Typografie ---------- */
+  --font-display:'Anton','Archivo Black',sans-serif;
+  --font-body:'Archivo','Helvetica Neue',Arial,sans-serif;
+  --font-mono:'JetBrains Mono','SF Mono',ui-monospace,monospace;
+  --lh-display:.98;
+  --lh-body:1.6;
+  --ls-eyebrow:.14em;
+  --ls-mono-tag:.06em;
+
+  /* ---------- Form ---------- */
+  --cut-sm:10px;
+  --cut-md:18px;
+  --shadow-flat-sm:3px 3px 0 var(--color-ink-900);
+  --shadow-flat-md:6px 6px 0 var(--color-ink-900);
+  --shadow-flat-brand:6px 6px 0 var(--color-orange-500);
+  --shadow-soft-md:0 12px 32px rgba(11,11,12,.14);
+
+  /* ---------- Bewegung ---------- */
+  --duration-fast:120ms;
+  --duration-base:200ms;
+  --duration-slow:360ms;
+  --ease-standard:cubic-bezier(.4,0,.2,1);
+  --ease-out:cubic-bezier(0,0,.2,1);
+  --ease-emphasis:cubic-bezier(.2,0,0,1);
+  --press-scale:.97;
+}
+
+/* Der Bildoptimierer der Deploy-Pipeline (tools/optimize-images.py) verpackt
+   jedes <img> ab 700 px Breite in ein <picture>. Damit wird auf einmal das
+   <picture> das Element, das Flexbox anfasst — und jede CSS-Regel, die auf
+   img zielt, greift eine Ebene zu tief.
+
+   Sichtbar wurde das zweimal: das Autorenbild stand als 33 x 64 px grosses
+   Oval statt als 64er Kreis, und die Bilder im Hochzeitsbeitrag verloren ihre
+   volle Breite. Im Repo war das HTML jedes Mal richtig, kaputt war nur, was
+   ausgeliefert wurde — deshalb war es lokal nicht zu sehen.
+
+   display:contents nimmt den Wrapper aus dem Kasten-Baum. Das <img> ist damit
+   wieder selbst das Flex-Element, und alle bestehenden Regeln stimmen wieder,
+   ohne dass eine einzige davon angefasst werden muss. */
+picture{display:contents}

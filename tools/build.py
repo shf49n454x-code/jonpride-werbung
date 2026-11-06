@@ -7,11 +7,11 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 PUB = ROOT / "public"
 SITE = "https://jonandjoystudios.com"
 STAND = "06.11.2026"
-MAIL = "hello@jonandjoystudios.com"
+MAIL = "me@jonpride.de"
 TEL = "0162 3361352"
 TEL_INT = "+491623361352"
 
-PLAYFAIR = (ROOT / "tools/playfair.css").read_text()
+PLAYFAIR = ""
 
 # ---------- Bilder ----------
 BILDER = {
@@ -48,7 +48,7 @@ CSS = """
 @font-face{font-family:'Archivo';src:url(/fonts/archivo-variable.woff2) format('woff2');font-weight:100 900;font-stretch:62% 125%;font-display:swap}
 @font-face{font-family:'JetBrains Mono';src:url(/fonts/jetbrains-mono-variable.woff2) format('woff2');font-weight:100 800;font-display:swap}
 """ + PLAYFAIR + """
-:root{--paper:#F3EFE8;--paper-2:#E9E3D9;--ink:#141413;--ink-2:#55524C;--line:#D6CFC3;--deep:#1C2B27;--deep-2:#24372F;--on-deep:#EDE8DF;--on-deep-2:#A9B3AC;--accent:#B5734A;
+:root{--paper:#000;--paper-2:#0c0c0c;--ink:#fff;--ink-2:#9a9a9a;--line:#1d1d1d;--deep:#1C2B27;--deep-2:#24372F;--on-deep:#EDE8DF;--on-deep-2:#A9B3AC;--accent:#F4571B;
 --sans:'Archivo','Helvetica Neue',Arial,sans-serif;--serif:'Playfair Display',Georgia,serif;--mono:'JetBrains Mono',ui-monospace,monospace;--pad:clamp(16px,4vw,48px);--max:1280px}
 *{box-sizing:border-box}html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
 body{margin:0;background:var(--paper);color:var(--ink);font:400 18px/1.6 var(--sans);font-stretch:100%}
@@ -161,17 +161,17 @@ def head(title, desc, path, ld, extra=""):
     return f"""<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{html.escape(title)}</title><meta name="description" content="{html.escape(desc)}"><link rel="canonical" href="{url}">
 <meta property="og:type" content="website"><meta property="og:title" content="{html.escape(title)}"><meta property="og:description" content="{html.escape(desc)}"><meta property="og:url" content="{url}"><meta property="og:image" content="{SITE}/img/w04-1600.jpg"><meta property="og:locale" content="de_DE">
-<meta name="theme-color" content="#F3EFE8"><link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#000000"><link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="/fonts/archivo-variable.woff2" as="font" type="font/woff2" crossorigin>
 <style>{CSS}</style>{extra}
 <script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script></head><body>
 <a class="skip" href="#inhalt">Zum Inhalt</a>
-<header class="top"><div class="wrap">{logo()}<nav class="main" aria-label="Hauptnavigation"><a href="/business-portraets/">Business-Porträts</a><a href="/werbefotografie/">Werbefotografie</a><a href="/#arbeiten">Arbeiten</a><a href="/#kontakt" class="cta">Anfragen</a></nav></div></header>
+<header class="top"><div class="wrap">{logo()}<nav class="main" aria-label="Hauptnavigation"><a href="/#work">Work</a><a href="/#kontakt" class="cta">Anfragen</a></nav></div></header>
 <main id="inhalt">"""
 
 def foot():
     return f"""</main><footer><div class="wrap"><div>© 2026 Jon &amp; Joy Studios</div>
-<nav aria-label="Fußnavigation"><a href="/business-portraets/">Business-Porträts</a><a href="/werbefotografie/">Werbefotografie</a><a href="/impressum/">Impressum</a><a href="/datenschutz/">Datenschutz</a><a href="https://jonpride.de">Hochzeiten: jonpride.de</a></nav></div></footer></body></html>"""
+<nav aria-label="Fußnavigation"><a href="/impressum/">Impressum</a><a href="/datenschutz/">Datenschutz</a><a href="https://jonpride.de">Hochzeiten: jonpride.de</a></nav></div></footer></body></html>"""
 
 ORG = {"@type": "ProfessionalService", "@id": SITE + "/#org", "name": "Jon & Joy Studios", "url": SITE + "/",
        "description": "Business-Porträts, Werbe- und Produktfotografie für Unternehmen in Hamburg, im Landkreis Harburg und in der Lüneburger Heide.",
@@ -317,22 +317,11 @@ DATENSCHUTZ = f"""<p class="mono stand">Stand: {STAND}</p>
 <h2>1. Verantwortlicher</h2><p>Jon &amp; Joy Studios, Inhaber Jan Stolz, Schützenstraße 10, 21255 Tostedt. E-Mail: <a href="mailto:{MAIL}">{MAIL}</a></p>
 <h2>2. Hosting</h2><p>Diese Website wird über Cloudflare Pages der Cloudflare, Inc. (101 Townsend St, San Francisco, CA 94107, USA) ausgeliefert. Beim Aufruf verarbeitet Cloudflare technisch notwendige Daten, darunter Ihre IP-Adresse. Eine Verarbeitung in den USA ist nicht ausgeschlossen. Cloudflare ist unter dem EU-US Data Privacy Framework zertifiziert, ergänzend gelten die EU-Standardvertragsklauseln. Rechtsgrundlage ist unser berechtigtes Interesse an einer sicheren und schnellen Bereitstellung (Art. 6 Abs. 1 lit. f DSGVO). Mit Cloudflare besteht ein Vertrag zur Auftragsverarbeitung.</p>
 <h2>3. Server-Logfiles</h2><p>Erhoben werden Browsertyp und -version, Betriebssystem, Referrer-URL, Uhrzeit der Anfrage und IP-Adresse. Die Daten dienen der technischen Sicherheit und werden nicht mit anderen Daten zusammengeführt.</p>
-<h2>4. Keine Cookies, kein Tracking</h2><p>Diese Website setzt keine Cookies und lädt keine Analyse-, Werbe- oder Social-Media-Dienste. Schriften und Bilder liegen auf unserem eigenen Server.</p>
-<h2>5. Kontakt per E-Mail oder Telefon</h2><p>Wenn Sie uns schreiben oder anrufen, verarbeiten wir Ihre Angaben, um Ihre Anfrage zu beantworten und ein Angebot zu erstellen (Art. 6 Abs. 1 lit. b DSGVO). Wir löschen die Daten, wenn sie dafür nicht mehr nötig sind und keine gesetzlichen Aufbewahrungsfristen bestehen.</p>
-<h2>6. Ihre Rechte</h2><p>Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch. Außerdem können Sie sich bei einer Datenschutz-Aufsichtsbehörde beschweren, zum Beispiel bei der Landesbeauftragten für den Datenschutz Niedersachsen.</p>"""
+<h2>4. Keine Cookies, kein Tracking</h2><p>Diese Website setzt keine Cookies und lädt keine Analyse- oder Werbedienste. Schriften und Bilder liegen auf unserem eigenen Server.</p><h2>5. Anfrageformular</h2><p>Das Anfrageformular schickt Ihre Angaben an das Formular von jonpride.de (ebenfalls Jan Stolz, Cloudflare Pages). Dort werden sie verschlüsselt zwischengespeichert, auf unseren eigenen Rechner abgeholt und danach auf dem Server gelöscht. Rechtsgrundlage ist die Anbahnung eines Vertrags (Art. 6 Abs. 1 lit. b DSGVO).</p><h2>6. YouTube-Videos</h2><p>Videos werden erst geladen, wenn Sie auf ein Vorschaubild klicken. Dann wird eine Verbindung zu YouTube (Google Ireland Ltd.) im erweiterten Datenschutzmodus (youtube-nocookie.com) hergestellt. Dabei können Daten in die USA übertragen werden. Rechtsgrundlage ist Ihre Einwilligung durch den Klick (Art. 6 Abs. 1 lit. a DSGVO).</p>
+<h2>7. Kontakt per E-Mail oder Telefon</h2><p>Wenn Sie uns schreiben oder anrufen, verarbeiten wir Ihre Angaben, um Ihre Anfrage zu beantworten und ein Angebot zu erstellen (Art. 6 Abs. 1 lit. b DSGVO). Wir löschen die Daten, wenn sie dafür nicht mehr nötig sind und keine gesetzlichen Aufbewahrungsfristen bestehen.</p>
+<h2>8. Ihre Rechte</h2><p>Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch. Außerdem können Sie sich bei einer Datenschutz-Aufsichtsbehörde beschweren, zum Beispiel bei der Landesbeauftragten für den Datenschutz Niedersachsen.</p>"""
 
 PAGES = {
-    "/": startseite(),
-    "/business-portraets/": unterseite("/business-portraets/", "Business-Porträts Hamburg & Landkreis Harburg · Jon & Joy Studios",
-        "Mitarbeiter-, Team- und Vorstandsporträts mit mobilem Studio bei Ihnen im Unternehmen. Einheitlicher Look, Auswahl online, Lieferung in fünf Werktagen.",
-        'Business-Porträts, <span class="ser">bei Ihnen im Haus.</span>',
-        "Ich komme mit Licht und Hintergrund zu Ihnen ins Unternehmen und fotografiere Team, Führung und neue Mitarbeiter in einem einheitlichen Look. Etwa zehn Minuten pro Person, Auswahl in einer Online-Galerie, fertige Bilder in fünf Werktagen.",
-        PORTRAET_SECTIONS, FAQ_PORTRAET, ["w04", "w08", "w03"], "Business-Porträts"),
-    "/werbefotografie/": unterseite("/werbefotografie/", "Werbe- & Produktfotografie Hamburg · Jon & Joy Studios",
-        "Kampagnen, Produkte, Food und Imagebilder für Unternehmen in Hamburg und Norddeutschland. Konzept, Location, Styling und Shooting aus einer Hand.",
-        'Werbe- &amp; Produktfotografie <span class="ser">mit Konzept.</span>',
-        "Kampagnen, Produkte, Food und Imagebilder für Anzeige, Verpackung, Website und Social Media. Auf Wunsch mit Bildidee, Location, Models und Styling. Sie sehen die Bilder am Set und geben direkt frei.",
-        WERBUNG_SECTIONS, FAQ_WERBUNG, ["w09", "w07", "w05"], "Werbefotografie"),
     "/impressum/": recht("/impressum/", "Impressum", IMPRESSUM),
     "/datenschutz/": recht("/datenschutz/", "Datenschutzerklärung", DATENSCHUTZ),
 }
@@ -345,7 +334,7 @@ for path, content in PAGES.items():
 nf = head("Seite nicht gefunden · Jon & Joy Studios", "Diese Seite gibt es nicht.", "/404", {"@context": "https://schema.org", "@graph": [ORG]}, '<meta name="robots" content="noindex">')
 (PUB / "404.html").write_text(nf + '<section class="page-hero"><div class="wrap"><h1>Diese Seite <span class="ser">gibt es nicht.</span></h1><p class="lead" style="margin:24px 0 32px">Vielleicht hilft einer dieser Wege weiter.</p><a class="btn solid" href="/">Zur Startseite</a></div></section>' + foot())
 
-indexiert = ["/", "/business-portraets/", "/werbefotografie/"]
+indexiert = ["/"]
 (PUB / "sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + "".join(f"<url><loc>{SITE}{p}</loc><lastmod>2026-11-06</lastmod></url>\n" for p in indexiert) + "</urlset>\n")
 (PUB / "robots.txt").write_text(f"User-agent: *\nAllow: /\n\nSitemap: {SITE}/sitemap.xml\n")
 (PUB / "llms.txt").write_text(f"""# Jon & Joy Studios
@@ -353,9 +342,7 @@ indexiert = ["/", "/business-portraets/", "/werbefotografie/"]
 > Business-Porträts sowie Werbe- und Produktfotografie für Unternehmen in Hamburg, im Landkreis Harburg und in der Lüneburger Heide. Fotograf: Jan Stolz (Jon Pride), Tostedt, seit 2009. Hochzeiten: https://jonpride.de
 
 ## Seiten
-- [Startseite]({SITE}/): Leistungen, Arbeiten, Kunden, Ablauf, FAQ, Kontakt
-- [Business-Porträts]({SITE}/business-portraets/): Mitarbeiter-, Team- und Vorstandsporträts mit mobilem Studio
-- [Werbefotografie]({SITE}/werbefotografie/): Kampagnen, Produkte, Food, Events
+- [Startseite]({SITE}/): Arbeiten, Leistungen, Kunden, FAQ, Kontakt
 
 ## Kontakt
 - E-Mail: {MAIL}
@@ -366,11 +353,11 @@ indexiert = ["/", "/business-portraets/", "/werbefotografie/"]
   Referrer-Policy: strict-origin-when-cross-origin
   X-Frame-Options: DENY
   Permissions-Policy: camera=(), microphone=(), geolocation=()
-  Content-Security-Policy: default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; font-src 'self'; script-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'
+  Content-Security-Policy: default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; font-src 'self'; script-src 'self' 'unsafe-inline'; frame-src https://www.youtube-nocookie.com; base-uri 'self'; form-action 'self' https://jonpride.de; frame-ancestors 'none'
 /fonts/*
   Cache-Control: public, max-age=31536000, immutable
 /img/*
   Cache-Control: public, max-age=2592000
 """)
-(PUB / "favicon.svg").write_text('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" fill="#1C2B27"/><text x="32" y="45" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-size="40" fill="#EDE8DF">&amp;</text></svg>')
+(PUB / "favicon.svg").write_text('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" fill="#000"/><text x="32" y="45" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-size="40" fill="#F4571B">&amp;</text></svg>')
 print("ok", len(PAGES), "Seiten")
