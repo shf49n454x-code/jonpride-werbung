@@ -11,7 +11,7 @@
 ## Swarovski · direkt beauftragt
 - Auftrag: direkt von Swarovski, ohne Agentur
 - Aufträge laut Jon: Paris Fashion Week (3x), Kampagne auf Santorini, Celebration-Video im Swarovski-Werk, Social-Kampagne in Zürich
-- Hinweis: Jon nennt „5 Aufträge“, die Aufzählung ergibt 6 – klären
+- Anzahl der Aufträge nicht nennen (Jon: egal), nur die Einsätze aufzählen
 - Zeitraum: Jon schätzt 2015–2019. Belegt im Kalender (Schreibweise dort „Swarowski/Swarowsky“):
   - Paris Fashion Week Feb./März 2019: 27.02.–02.03.2019 „Paris Für Swarowsky“, Hotel L'Echiquier Opéra
   - Santorini-Kampagne: 04.–07.09.2019
