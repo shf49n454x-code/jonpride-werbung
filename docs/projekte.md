@@ -22,7 +22,8 @@
 ## McDonald's · Happy-Meal-Bücher · Influencer-Video
 - Auftrag laut Jon: Video für die Influencerin „Mrs. Mama“ zur neuen Bücher-Kampagne des Happy Meals
 - Reel: https://www.instagram.com/reel/DRDKX23DEZb/ (auf der alten Werbeseite mit „3,5 Mio. Views“ angegeben)
-- Offen: Jahr, Jons Anteil (Konzept, Dreh, Schnitt?), Schreibweise/Handle von „Mrs. Mama“, ob der Auftrag über McDonald's, eine Agentur oder die Influencerin kam
+- Jons Anteil: komplett Video und Ton (bestätigt)
+- Offen: Jahr, Schreibweise/Handle von „Mrs. Mama“, ob der Auftrag über McDonald's, eine Agentur oder die Influencerin kam
 
 ## Offen
 - Cinemaxx, Jana Highholder, Robert Stolz (Food), DAR/Sir Pew Pew (Zahlen), VW
