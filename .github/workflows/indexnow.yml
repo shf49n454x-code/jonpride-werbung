@@ -1,0 +1,29 @@
+# Meldet nach jedem Merge auf main alle Adressen der Sitemap an IndexNow (Bing & Co.).
+# Wartet, bis Cloudflare Pages die neue Version ausliefert (Schlüsseldatei erreichbar).
+name: IndexNow
+on:
+  push:
+    branches: [main]
+    paths: ['public/**']
+  workflow_dispatch:
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Warten auf Deploy und melden
+        run: |
+          HOST=werbung.jonpride.de
+          KEY=$(tr -d '[:space:]' < content/indexnow-key.txt)
+          for i in $(seq 1 30); do
+            if curl -fsS "https://$HOST/$KEY.txt" | grep -q "$KEY"; then break; fi
+            sleep 20
+          done
+          BODY=$(python3 - "$HOST" "$KEY" <<'PY'
+          import json, re, sys
+          host, key = sys.argv[1], sys.argv[2]
+          urls = re.findall(r'<loc>([^<]+)</loc>', open('public/sitemap.xml').read())
+          print(json.dumps({'host': host, 'key': key, 'keyLocation': f'https://{host}/{key}.txt', 'urlList': urls}))
+          PY
+          )
+          curl -sS -o /dev/null -w "IndexNow: %{http_code}\n" -X POST https://api.indexnow.org/indexnow -H 'Content-Type: application/json; charset=utf-8' -d "$BODY"
