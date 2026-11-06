@@ -12,7 +12,11 @@
 - Auftrag: direkt von Swarovski, ohne Agentur
 - Aufträge laut Jon: Paris Fashion Week (3x), Kampagne auf Santorini, Celebration-Video im Swarovski-Werk, Social-Kampagne in Zürich
 - Hinweis: Jon nennt „5 Aufträge“, die Aufzählung ergibt 6 – klären
-- Zeitraum: ca. 2015–2019 (Jons Schätzung; im Kalender 2015–2019 kein Eintrag „Swarovski“ gefunden)
+- Zeitraum: Jon schätzt 2015–2019. Belegt im Kalender (Schreibweise dort „Swarowski/Swarowsky“):
+  - Paris Fashion Week Feb./März 2019: 27.02.–02.03.2019 „Paris Für Swarowsky“, Hotel L'Echiquier Opéra
+  - Santorini-Kampagne: 04.–07.09.2019
+  - Paris Fashion Week Sept. 2019: Photographer Meeting 24.09.2019 (Galerie Art, Faubourg Saint-Honoré, Thema „content production during the PFW“), Einsatz 25.–28.09.2019
+  - dritte Fashion Week, Werk-Video, Zürich: im Kalender nicht gefunden (2020 kein Treffer; Suche 2018/Zürich/Wattens lief nicht durch)
 - Offen: Jons Anteil je Auftrag, Team, Bilder/Videos (Ablageort)
 
 ## Offen
