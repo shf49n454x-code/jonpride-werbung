@@ -19,5 +19,11 @@
   - dritte Fashion Week, Werk-Video, Zürich: im Kalender nicht gefunden (2020 kein Treffer; Suche 2018/Zürich/Wattens lief nicht durch)
 - Offen: Jons Anteil je Auftrag, Team, Bilder/Videos (Ablageort)
 
+## McDonald's · Happy-Meal-Bücher · Influencer-Video
+- Auftrag laut Jon: Video für die Influencerin „Mrs. Mama“ zur neuen Bücher-Kampagne des Happy Meals
+- Reel: https://www.instagram.com/reel/DRDKX23DEZb/ (auf der alten Werbeseite mit „3,5 Mio. Views“ angegeben)
+- Offen: Jahr, Jons Anteil (Konzept, Dreh, Schnitt?), Schreibweise/Handle von „Mrs. Mama“, ob der Auftrag über McDonald's, eine Agentur oder die Influencerin kam
+
 ## Offen
-- Cinemaxx, Jana Highholder, Robert Stolz (Food), DAR/Sir Pew Pew (Zahlen), VW, McDonald's
+- Cinemaxx, Jana Highholder, Robert Stolz (Food), DAR/Sir Pew Pew (Zahlen), VW
+- Weitere Kunden aus der alten Seite ohne Fakten: Levi's, Sky Sport, UBS, St. Pauli, Wella, LBS, DVAG, Top Hair; Musikvideo „Through It All“ (Spoken, 5,1 Mio. Views laut alter Seite)
