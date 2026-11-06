@@ -220,6 +220,8 @@ nav.haupt a.cta:hover{background:var(--accent-h);color:#0b0b0c}
 .krumen a{text-decoration:none}.krumen a:hover{color:var(--text)}
 .skg{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:32px;align-items:end;margin-bottom:32px}
 @media(max-width:900px){.skg{grid-template-columns:1fr}}
+.skg h1{min-width:0;overflow-wrap:break-word;hyphens:auto;-webkit-hyphens:auto}
+h1.mittel{font-size:clamp(38px,5.4vw,80px)}
 .projekt .seitenkopf .lead{margin-top:22px}
 
 /* Preis-Kasten auf Kategorieseiten */
@@ -237,6 +239,19 @@ nav.haupt a.cta:hover{background:var(--accent-h);color:#0b0b0c}
 .stufe .sp{font-family:var(--font-display);font-size:clamp(26px,2.4vw,34px);line-height:1.1;text-transform:uppercase;color:var(--text)}
 .stufe p:last-child{color:var(--muted-2);font-size:15.5px;line-height:1.55}
 @media(max-width:900px){.stufen{grid-template-columns:1fr}}
+
+/* Lead-Magnet */
+.lm{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:6px 28px;align-items:center;text-decoration:none;color:var(--text);border:1px solid var(--accent);padding:clamp(18px,2vw,26px);margin-bottom:28px;clip-path:polygon(0 0,100% 0,100% calc(100% - var(--cut-md)),calc(100% - var(--cut-md)) 100%,0 100%)}
+.lm .mono{color:var(--accent);grid-row:1/span 2}
+.lmt{font-family:var(--font-display);font-size:clamp(22px,2vw,28px);text-transform:uppercase;line-height:1.1}
+.lm .kd{grid-column:2}
+.lm .mehr{grid-column:3;grid-row:1/span 2;color:var(--accent)}
+.lm:hover{background:var(--bg-2)}
+@media(max-width:700px){.lm{grid-template-columns:1fr}.lm .mono,.lm .kd,.lm .mehr{grid-column:1;grid-row:auto}}
+.lm-s .kl h2{font-size:clamp(36px,4.4vw,64px)}
+.lm-l{list-style:none;display:flex;flex-direction:column;gap:10px;font-size:18px;font-weight:600}
+.lm-l li{position:relative;padding-left:28px}
+.lm-l li::before{content:"✓";position:absolute;left:0;font-weight:700}
 
 /* Projektseite */
 .ph{margin-bottom:clamp(48px,6vw,88px)}
