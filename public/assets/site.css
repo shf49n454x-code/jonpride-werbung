@@ -28,6 +28,10 @@ h2 em{font-style:normal;color:var(--accent)}
 h3{font-family:var(--font-body);font-size:21px;font-weight:700;line-height:1.3}
 .lead{font-size:clamp(18px,1.55vw,21px);line-height:1.55;color:var(--muted-2);max-width:36em}
 
+/* Schräge Ecke aus der CI: unten rechts angeschnitten, auf Bildern, Kacheln und Kästen */
+.karte .media,.kat-k .media,.ph,.hb img,.preis,.rgk,.bsp,.kurz,.chip,.form input,.form select,.form textarea{clip-path:polygon(0 0,100% 0,100% calc(100% - var(--cut-md)),calc(100% - var(--cut-md)) 100%,0 100%)}
+.chip,.form input,.form select,.form textarea{clip-path:polygon(0 0,100% 0,100% calc(100% - 8px),calc(100% - 8px) 100%,0 100%)}
+
 /* Knöpfe – schräge Ecke aus der CI */
 .btn{display:inline-block;text-decoration:none;font-weight:700;font-size:15px;letter-spacing:.06em;text-transform:uppercase;padding:17px 26px;transition:background var(--duration-base) var(--ease-standard),color var(--duration-base) var(--ease-standard)}
 .btn.voll{background:var(--accent);color:#0b0b0c;clip-path:polygon(0 0,100% 0,100% calc(100% - var(--cut-sm)),calc(100% - var(--cut-sm)) 100%,0 100%)}
@@ -205,6 +209,13 @@ nav.haupt a.cta:hover{background:var(--accent-h);color:#0b0b0c}
 .skg{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:32px;align-items:end;margin-bottom:32px}
 @media(max-width:900px){.skg{grid-template-columns:1fr}}
 .projekt .seitenkopf .lead{margin-top:22px}
+
+/* Preis-Kasten auf Kategorieseiten */
+.preis{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 32px;align-items:center;background:var(--bg-2);border-left:3px solid var(--accent);padding:clamp(20px,2.4vw,30px);margin-bottom:28px}
+.preis .pz{font-family:var(--font-display);font-size:clamp(26px,2.6vw,36px);line-height:1.1;text-transform:uppercase;color:var(--accent)}
+.preis p:not(.pz){color:var(--muted-2);font-size:16px;grid-column:1}
+.preis .btn{grid-column:2;grid-row:1/span 2}
+@media(max-width:700px){.preis{grid-template-columns:1fr}.preis .btn{grid-column:1;grid-row:auto;justify-self:start;margin-top:10px}}
 
 /* Projektseite */
 .ph{margin-bottom:clamp(48px,6vw,88px)}

@@ -65,3 +65,8 @@
 ## Offen
 - Cinemaxx, Jana Highholder, DAR/Sir Pew Pew (Zahlen)
 - Weitere Kunden aus der alten Seite ohne Fakten: Wella, LBS, DVAG, Top Hair; Musikvideo „Through It All“ (Spoken, 5,1 Mio. Views laut alter Seite)
+
+## Preise (von Jon festgelegt, 06.11.2026)
+- Kampagnen ab 2.999 € (Endpreis)
+- Mitarbeiterfotos: 85 € je fertigem Bild plus Anfahrtspauschale (Höhe offen)
+- UGC-Pakete: offen

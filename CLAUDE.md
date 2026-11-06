@@ -44,7 +44,8 @@ Lightbox und Formular durchklicken.
 - **Kein langer Onepager:** Startseite zeigt nur eine Auswahl (sechs Arbeiten) und die Bereiche; alles Weitere
   auf Unterseiten, Anfrage auf `/kontakt/`. Jeder Klick auf eine Unterseite ist gut für die Statistik.
 - **Überschriften:** Anton in Versalien, Zeilenabstand mindestens 1.04, sonst stoßen Ä/Ö/Ü an die Zeile darüber.
-- **Design:** dunkel, Orange `#F4571B` als einziger Akzent, schräge Ecken aus der CI. Animationen dezent
+- **Design:** dunkel, Orange `#F4571B` als einziger Akzent, Logo in Orange (`assets/logo/jonpride-logo.svg`),
+  angeschnittene Ecke unten rechts (`--cut-md`/`--cut-sm` aus ci.css) auf Bildern, Kacheln, Kästen und Knöpfen. Animationen dezent
   (Einblenden beim Scrollen, Überschrift Wort für Wort, View Transitions), `prefers-reduced-motion` respektieren.
 - **Selbst hosten vor anbinden.** Keine CDNs, keine fremden Einbettungen außer YouTube-nocookie im Klick.
 - **Neue Seite:** Eintrag in `content/*.json`, Sitemap und llms.txt entstehen automatisch. Jede Inhaltsseite

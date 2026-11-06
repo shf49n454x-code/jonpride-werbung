@@ -124,7 +124,7 @@ def kopf(title, desc, pfad, ld, og_bild="w10", extra=""):
 <a class="skip" href="#inhalt">Zum Inhalt</a>
 <header class="top">
   <div class="wrap">
-    <a href="/" class="marke" aria-label="Jon Pride, zur Startseite"><img src="/assets/logo/jonpride-logo-solid-white.png" alt="Jon Pride" width="962" height="592"></a>
+    <a href="/" class="marke" aria-label="Jon Pride, zur Startseite"><img src="/assets/logo/jonpride-logo.svg" alt="Jon Pride" width="962" height="592"></a>
     <nav class="haupt" aria-label="Hauptnavigation">{nav}<a class="hz" href="https://jonpride.de/">Hochzeit&nbsp;→</a><a class="cta" href="/kontakt/">Projekt anfragen</a></nav>
     <details class="menu"><summary aria-label="Menü öffnen">Menü</summary><nav aria-label="Menü">{nav}<a href="/kontakt/">Projekt anfragen</a><a href="https://jonpride.de/">Hochzeit&nbsp;→</a></nav></details>
   </div>
@@ -326,6 +326,7 @@ def kategorie(k):
     h += f"""<section class="seitenkopf"><div class="wrap">
   {nav_k}
   <div class="skg"><h1>{worte(k["name"])}</h1><p class="lead rv">{esc(k["intro"])}</p></div>
+  {f'<div class="preis rv"><p class="pz">{esc(k["preis"][0])}</p><p>{esc(k["preis"][1])}</p><a class="btn voll" href="/kontakt/">Angebot anfragen</a></div>' if k.get("preis") else ""}
   <div class="chips rv">{chips}</div>
 </div></section>
 <section class="arbeiten kat"><div class="wrap">{raster(liste)}</div></section>

@@ -13,7 +13,11 @@
     "kosten"
    ],
    "cover": "w09",
-   "leistung": "Kampagnen-, Produkt- und Imagebilder für Marken. Location, Set, Licht, Fotografie und Bearbeitung aus einer Hand."
+   "leistung": "Kampagnen-, Produkt- und Imagebilder für Marken. Location, Set, Licht, Fotografie und Bearbeitung aus einer Hand.",
+   "preis": [
+    "Kampagnen ab 2.999 €",
+    "Der genaue Preis richtet sich nach Motiven, Shootingtagen und Nutzung. Nach einem kurzen Briefing bekommt ihr ein festes Angebot."
+   ]
   },
   {
    "slug": "business-portraet",
@@ -28,7 +32,11 @@
     "rechte"
    ],
    "cover": "w04",
-   "leistung": "Mitarbeiter-, Team- und Führungskräfteporträts für Website, Recruiting und Presse, bei euch vor Ort."
+   "leistung": "Mitarbeiter-, Team- und Führungskräfteporträts für Website, Recruiting und Presse, bei euch vor Ort.",
+   "preis": [
+    "Mitarbeiterfotos: 85 € je fertigem Bild",
+    "Dazu eine Anfahrtspauschale. Ihr zahlt nur die Bilder, die ihr wirklich nutzt."
+   ]
   },
   {
    "slug": "food",
