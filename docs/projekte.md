@@ -70,5 +70,5 @@
 ## Preise (von Jon festgelegt, 06.11.2026)
 - Kampagnen ab 2.999 € (Endpreis)
 - Mitarbeiterporträts: Jon hat wenig Lust darauf, dürfen teuer sein. Umgesetzt: 149 € pro fertigem Bild + 249 € Anfahrt/mobiles Studio bis 50 km, mind. 5 Bilder (Bestätigung offen)
-- Markenauftritt einer Firma mit diversen Bereichen: darauf hat Jon Lust. Kategorie „Unternehmen & Marke“. Stufen (Vorschlag, von Jon mit „Ja, aber Film = 2 Tage“ beantwortet): Halbtag ab 1.990 €, ganzer Tag ab 3.490 €, Foto + Social-Videos (3 × ca. 30 s, 1 Tag) ab 4.990 € (Jon: „für glatt 5“); Imagefilm 60–90 s braucht 2 Drehtage, einzeln anbieten
+- Markenauftritt einer Firma mit diversen Bereichen: darauf hat Jon Lust. Kategorie „Unternehmen & Marke“. Stufen (Vorschlag, von Jon mit „Ja, aber Film = 2 Tage“ beantwortet): Halbtag ab 1.990 €, ganzer Tag ab 3.490 €, Foto + Social-Videos (3 × ca. 30 s, 1 Tag) ab 4.990 € (von Jon bestätigt); Imagefilm 60–90 s braucht 2 Drehtage, einzeln anbieten
 - UGC-Pakete: offen
