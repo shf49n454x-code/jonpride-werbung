@@ -8,5 +8,11 @@
 - Nutzung der Bilder: digitale Kampagne
 - Bilder (Drive „JON PRIDE - Business/Oral-B“): JPS06671, JPS07121, JPS07416, JPS07284, JPS07004 (+ JPS06129, JPS07513)
 
+## Swarovski · direkt beauftragt
+- Auftrag: direkt von Swarovski, ohne Agentur
+- Aufträge laut Jon: Paris Fashion Week (3x), Kampagne auf Santorini, Celebration-Video im Swarovski-Werk, Social-Kampagne in Zürich
+- Hinweis: Jon nennt „5 Aufträge“, die Aufzählung ergibt 6 – klären
+- Offen: Jahre, Jons Anteil je Auftrag, Team, Bilder/Videos (Ablageort)
+
 ## Offen
-- Swarovski (Santorini), Cinemaxx, Jana Highholder, Robert Stolz (Food), DAR/Sir Pew Pew (Zahlen), VW, McDonald's
+- Cinemaxx, Jana Highholder, Robert Stolz (Food), DAR/Sir Pew Pew (Zahlen), VW, McDonald's
